@@ -1,5 +1,5 @@
-/* Global Styles */
-/* Resetting margin and padding for cross-browser compatibility */
+/* global styles */
+/* resetting margin and padding for cross-browser compatibility */
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +25,7 @@ body {
     align-items: center;
 }
 
-
+/*header styles*/
 header{
     width: 100%;
     background-color: #5a2d14;
@@ -139,8 +139,8 @@ nav i:hover{
     transform: scale(1.2);
 }
 
-/* Sidebar Styles */
-/* Sidebar hidden by default */
+/* sidebar styles */
+/* sidebar hidden by default */
 #sidebar {
     position: fixed;
     top: 0;
@@ -206,4 +206,139 @@ nav i:hover{
 .sidebar-menu li ul li a:hover{
     text-decoration: underline;
     color: #5a2d14
+}
+
+
+/*banner styles*/
+.banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 140px 50px;
+}
+
+.carousel{
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.carousel-container{
+    width: 100%;
+    max-width: 730px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+}
+
+.carousel-slide{
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+
+.carousel-dots{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    display: flex;
+    gap: 10px;
+    transform: translateX(-50%);
+}
+
+.dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff5e1;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.dot.active{
+    opacity: 1;
+    background-color: #fff5e1;
+}
+
+.banner-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 15%;
+    padding-left: 20px;
+    margin-top: -100px;
+    color: #fff5e1;
+}
+
+.banner-text h1{
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff5e1;
+}
+
+.banner-text p{
+    font-size: 18px;
+    text-align: center;
+    width: 70%;
+}
+
+#shopForHeading{
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff5e1;
+    margin: 0;
+}
+
+#shopForText{
+    display: inline-block;
+    font-size: 70px;
+    font-weight: bold;
+    color: #fff5e1;
+    transition: opacity 1.5s ease;
+    opacity: 1;
+}
+
+@keyframes fade{
+    0%{
+        opacity: 1;
+    }
+    40%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    60%{
+        opacity: 0;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+input[type="search"]{
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background-color: #fff5e1;
+    border-radius: 30px;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    color: #5a2d14;
+    padding: 10px 15px;
+}
+
+.banner-text input[type="search"]::placeholder{
+    color:#5a2d14;
+    padding-left: 10px;
+    font: "inter";
+    opacity: 0.6;
 }
