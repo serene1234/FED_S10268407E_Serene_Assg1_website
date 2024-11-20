@@ -1,0 +1,209 @@
+/* Global Styles */
+/* Resetting margin and padding for cross-browser compatibility */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*font styles*/
+.inter-customer-font {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: #fff5e1;
+    background-color: #5a2d14;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+header{
+    width: 100%;
+    background-color: #5a2d14;
+    padding: 10px 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    height: 100px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.menu-btn{
+    border: none;
+    background: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.logo{
+    position: absolute;
+    top: 0;
+    left: 46%;
+}
+
+.logo img{
+    max-width: 150px;
+    height: auto;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    color:#fff5e1;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li{
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a{
+    position: relative;
+    color:#fff5e1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover{
+    color: #fff5e1;
+    text-decoration: none;
+}
+nav ul li a::after{
+    content: "";
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #fff5e1;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+nav button{
+    background-color: #fff5e1;
+    padding: 5px 15px;
+    color: #5a2d14;
+    border: 0px solid transparent;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3 ease, color 0.3 ease, border-color 0.6 ease;
+}
+
+nav button:hover{
+    background-color: #5a2d14;
+    color: #fff5e1;
+    border: 2px solid #fff5e1;
+}
+
+nav i{
+    font-size: 26px;
+    color: #fff5e1;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3 ease;
+}
+
+nav i:hover{
+    transform: scale(1.2);
+}
+
+/* Sidebar Styles */
+/* Sidebar hidden by default */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #fff5e1;
+    color: #5a2d14;
+    padding: 20px;
+    z-index: 1000; /* Ensure the sidebar is above other content */
+    transition: left 0.3s ease;
+}
+
+#sidebar.active{
+    left: 0;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 25px;
+    background: none;
+    border: none;
+    color: #5a2d14;
+    padding: 5px;
+}
+
+.sidebar-menu, .sidebar-menu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-category {
+    color: #5a2d14;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.menu-category a {
+    color: #5a2d14;
+    text-decoration-line: underline;
+    text-decoration-thickness: 3px;
+    font-weight: 700;
+    display: block;
+    padding: 10px 0;
+}
+
+.sidebar-menu li ul{
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.sidebar-menu li ul li a{
+    font-size: 16px;
+    color: #5a2d14;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.sidebar-menu li ul li a:hover{
+    text-decoration: underline;
+    color: #5a2d14
+}

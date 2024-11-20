@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Chateraise - Home</title>
+        <link rel="stylesheet" href="https://unpkg.com/normalize.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- sidebar navigation -->
+        <div id="sidebar" class="sidebar">
+            <!-- close button -->
+            <button class="close-btn" onclick="closeSidebar()">x</button>
+            <ul class="sidebar-menu">
+                <li class="menu-category"><a href="index.html">Home</a></li>
+                <li class="menu-category"><a href="#">Products</a>
+                    <ul>
+                        <li><a href="#">Cakes</a></li>
+                        <li><a href="#">Ice Cream</a></li>
+                        <li><a href="#">Baked Goods</a></li>
+                        <li><a href="#">Chilled Items</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category"><a href="#">Contact Us</a>
+                    <ul>
+                        <li><a href="#">Join the Team</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category"><a href="#">About Us</a>
+                    <ul>
+                        <li><a href="#">Franchise</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category"><a href="#">Consumer Care</a>
+                    <ul>
+                        <li><a href="#">Return and Exchange</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Allergens</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+         <!-- main content -->
+          <div class="main-content">
+            <!-- header -->
+            <header>
+                <button class="menu-btn" onclick="openSidebar()">☰ Menu</button>
+                <nav class="nav-bar">
+                    <div class="logo">
+                        <img src="images/chateraise logo.png">
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <button class="order-btn" onclick="openProductsPage()">Order Now</button>
+                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- banner section -->
+             <section class="banner">
+                <img src="images/Chateraise advertisement.png" alt="Japanese Apple and Mikan Fair">
+                <div class="banner-text">
+                    <h1>Shop for CAKES</h1>
+                    <p>All of our products contain little to no additives. Please keep refrigerated (frozen for ice cream) if not consumed immediately.</p>
+                    <input type="search" placeholder=""Search for products">
+                </div>
+             </section>
+          </div>
+    </body>
