@@ -214,7 +214,7 @@ nav i:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 140px 50px;
+    padding: 140px 100px 50px;
 }
 
 .carousel{
@@ -269,7 +269,7 @@ nav i:hover{
     justify-content: flex-start;
     text-align: center;
     gap: 15%;
-    padding-left: 20px;
+    padding-left: 65px;
     margin-top: -100px;
     color: #fff5e1;
 }
@@ -341,4 +341,73 @@ input[type="search"]{
     padding-left: 10px;
     font: "inter";
     opacity: 0.6;
+}
+
+/*featured styles*/
+.featured{
+    background-color: #fff5e1;
+    text-align:center;
+    padding: 20px;
+}
+
+.featured h2{
+    font-size: 70px;
+    font-weight: bold;
+    color: #5a2d14;
+    padding: 30px;
+}
+
+.featured-items{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.item{
+    position: relative;
+    border-radius: 10px;
+    width: 300px;
+    height:350px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    scroll-snap-align: start;
+}
+
+.item:hover{
+    transform: scale(1.05);
+}
+
+.item-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-text{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #5a2d14;
+    color: #fff5e1;
+    padding: 60px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    border-radius: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: height 0.5s ease, padding 0.5s ease, background-color 0.5s ease; 
+}
+
+.item:hover .item-text{
+    background-color: #5a2d14;
+    height: 100%;
+    padding: 20px;
+    font-size: 26px;
+    align-items: center;
 }
