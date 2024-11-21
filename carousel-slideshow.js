@@ -1,3 +1,21 @@
+// Function to open the sidebar
+function openSidebar() {
+    // Add the 'active' class to the sidebar which will trigger the transition
+    document.getElementById("sidebar").classList.add("active");
+    // Adjust the margin of the main content to make space for the sidebar
+    document.querySelector(".main-content").style.marginLeft = "250px";
+}
+
+// Function to close the sidebar
+function closeSidebar() {
+    // Remove the 'active' class to hide the sidebar
+    document.getElementById("sidebar").classList.remove("active");
+    // Reset the margin of the main content
+    document.querySelector(".main-content").style.marginLeft = "0";
+}
+
+
+
 let currentIndex = 0;
 const slides = document.querySelectorAll('.carousel-slide');
 const dots = document.querySelectorAll('.dot');

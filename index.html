@@ -6,6 +6,7 @@
         <title>Chateraise - Home</title>
         <link rel="stylesheet" href="https://unpkg.com/normalize.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -86,7 +87,10 @@
                     <div id="shopForHeading">Shop For</div>
                     <h1 id="shopForText">CAKES</h1>
                     <p>All of our products contain little to no additives. Please keep refrigerated (frozen for ice cream) if not consumed immediately.</p>
-                    <input type="search" placeholder="Search for products">
+                    <div class="search-container">
+                        <i class="bi bi-search"></i>
+                        <input type="search" id="search-bar" placeholder="Search for products">
+                    </div>
                 </div>
              </section>
 
@@ -129,6 +133,97 @@
                     </div>
                 </div>
             </section>
+
+            <!--testimonials section-->
+            <section class="testimonial">
+                <div class="testimonial-content">
+                    <!--article section-->
+                    <div class="testimonial-article-container">
+                        <div  class="testimonial-article">
+                            <!--link to article-->
+                            <a href="https://eatbook.sg/chateraise-24-hour-unmanned-store/" target="_blank">
+                                <img src="images/Chateraise article image.png" alt="Article 1 Thumbnail">
+                            </a>
+                        </div>
+                        <div class="article-details">
+                            <h3>Chateraise 24-Hour Unmanned Store</h3>
+                            <p>Eatbook</p>
+                            <a href="https://eatbook.sg/chateraise-24-hour-unmanned-store/" class="read-now" target="_blank">Read Now</a>
+                        </div>
+                    </div>
+
+                    <!--text section-->
+                    <div class ="testimonial-text-container">
+                        <h3>In the Internet!</h3>
+                        <h2>TASTIFIED</h2>
+                        <h2>BY</h2>
+                    </div>
+                    
+                    <!--video section-->
+                    <div class="testimonial-video-container">
+                        <!--link to video 1-->
+                        <div class="testimonial-item">
+                            <iframe src="https://www.youtube.com/embed/7i5e0FoqBlY?si=58BPnsZMnTV2PQXL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <!--link to video 2-->
+                        <div class="testimonial-item">
+                            <iframe src="https://www.youtube.com/embed/4aZcL-aZ1r4?si=NTNlMVeRZ6rCrMCt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <!--link to video 3-->
+                        <div class="testimonial-item">
+                            <iframe src="https://www.youtube.com/embed/xpLsFxm41wM?si=owRo1M5DRKpC0Qiz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--footer section-->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <h3>Get the Latest News!</h3>
+                        <div class="newsletter">
+                            <input type="email" placeholder="Enter email here">
+                            <button class="subscribe">Subscribe</button>
+                        </div>
+                        <div class="social-icons">
+                            <a href="" class="icon"><img src="images/Instagram logo.png" alt="Instagram"></a>
+                            <a href="" class="icon"><img src="images/Twitter logo.png" alt="Twitter"></a>
+                            <a href="" class="icon"><img src="images/Facebook logo.png" alt="Facebook"></a>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-section">
+                            <h4>Consumer Care</h4>
+                            <ul>
+                                <li><a href="">Return and Exchange</a></li>
+                                <li><a href="">Delivery Information</a></li>
+                                <li><a href="">Allergens</a></li>
+                                <li><a href="">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>About Us</h4>
+                            <ul>
+                                <li><a href="">Franchise</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Contact Us</h4>
+                            <ul>
+                                <li><a href="">Join the Team</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© Chateraise Co., Ltd. All Rights Reserved.</p>
+                    <div class="footer-logo">
+                        <img src="images/chateraise logo.png" alt="Chateraise Logo">
+                    </div>
+                </div>
+            </footer>
+            
           </div>
           <script src="carousel-slideshow.js"></script>
     </body>
