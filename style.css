@@ -27,37 +27,39 @@ body {
 
 /*header styles*/
 header{
+    border: 2px red solid;
     width: 100%;
     background-color: #5a2d14;
-    padding: 10px 50px;
+    padding: 0 50px;
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     z-index: 100;
     height: 81px;
     font-size: 18px;
     font-weight: 700;
+    height: auto;
 }
 
+.nav-bar{
+    border: 2px red solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
 
 .menu-btn{
-    border: none;
+    border: 0;
     background: none;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+    color: #fff5e1;
+    font-size: 24px;
 }
 
 .logo{
-    position: absolute;
-    top: 0;
-    left: 46%;
+    border: 2px red solid;
+    display: flex;
+    width: auto;
 }
 
 .logo img{
@@ -65,17 +67,12 @@ header{
     height: auto;
 }
 
-nav{
-    display: flex;
-    align-items: center;
-}
-nav ul{
-    display: flex;
+.nav-links {
     list-style: none;
-    text-decoration: none;
-    color:#fff5e1;
-    padding: 0;
+    display: flex;
+    gap: 15px;
     margin: 0;
+    padding: 0;
 }
 
 nav ul li{
@@ -110,27 +107,6 @@ nav ul li a:hover::after{
     width: 100%;
 }
 
-nav button{
-    background-color: #fff5e1;
-    padding: 5px 15px;
-    color: #5a2d14;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
-    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.2);
-    border: 0px solid transparent;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3 ease, color 0.3 ease, border-color 0.6 ease;
-}
-
-nav button:hover{
-    background-color: #5a2d14;
-    color: #fff5e1;
-    border: 2px solid #fff5e1;
-    text-decoration: none;
-}
-
 nav i{
     font-size: 26px;
     color: #fff5e1;
@@ -141,6 +117,29 @@ nav i{
 
 nav i:hover{
     transform: scale(1.2);
+}
+
+/* Order button styles */
+nav .order-btn {
+    background-color: #fff5e1;
+    padding: 5px 15px;
+    color: #5a2d14;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.2);
+    border: 0px solid transparent;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.6s ease;
+}
+
+/* Hover effect for Order button */
+nav .order-btn:hover {
+    background-color: #5a2d14;
+    color: #fff5e1;
+    border: 2px solid #fff5e1;
+    text-decoration: none;
 }
 
 /* sidebar styles */
