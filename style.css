@@ -25,7 +25,7 @@ body {
 }
 /*header styles*/
 header{
-    position: relative; /* Make header the positioning context */
+    position: fixed; /* Make header the positioning context */
     width: 100%;
     background-color: #5a2d14;
     display: flex;
@@ -46,7 +46,7 @@ header{
     display: flex;
     justify-content: space-between; /* Space menu button and nav-links */
     align-items: center;
-    padding: 0 30px; /* Optional padding for the nav-bar */
+    padding: 0 40px; /* Optional padding for the nav-bar */
     transform: translateY(-50%); /* Adjust to center the nav-bar over the logo */
     z-index: 2; /* Make sure it overlaps the logo */
     box-sizing: border-box;
@@ -82,6 +82,7 @@ header{
     margin: 0;
     justify-content: flex-end;
     align-self: flex-end;
+    font-size: 20px;
 }
 
 nav ul li{
@@ -118,7 +119,7 @@ nav ul li a:hover::after{
 }
 
 nav i{
-    font-size: 26px;
+    font-size: 30px;
     color: #fff5e1;
     display: flex;
     align-items: center;
@@ -244,7 +245,7 @@ nav .order-btn:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 140px 50px 50px;
+    padding: 120px 50px 50px;
     flex-wrap: nowrap;
 }
 
@@ -257,6 +258,7 @@ nav .order-btn:hover {
 
 .carousel-container{
     width: 80%;
+    max-width: 800px;
     height: 400px;
     overflow: hidden;
     border-radius: 20px;
@@ -314,6 +316,7 @@ nav .order-btn:hover {
     font-size: 18px;
     text-align: center;
     width: 70%;
+    margin-bottom: 20px;
 }
 
 #shopForHeading{
@@ -353,10 +356,12 @@ nav .order-btn:hover {
     }
 }
 
+/*search bar container*/
 .search-container {
     position: relative;
     margin-top: 20px;
     width: 100%;
+    max-width: 600px;
     display: flex;
 }
 
@@ -835,20 +840,20 @@ nav .order-btn:hover {
         padding: 0 20px;
     }
     .menu-btn{
-        font-size: 14px;
-    }
-    .logo img{
-        max-width: 120px;
-    }
-    .nav-links{
-        gap: 11px;
-        font-size: 12px;
-    }
-    nav i{
         font-size: 18px;
     }
+    .logo img{
+        max-width: 140px;
+    }
+    .nav-links li{
+        display: none;
+    }
+    nav i{
+        font-size: 26px;
+    }
     nav .order-btn{
-        padding: 1px 8px;
+        padding: 2px 10px;
+        font-size: 18px;
     }
 
     /*sidebar section*/
@@ -863,29 +868,47 @@ nav .order-btn:hover {
     }
 
     /*banner section*/
-    
+   .banner{
+        padding: 100px 40px 40px 40px;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .banner-text{
+        margin-bottom: 20px;
+        padding-left: 0;
+    }
+    .banner-text p{
+        font-size: 18px;
+        width: 65%;
+    }
+    .carousel-container{
+        width: 100%;
+    }
+    .search-container{
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 480px){
     /*header section*/
     .nav-bar{
-        padding: 0 6px;
+        padding: 0 10px;
     }
     .menu-btn{
-        font-size: 8px;
+        font-size: 12px;
     }
     .logo img{
-        max-width: 60px;
+        max-width: 70px;
     }
-    .nav-links{
-        gap: 8px;
-        font-size: 7px;
+    .nav-links li{
+        display: none;
     }
     nav i{
-        font-size: 10px;
+        font-size: 16px;
     }
     nav .order-btn{
-        padding: 1px 8px;
+        padding: 2px 6px;
+        font-size: 12px;
     }
     
     /*sidebar section*/
@@ -898,4 +921,43 @@ nav .order-btn:hover {
     .sidebar-menu li ul li a{
         font-size: 16px;
     }
+
+    /*banner section*/
+    .banner{
+            padding: 50px 20px 20px 20px;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+        .banner-text{
+            margin-bottom: 20px;
+            padding-left: 0;
+        }
+        #shopForHeading{
+            font-size: 14px;
+        }
+        #shopForText{
+            font-size:44px;
+        }
+        .banner-text p{
+            font-size: 14px;
+            width: 80%;
+        }
+        .carousel-container{
+            width: 100%;
+            height: auto;
+        }
+        .search-container{
+            max-width: 100%;
+        }
+        #search-bar{
+            width: 100%;
+            padding: 6px 12px 6px 40px;
+            font-size: 12px;
+        }
+        .search-container i {
+            font-size: 12px; /* Reduced icon size */
+        }
+        .banner-text input[type="search"]::placeholder{
+            font-size: 12px;
+        }
 }
