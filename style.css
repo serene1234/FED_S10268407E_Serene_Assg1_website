@@ -144,7 +144,7 @@ nav i:hover{
 
 /* sidebar styles */
 /* sidebar hidden by default */
-#sidebar {
+.sidebar {
     position: fixed;
     top: 0;
     left: -250px;
@@ -157,9 +157,22 @@ nav i:hover{
     transition: left 0.3s ease;
 }
 
-#sidebar.active{
+.sidebar.sidebar-active{
     left: 0;
 }
+
+/* Wrapper for main content */
+.main-content {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: relative;
+    z-index: 1; /* Ensure it stays below the sidebar */
+}
+
+/* Scale down and fade out content when sidebar is active */
+.sidebar-active .main-content {
+    opacity: 0.8; /* Optional, adds a subtle dimming effect */
+}
+
 
 .close-btn {
     position: absolute;
@@ -222,6 +235,7 @@ nav i:hover{
 
 .carousel{
     display: flex;
+    height: 100%;
     transition: transform 1s ease-in-out;
 }
 

@@ -1,17 +1,21 @@
 // Function to open the sidebar
 function openSidebar() {
     // Add the 'active' class to the sidebar which will trigger the transition
-    document.getElementById("sidebar").classList.add("active");
-    // Adjust the margin of the main content to make space for the sidebar
-    document.querySelector(".main-content").style.marginLeft = "250px";
+    document.getElementById("sidebar").classList.add("sidebar-active");
+    // Add a scaling effect to the main content
+    const mainContent = document.querySelector(".main-content");
+    mainContent.style.opacity = "0.8"; // Optional: dim the content
+    mainContent.style.transition = "transform 0.3s ease, opacity 0.3s ease";
 }
 
 // Function to close the sidebar
 function closeSidebar() {
     // Remove the 'active' class to hide the sidebar
-    document.getElementById("sidebar").classList.remove("active");
+    document.getElementById("sidebar").classList.remove("sidebar-active");
     // Reset the margin of the main content
-    document.querySelector(".main-content").style.marginLeft = "0";
+    const mainContent = document.querySelector(".main-content");
+    mainContent.style.opacity = "1";
+    mainContent.style.transition = "transform 0.3s ease, opacity 0.3s ease";
 }
 
 
