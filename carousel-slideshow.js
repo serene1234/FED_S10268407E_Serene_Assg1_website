@@ -75,7 +75,7 @@ setInterval(changeText, 3000); // 2000ms = 2 seconds
 
 
 // sample list of product nammes
-const product = [
+const products = [
     "Cakes - Caramel Butter Cream Cake",
     "Cakes - Strawberry Fresh Cream Cake",
     "Cakes - Tiramisu Mille Crepe Cake",

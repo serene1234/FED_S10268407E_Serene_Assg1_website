@@ -20,65 +20,74 @@ body {
     background-color: #5a2d14;
     margin: 0;
     padding: 0;
+    width: 100%;
+    height:100%;
+}
+/*header styles*/
+header{
+    position: relative; /* Make header the positioning context */
+    width: 100%;
+    background-color: #5a2d14;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/*header styles*/
-header{
-    border: 2px red solid;
-    width: 100%;
-    background-color: #5a2d14;
-    padding: 0 50px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    height: 81px;
+    padding: 0;
+    z-index: 1;
     font-size: 18px;
     font-weight: 700;
-    height: auto;
+    box-sizing: border-box;
 }
 
 .nav-bar{
-    border: 2px red solid;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: absolute; /* Overlap the logo */
+    top: 50%; /* Center vertically over the logo */
+    left: 0;
     width: 100%;
+    display: flex;
+    justify-content: space-between; /* Space menu button and nav-links */
+    align-items: center;
+    padding: 0 30px; /* Optional padding for the nav-bar */
+    transform: translateY(-50%); /* Adjust to center the nav-bar over the logo */
+    z-index: 2; /* Make sure it overlaps the logo */
+    box-sizing: border-box;
 }
 
 .menu-btn{
-    border: 0;
+    border: none;
     background: none;
     color: #fff5e1;
     font-size: 24px;
+    align-self: flex-start;
+    white-space: nowrap;
 }
 
 .logo{
-    border: 2px red solid;
     display: flex;
-    width: auto;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 }
 
 .logo img{
     max-width: 150px;
     height: auto;
+    display: block;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 15px;
-    margin: 0;
+    gap: 40px;
     padding: 0;
+    margin: 0;
+    justify-content: flex-end;
+    align-self: flex-end;
 }
 
 nav ul li{
-    margin: 0 15px;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 nav ul li a{
@@ -86,6 +95,7 @@ nav ul li a{
     color:#fff5e1;
     text-decoration: none;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 nav ul li a:hover{
@@ -113,6 +123,7 @@ nav i{
     display: flex;
     align-items: center;
     transition: transform 0.3 ease;
+    flex-shrink: 1;
 }
 
 nav i:hover{
@@ -132,6 +143,8 @@ nav .order-btn {
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.6s ease;
+    flex-shrink: 1;
+    white-space: nowrap;
 }
 
 /* Hover effect for Order button */
@@ -166,6 +179,7 @@ nav .order-btn:hover {
     transition: transform 0.3s ease, opacity 0.3s ease;
     position: relative;
     z-index: 1; /* Ensure it stays below the sidebar */
+    overflow-x: hidden;
 }
 
 /* Scale down and fade out content when sidebar is active */
@@ -195,7 +209,7 @@ nav .order-btn:hover {
     color: #5a2d14;
     font-weight: 500;
     font-size: 18px;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .menu-category a {
@@ -231,12 +245,14 @@ nav .order-btn:hover {
     justify-content: space-between;
     align-items: center;
     padding: 140px 50px 50px;
+    flex-wrap: nowrap;
 }
 
 .carousel{
     display: flex;
     height: 100%;
     transition: transform 1s ease-in-out;
+    width: 100%;
 }
 
 .carousel-container{
@@ -810,4 +826,76 @@ nav .order-btn:hover {
 .footer-logo img {
     max-width: 150px;
     height: auto;
+}
+
+/*responsive media*/
+@media (max-width: 768px){
+    /*header section*/
+    .nav-bar{
+        padding: 0 20px;
+    }
+    .menu-btn{
+        font-size: 14px;
+    }
+    .logo img{
+        max-width: 120px;
+    }
+    .nav-links{
+        gap: 11px;
+        font-size: 12px;
+    }
+    nav i{
+        font-size: 18px;
+    }
+    nav .order-btn{
+        padding: 1px 8px;
+    }
+
+    /*sidebar section*/
+    .sidebar{
+        width: 200px;
+    }
+    .close-btn{
+        font-size: 20px;
+    }
+    .sidebar-menu li ul li a{
+        font-size: 16px;
+    }
+
+    /*banner section*/
+    
+}
+
+@media (max-width: 480px){
+    /*header section*/
+    .nav-bar{
+        padding: 0 6px;
+    }
+    .menu-btn{
+        font-size: 8px;
+    }
+    .logo img{
+        max-width: 60px;
+    }
+    .nav-links{
+        gap: 8px;
+        font-size: 7px;
+    }
+    nav i{
+        font-size: 10px;
+    }
+    nav .order-btn{
+        padding: 1px 8px;
+    }
+    
+    /*sidebar section*/
+    .sidebar{
+        width: 200px;
+    }
+    .close-btn{
+        font-size: 20px;
+    }
+    .sidebar-menu li ul li a{
+        font-size: 16px;
+    }
 }
