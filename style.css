@@ -42,6 +42,7 @@ header{
     font-weight: 700;
 }
 
+
 .menu-btn{
     border: none;
     background: none;
@@ -240,8 +241,7 @@ nav i:hover{
 }
 
 .carousel-container{
-    width: 100%;
-    max-width: 730px;
+    width: 80%;
     height: 400px;
     overflow: hidden;
     border-radius: 20px;
@@ -342,17 +342,19 @@ nav i:hover{
     position: relative;
     margin-top: 20px;
     width: 100%;
+    display: flex;
 }
 
 #search-bar {
     width: 100%;
-    padding: 10px 45px;
+    padding: 10px 15px 10px 45px;
     background-color: #fff5e1;
-    border-radius: 30px;
+    border-radius: 20px;
     border: 0;
     outline: none;
     font-size: 18px;
     color: #5a2d14;
+    transition: all 0.3s ease; /* Smooth transition for focus */
 }
 
 .search-container i {
@@ -368,6 +370,40 @@ nav i:hover{
     color:#5a2d14;
     font: "inter";
     opacity: 0.6;
+}
+
+/* Suggestions List */
+.suggestions-list {
+    position: absolute;
+    top: 100%; /* Space below the search bar */
+    left: 0;
+    right: 0;
+    max-height: 200px; /* Limit height for scrollable suggestions */
+    overflow-y: auto; /* Scroll when content exceeds max height */
+    background-color: #fff5e1; /* Matches the search bar */
+    border-radius: 20px; /* Rounded edges */
+    z-index: 1000; /* Ensure it appears above other elements */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.suggestions-list li {
+    text-align: left;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #5a2d14;
+}
+
+.suggestions-list li:hover {
+    background-color: #fbe2b4; /* Highlight suggestion on hover */
+}
+
+.first-suggestion{
+    background-color: #fbe2b4;
+    font-weight: bold;
+    color: #5a2d14;
 }
 
 /*featured styles*/
@@ -387,8 +423,9 @@ nav i:hover{
 
 .featured-items{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
+    gap: 34px;
 }
 
 .item{
