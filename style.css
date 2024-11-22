@@ -538,17 +538,18 @@ nav .order-btn:hover {
     font-size: 36px;
     font-weight: bold;
     color: #5a2d14;
-    margin-top: 100px;
+    margin-top: 150px;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 .about-image{
     width: 60%;
     text-align: right;
+    object-fit: cover;
 }
 
 .about-image img{
     width: 100%;
-    height: 500px;
+    height: auto;
     border-radius: 20px;
     object-fit: cover;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
@@ -887,12 +888,42 @@ nav .order-btn:hover {
     .search-container{
         max-width: 100%;
     }
+
+    /*about us section*/
+    .about{
+        background: linear-gradient(to bottom, #5a2d14 35%, #fff5e1 35%);
+    }
+    .about-content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-text-container{
+        width: 100%;
+        padding-right: 0;
+        text-align: left;
+    }
+    .about-image{
+        width: 100%;
+        margin-top: 5px;
+    }
+    .about-heading h2{
+        font-size: 70px;
+    }
+    .about-text-container p{
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .about-text-container h3{
+        max-width: 60%;
+        font-size: 30px;
+        margin-top: 40px;
+    }
 }
 
 @media (max-width: 480px){
     /*header section*/
     .nav-bar{
-        padding: 0 10px;
+        padding: 0 20px;
     }
     .menu-btn{
         font-size: 12px;
@@ -924,40 +955,77 @@ nav .order-btn:hover {
 
     /*banner section*/
     .banner{
-            padding: 50px 20px 20px 20px;
-            flex-direction: column-reverse;
-            align-items: center;
-        }
-        .banner-text{
-            margin-bottom: 20px;
-            padding-left: 0;
-        }
-        #shopForHeading{
-            font-size: 14px;
-        }
-        #shopForText{
-            font-size:44px;
-        }
-        .banner-text p{
-            font-size: 14px;
-            width: 80%;
-        }
-        .carousel-container{
-            width: 100%;
-            height: auto;
-        }
-        .search-container{
-            max-width: 100%;
-        }
-        #search-bar{
-            width: 100%;
-            padding: 6px 12px 6px 40px;
-            font-size: 12px;
-        }
-        .search-container i {
-            font-size: 12px; /* Reduced icon size */
-        }
-        .banner-text input[type="search"]::placeholder{
-            font-size: 12px;
-        }
+        padding: 50px 20px 20px 20px;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .banner-text{
+        margin-bottom: 20px;
+        padding-left: 0;
+    }
+    #shopForHeading{
+        font-size: 14px;
+    }
+    #shopForText{
+        font-size:44px;
+    }
+    .banner-text p{
+        font-size: 14px;
+        width: 80%;
+    }
+    .carousel-container{
+        width: 100%;
+        height: auto;
+    }
+    .search-container{
+        max-width: 100%;
+    }
+    #search-bar{
+        width: 100%;
+        padding: 6px 12px 6px 40px;
+        font-size: 12px;
+    }
+    .search-container i {
+        font-size: 12px; /* Reduced icon size */
+    }
+    .banner-text input[type="search"]::placeholder{
+        font-size: 12px;
+    }
+    /*featured section*/
+    .featured h2{
+        font-size: 40px;
+    }
+    .featured-items .item-text{
+        font-size: 24px;
+    }
+    /*about us section*/
+    .about{
+        background: linear-gradient(to bottom, #5a2d14 48%, #fff5e1 48%);
+        padding: 20px 30px;
+    }
+    .about-content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-text-container{
+        width: 100%;
+        padding-right: 0;
+        text-align: left;
+    }
+    .about-image{
+        width: 100%;
+        margin-top: 5px;
+    }
+    .about-heading h2{
+        font-size: 60px;
+    }
+    .about-text-container p{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .about-text-container h3{
+        max-width: 70%;
+        font-size: 24px;
+        margin-top: 30px;
+    }
 }
