@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Chateraise - Products</title>
+        <link rel="stylesheet" href="https://unpkg.com/normalize.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- sidebar navigation -->
+        <div id="sidebar" class="sidebar">
+            <!-- close button -->
+            <button class="close-btn" onclick="closeSidebar()">x</button>
+            <ul class="sidebar-menu">
+                <li class="menu-category"><a href="index.html">Home</a></li>
+                <li class="menu-category"><a href="#">Products</a>
+                    <ul>
+                        <li><a href="#">Cakes</a></li>
+                        <li><a href="#">Ice Cream</a></li>
+                        <li><a href="#">Baked Goods</a></li>
+                        <li><a href="#">Chilled Items</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category"><a href="#">Contact Us</a>
+                    <ul>
+                        <li><a href="#">Join the Team</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category"><a href="#">About Us</a>
+                    <ul>
+                        <li><a href="#">Franchise</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category"><a href="#">Consumer Care</a>
+                    <ul>
+                        <li><a href="#">Return and Exchange</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Allergens</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- main content -->
+        <div class="main-content">
+            <!-- header -->
+            <header>
+                <div class="logo">
+                    <img src="images/chateraise logo.png">
+                </div>
+                <nav class="nav-bar">
+                <button class="menu-btn" onclick="openSidebar()">☰ Menu</button>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <button class="order-btn" onclick="openProductsPage()">Order Now</button>
+                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                    </ul>
+                </nav>
+            </header>
+            
+            <!--products section-->
+            <section class="products">
+                <div class="category-header">
+                    <h1>PRODUCTS</h1>
+                </div>
+                <div class="category-container">
+                    <div class="category-banner">
+                        <div class="category-image">
+                            <img src="images/Chateraise cake category.png" alt="Category Image">
+                        </div>
+                        <div class="category-text">
+                            <h1>Cakes</h1>
+                            <p>Chateraise offers a range of handcrafted cakes, blending Japanese flavors and European elegance. Each cake is made with fresh ingredients, from light cream cakes to rich chocolate treats, perfect for any occasion.</p>
+                        </div>
+                    </div>
+                    <h2><span class="bold-word">Products</span> | Cakes</h2>
+                    <div class="product-items">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/Chateraise caramel butter cream cake.png" alt="Caramel Butter Cream Cake">
+                            </div>
+                            <div class="product-text">
+                                <h3>Caramel Butter Cream Cake</h3>
+                                <p>A luscious caramel buttercream cake with layers of soft, moist sponge, generously filled and topped with smooth, buttery caramel frosting. Perfectly sweet with a rich caramel flavor that melts in your mouth.</p>
+                                <div class="price">$5.50</div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/Chateraise strawberry fresh cream cake.png" alt="Strawberry Fresh Cream Cake">
+                            </div>
+                            <div class="product-text">
+                                <h3>Strawberry Fresh Cream Cake</h3>
+                                <p>A light and airy sponge cake layered with fresh strawberries and whipped cream, topped with a generous layer of smooth, fluffy cream and juicy strawberry slices for a refreshing and sweet treat.</p>
+                                <div class="price">$5.50</div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/Chateraise white peach cake.png" alt="White Peach Cake">
+                            </div>
+                            <div class="product-text">
+                                <h3>White Peach Cake</h3>
+                                <p>A delicate cake featuring soft sponge layers filled with creamy frosting and sweet, juicy white peach slices. Light and fruity, it's a perfect balance of sweetness and refreshing flavor.</p>
+                                <div class="price">$5.50</div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/Chateraise gateau chocolate bar cake.png" alt="Gateau Chocolate Bar Cake">
+                            </div>
+                            <div class="product-text">
+                                <h3>Gateau Chocolate Bar Cake</h3>
+                                <p>A rich and decadent chocolate cake bar with dense, moist layers of chocolate sponge, covered in a smooth chocolate ganache. An indulgent treat for chocolate lovers.</p>
+                                <div class="price">$5.80</div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/Chateraise tiramisu mille crepe cake.png" alt="Tiramisu Mille Crepe Cake">
+                            </div>
+                            <div class="product-text">
+                                <h3>Tiramisu Mille Crepe Cake</h3>
+                                <p>A luxurious tiramisu-inspired crepe cake with layers of thin crepes, mascarpone cream, and a hint of coffee, dusted with cocoa powder. A perfect blend of light and creamy textures with a subtle coffee kick.</p>
+                                <div class="price">$5.80</div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/Chateraise white zebra mille crepe cake.png" alt="White Zebra Mille Crepe Cake">
+                            </div>
+                            <div class="product-text">
+                                <h3>White Zebra Mille Crepe Cake</h3>
+                                <p>A striking mille crepe cake with alternating layers of vanilla and chocolate crepes, each spread with a light and creamy filling. A beautiful and delicious treat with a perfect balance of flavors.</p>
+                                <div class="price">$5.80</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--footer section-->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <h3>Get the Latest News!</h3>
+                        <div class="newsletter">
+                            <input type="email" placeholder="Enter email here">
+                            <button class="subscribe">Subscribe</button>
+                        </div>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Instagram logo.png" alt="Instagram"></a>
+                            <a href="https://x.com/chateraise_jp/" target="_blank" class="icon"><img src="images/Twitter logo.png" alt="Twitter"></a>
+                            <a href="https://www.facebook.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Facebook logo.png" alt="Facebook"></a>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-section consumer-care">
+                            <h4>Consumer Care</h4>
+                            <ul>
+                                <li><a href="">Return and Exchange</a></li>
+                                <li><a href="">Delivery Information</a></li>
+                                <li><a href="">Allergens</a></li>
+                                <li><a href="">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section about-us">
+                            <h4>About Us</h4>
+                            <ul>
+                                <li><a href="">Franchise</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section contact-us">
+                            <h4>Contact Us</h4>
+                            <ul>
+                                <li><a href="">Join the Team</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© Chateraise Co., Ltd. All Rights Reserved.</p>
+                    <div class="footer-logo">
+                        <img src="images/chateraise logo.png" alt="Chateraise Logo">
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="carousel-slideshow.js"></script>
+    </body>
