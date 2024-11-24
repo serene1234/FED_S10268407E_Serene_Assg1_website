@@ -44,6 +44,7 @@ header{
     top: 50%; /* Center vertically over the logo */
     left: 0;
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between; /* Space menu button and nav-links */
     align-items: center;
@@ -57,7 +58,10 @@ header{
     background: none;
     color: #fff5e1;
     font-size: 24px;
-    align-self: flex-start;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
     white-space: nowrap;
 }
 .logo{
@@ -72,13 +76,14 @@ header{
     display: block;
 }
 .nav-links {
-    list-style: none;
     display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    height: 50%;
+    width: 40%;
     gap: 40px;
     padding: 0;
     margin: 0;
-    justify-content: flex-end;
-    align-self: flex-end;
     font-size: 20px;
 }
 nav ul li{
@@ -679,6 +684,7 @@ header .page-title{
     border: 2px #fff5e1 solid;
     border-radius: 20px;
     width: 100%;
+    outline: none;
     background-color: #5a2d14;
 }
 .newsletter input::placeholder{
@@ -767,8 +773,10 @@ header .page-title{
 
 /*PRODUCTS.HTML STYLES*/
 /*products section*/
-.products{
+.products-main-content{
     background-color: #fff5e1;
+}
+.products{
     color: #5a2d14;
 }
 .category-header h1{
@@ -840,16 +848,19 @@ header .page-title{
 .product-card{
     flex: 1 1 calc(33.33% - 20px); /* Each card takes up 1/3 of the row minus the gap */
     max-width: calc(33.33% - 20px); /* Prevents cards from exceeding 1/3 of the row */
-    background-color: rgba(90, 45, 20, 0.85);
+    background-color: #fff5e1;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Creates a soft shadow */
     border-radius: 10px;
     box-sizing: border-box; /* Includes padding and border in size calculations */
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
+.product-items a{
+    text-decoration: none;
+}
 .product-card:hover{
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    background-color:#fff5e1;
+    background-color: rgba(90, 45, 20, 0.85);
 }
 .product-image img{
     max-width: 100%;
@@ -861,12 +872,12 @@ header .page-title{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fff5e1;
+    color: #5a2d14;
     padding: 10px 15px;
     text-align: center;
 }
 .product-card:hover .product-text{
-    color: rgba(90, 45, 20, 0.85);
+    color: #fff5e1;
 }
 .product-text h3{
     font-weight: 700;
@@ -884,7 +895,6 @@ header .page-title{
 
 /*delivery section*/
 .delivery{
-    background-color: #fff5e1;
     padding: 20px 50px;
 }
 .delivery-container{
@@ -974,6 +984,102 @@ header .page-title{
 .step-text p{
     font-size: 16px;
     width: 84%;
+}
+
+/*faq section*/
+.faq {
+    color: #5a2d14;
+    padding: 80px 50px;
+}
+.faq-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 50px;
+}
+.faq-left{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.faq-left h2{
+    font-weight: bold;
+    font-size: 68px;
+    width: 80%;
+}
+.faq-left p{
+    font-size: 24px;
+}
+.faq-form{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    max-width: 100%;
+}
+.faq-form input{
+    padding: 6px 16px;
+    font-size: 16px;
+    border: 2px #5a2d14 solid;
+    border-radius: 20px;
+    outline: none;
+    background-color: #fff5e1;
+    width: 100%;
+}
+.faq-form input::placeholder{
+    color: #5a2d14;
+    opacity: 0.8;
+}
+.faq-form button{
+    background-color: #5a2d14;
+    color: #fff5e1;
+    padding: 6px 36px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.faq-form button:hover{
+    transform: scale(1.01);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.faq-right{
+    display: flex;
+    flex-direction:column;
+    width: 60%;
+    border-top: 2px solid #5a2d14;
+}
+.faq-right details{
+    border-bottom: 2px solid #5a2d14;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.faq-right summary{
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: padding-bottom 0.3s ease;
+}
+.faq-right details[open] summary{
+    padding-bottom: 5px;
+}
+.faq-right .faq-icon{
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+details[open] .faq-icon{
+    transform: rotate(180deg);
+    font-size: 40px;
+}
+details p{
+    padding: 5px 15px;
+    font-size: 20px;
+    width: 85%;
+    margin-top: 0;
 }
 
 /*responsive media*/
@@ -1209,12 +1315,10 @@ header .page-title{
         flex-direction: column;
         align-items: center;
     }
-
     .delivery-image {
         width: 100%;
         padding: 40px;
     }
-
     .delivery-details-container {
         width: 100%;
         padding: 0 40px;
@@ -1238,23 +1342,68 @@ header .page-title{
         max-width: 70%;
         padding: 0;
     }
-
     .delivery-details {
         flex-direction: row;
         padding-bottom: 40px;
         gap: 15px;
     }
-
     .step-number h2 {
         font-size: 48px;
         margin-bottom: 10px;
     }
-
     .step-text h3 {
         font-size: 20px;
     }
-
     .step-text p {
+        font-size: 16px;
+        width: 90%;
+    }
+
+    /*faq section*/
+    .faq{
+        padding: 10px 50px;
+    }
+    .faq-container{
+        flex-direction: column;
+    }
+    .faq-left{
+        width: 100%;
+    }
+    .faq-left h2{
+        font-size: 50px;
+        width: 100%;
+    }
+    .faq-left p{
+        font-size: 20px;
+    }
+    .faq-form{
+        margin-bottom: 5px;
+        max-width: 90%;
+    }
+    .faq-form button{
+        padding: 6px 30px;
+    }
+    .faq-right{
+        width: 100%;
+    }
+    .faq-right details{
+        margin-bottom: 0px;
+    }
+    .faq-right summary{
+        padding: 10px;
+        font-size: 18px;
+    }
+    .faq-right details[open] summary{
+        padding-bottom: 0;
+    }
+    .faq-right .faq-icon{
+        font-size: 26px;
+    }
+    details[open] .faq-icon{
+        font-size: 36px;
+    }
+    details p{
+        padding: 0 15px;
         font-size: 16px;
         width: 90%;
     }
@@ -1447,9 +1596,15 @@ header .page-title{
     .footer-left h3{
         font-size: 18px;
     }
+    .newsletter input{
+        padding: 2px 10px;
+    }
+    .newsletter input::placeholder{
+        font-size: 14px;
+    }
     .subscribe{
-        font-size: 16px;
-        padding: 2px 12px;
+        font-size: 14px;
+        padding: 2px 14px;
     }
     .footer-right{
         width: 100%;
@@ -1549,12 +1704,10 @@ header .page-title{
         flex-direction: column;
         align-items: center;
     }
-
     .delivery-image {
         width: 100%;
         padding: 30px 30px 0 30px;
     }
-
     .delivery-details-container {
         width: 100%;
         padding: 0 40px;
@@ -1567,7 +1720,6 @@ header .page-title{
         font-size: 40px;
         width: 100%;
     }
-
     .delivery-header-text p {
         font-size: 18px;
     }
@@ -1579,7 +1731,6 @@ header .page-title{
         max-width: 100%;
         padding: 0;
     }
-
     .delivery-details {
         flex-direction: row;
         padding: 0 0 40px 0;
@@ -1592,13 +1743,60 @@ header .page-title{
         font-size: 48px;
         margin-bottom: 10px;
     }
-
     .step-text h3 {
         font-size: 18px;
     }
-
     .step-text p {
         font-size: 14px;
         width: 100%;
+    }
+
+    /*faq section*/
+    .faq{
+        padding: 0 50px 50px 50px;
+    }
+    .faq-container{
+        flex-direction: column;
+    }
+    .faq-left{
+        width: 100%;
+    }
+    .faq-left h2{
+        font-size: 40px;
+        width: 80%;
+    }
+    .faq-left p{
+        font-size: 18px;
+    }
+    .faq-form{
+        margin-bottom: 0;
+        max-width: 100%;
+    }
+    .faq-form input{
+        padding: 5px 10px;
+        font-size: 10px;
+        width: 100%;
+    }
+    .faq-form input::placeholder{
+        font-size: 10px;
+    }
+    .faq-form button{
+        padding: 2px 20px;
+        font-size: 12px;
+    }
+    .faq-right summary{
+        padding: 8px;
+        font-size: 12px;
+    }
+    .faq-right .faq-icon{
+        font-size: 16px;
+    }
+    details[open] .faq-icon{
+        font-size: 18px;
+    }
+    details p{
+        font-size: 10px;
+        width: 95%;
+        line-height: 1.2;
     }
 }
