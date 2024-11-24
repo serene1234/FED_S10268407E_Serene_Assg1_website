@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Chateraise - Home</title>
+        <link rel="stylesheet" href="https://unpkg.com/normalize.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- sidebar navigation -->
+        <div id="sidebar" class="sidebar">
+            <!-- close button -->
+            <button class="close-btn" onclick="closeSidebar()">x</button>
+            <ul class="sidebar-menu">
+                <li class="menu-category"><a href="index.html">Home</a></li>
+                <li class="menu-category"><a href="#">Products</a>
+                    <ul>
+                        <li><a href="products.html">Cakes</a></li>
+                        <li><a href="products.html">Ice Cream</a></li>
+                        <li><a href="products.html">Baked Goods</a></li>
+                        <li><a href="products.html">Chilled Items</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category"><a href="#">Contact Us</a>
+                    <ul>
+                        <li><a href="#">Join the Team</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category"><a href="#">About Us</a>
+                    <ul>
+                        <li><a href="#">Franchise</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category"><a href="#">Consumer Care</a>
+                    <ul>
+                        <li><a href="#">Return and Exchange</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Allergens</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- main content -->
+        <div class="main-content">
+            <!-- header -->
+            <header>
+                <div class="logo">
+                    <img src="images/chateraise logo.png">
+                </div>
+                <nav class="nav-bar">
+                    <button class="menu-btn" onclick="openSidebar()">☰ Menu</button>
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <button class="order-btn" onclick="openProductsPage()">Order Now</button>
+                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                    </ul>
+                </nav>
+            </header>
+
+            <!--item details section-->
+            <div class="category-header">
+                <h1>PRODUCTS</h1>
+            </div>
+            <section class="item-details">
+                <h2><span class="bold-word">Products</span> | Cakes | Caramel Butter Cream Cake</h2>
+                <div class="item-details-container">
+                    <div class="item-image">
+                        <img src="images/Chateraise caramel butter cream cake portrait.png" alt="Caramel Butter Cream Cake">
+                    </div>
+                    <div class="item-info">
+                        <div class="item-info-header">
+                            <div class="item-name">
+                                <h1>Caramel Butter Cream Cake</h1>
+                            </div>
+                            <div class="item-price">
+                                <h2>$5.50</h2>
+                            </div>
+                        </div>
+                        <div class="item-desc-container">
+                            <div class="item-desc">
+                                <p>The <span class="bold-word">Caramel Butter Cream Cake</span> features soft, fluffy vanilla sponge layers filled with smooth, rich caramel buttercream. Frosted with a <span class="bold-word">creamy caramel icing</span> and topped with a drizzle of golden caramel and a hint of sea salt, it offers a perfect balance of sweetness and <span class="bold-word">buttery richness</span> in every bite. A luxurious treat for caramel lovers.</p>
+                            </div>
+                            <div class="quantity-cart">
+                                <div class="quantity-selector">
+                                    <button class="decrease">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="increase">+</button>
+                                </div>
+                                <div class="add-to-cart-button">
+                                    <button class="add-to-cart">Add to Cart
+                                        <img src="images/Cart icon.png" alt="cart" class="button-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--footer section-->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <h3>Get the Latest News!</h3>
+                        <div class="newsletter">
+                            <input type="email" placeholder="Enter email here">
+                            <button class="subscribe">Subscribe</button>
+                        </div>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Instagram logo.png" alt="Instagram"></a>
+                            <a href="https://x.com/chateraise_jp/" target="_blank" class="icon"><img src="images/Twitter logo.png" alt="Twitter"></a>
+                            <a href="https://www.facebook.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Facebook logo.png" alt="Facebook"></a>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-section consumer-care">
+                            <h4>Consumer Care</h4>
+                            <ul>
+                                <li><a href="">Return and Exchange</a></li>
+                                <li><a href="">Delivery Information</a></li>
+                                <li><a href="">Allergens</a></li>
+                                <li><a href="">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section about-us">
+                            <h4>About Us</h4>
+                            <ul>
+                                <li><a href="">Franchise</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section contact-us">
+                            <h4>Contact Us</h4>
+                            <ul>
+                                <li><a href="">Join the Team</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© Chateraise Co., Ltd. All Rights Reserved.</p>
+                    <div class="footer-logo">
+                        <img src="images/chateraise logo.png" alt="Chateraise Logo">
+                    </div>
+                </div>
+            </footer>
+        </div>
+      <script src="script.js"></script>
+    </body>
