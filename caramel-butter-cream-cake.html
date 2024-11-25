@@ -5,7 +5,6 @@
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
         <title>Chateraise - Home</title>
         <link rel="stylesheet" href="https://unpkg.com/normalize.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
@@ -59,7 +58,10 @@
                         <li><a href="#">Contact</a></li>
                         <li><a href="#">About Us</a></li>
                         <button class="order-btn" onclick="openProductsPage()">Order Now</button>
-                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                        <a href="" class="cart-icon">
+                            <img src="images/Cart icon.png" alt="cart-icon">
+                            <span class="cart-badge">0</span>
+                        </a>
                     </ul>
                 </nav>
             </header>
@@ -103,6 +105,58 @@
                     </div>
                 </div>
             </section>
+
+            <!--you may also like section-->
+            <section class="suggestions">
+                <h2>You may also like</h2>
+                <div class="suggested-products">
+                    <!--product 1-->
+                    <div class="suggested-product-card">
+                        <div class="suggested-image">
+                            <img src="" alt="">
+                        </div>
+                        <div class="suggested-desc">
+                            <p class="name">Strawberry Fresh Cream Cake</p>
+                            <p class="price">$5.50</p>
+                            <button class="add">+ ADD</button>
+                        </div>
+                    </div>
+                    <!--product 2-->
+                    <div class="suggested-product-card">
+                        <div class="suggested-image">
+                            <img src="" alt="">
+                        </div>
+                        <div class="suggested-desc">
+                            <p class="name">White Peach Cake</p>
+                            <p class="price">$5.50</p>
+                            <button class="add">+ ADD</button>
+                        </div>
+                    </div>
+                    <!--product 3-->
+                    <div class="suggested-product-card">
+                        <div class="suggested-image">
+                            <img src="" alt="">
+                        </div>
+                        <div class="suggested-desc">
+                            <p class="name">Gateau Chocolate Bar Cake</p>
+                            <p class="price">$5.80</p>
+                            <button class="add">+ ADD</button>
+                        </div>
+                    </div>
+                    <!--product 4-->
+                    <div class="suggested-product-card">
+                        <div class="suggested-image">
+                            <img src="" alt="">
+                        </div>
+                        <div class="suggested-desc">
+                            <p class="name">Tiramisu Mille Crepe Cake</p>
+                            <p class="price">$5.80</p>
+                            <button class="add">+ ADD</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
             <!--footer section-->
             <footer class="footer">
                 <div class="footer-content">

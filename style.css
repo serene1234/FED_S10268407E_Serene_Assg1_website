@@ -58,6 +58,7 @@ header{
     background: none;
     color: #fff5e1;
     font-size: 24px;
+    font-weight: bold;
     width: 60%;
     height: 100%;
     display: flex;
@@ -78,6 +79,7 @@ header{
 .nav-links {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     list-style: none;
     height: 50%;
     width: 40%;
@@ -86,23 +88,23 @@ header{
     margin: 0;
     font-size: 20px;
 }
-nav ul li{
+.nar-bar ul li{
     display: flex;
     align-items: center;
     flex-shrink: 0;
 }
-nav ul li a{
+.nav-bar ul li a{
     position: relative;
     color:#fff5e1;
     text-decoration: none;
     transition: color 0.3s ease;
     white-space: nowrap;
 }
-nav ul li a:hover{
+.nav-bar ul li a:hover{
     color: #fff5e1;
     text-decoration: none;
 }
-nav ul li a::after{
+.nav-bar ul li a::after{
     content: "";
     position: absolute;
     left:0;
@@ -112,26 +114,49 @@ nav ul li a::after{
     background-color: #fff5e1;
     transition: width 0.3s ease;
 }
-nav ul li a:hover::after{
+.nav-bar ul li a:hover::after{
     width: 100%;
 }
-nav i{
-    font-size: 30px;
-    color: #fff5e1;
+.nav-bar .cart-icon{
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
     transition: transform 0.3 ease;
-    flex-shrink: 1;
+    flex-shrink: 0;
+    position: relative;
 }
-nav i:hover{
+.nav-bar .cart-icon img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+.nav-bar .cart-icon:hover{
     transform: scale(1.2);
+}
+.cart-badge{
+    position: absolute;
+    top: -5px;
+    right:-10px;
+    color: #fff5e1;
+    background-color: #5a2d14;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    display: none; /* Hidden by default */
 }
 
 /* Order button styles */
-nav .order-btn {
+.order-btn {
     background-color: #fff5e1;
     padding: 5px 15px;
     color: #5a2d14;
+    font-weight: bold;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
     box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.2);
     border: 0px solid transparent;
@@ -145,7 +170,7 @@ nav .order-btn {
 }
 
 /* Hover effect for Order button */
-nav .order-btn:hover {
+.order-btn:hover {
     background-color: #5a2d14;
     color: #fff5e1;
     border: 2px solid #fff5e1;
@@ -492,6 +517,7 @@ header .page-title{
 .about-text-container p{
     text-align: left;
     font-size: 18px;
+    line-height: 26px;
     color: #fff5e1;
     margin-top: 20px;
 }
@@ -832,6 +858,7 @@ header .page-title{
 .category-container h2{
     padding: 40px 0 20px 0;
     font-size:24px;
+    font-weight: normal;
 }
 .bold-word{
     font-weight: bold;
@@ -880,17 +907,21 @@ header .page-title{
     color: #fff5e1;
 }
 .product-text h3{
-    font-weight: 700;
+    font-weight: bold;
     font-size: 24px;
     max-width: 90%;
+    padding: 10px 0;
 }
 .product-text p{
     font-size: 14px;
     max-width: 80%;
+    line-height: 20px;
+    padding: 10px 0;
 }
 .product-text .price{
     font-size: 22px;
-    font-weight: 700;
+    font-weight: bold;
+    padding: 10px;
 }
 
 /*delivery section*/
@@ -963,7 +994,7 @@ header .page-title{
     flex-direction: row;
     justify-content:space-between;
     padding: 0 20px 30px 20px;
-    gap: 20px;
+    gap: 30px;
     flex-grow: 1;
 }
 .step-number, .step-text-container{
@@ -971,15 +1002,18 @@ header .page-title{
     flex-direction: column;
     justify-content: center;
 }
+.step-text{
+    margin-bottom: 26px;
+}
 .step-number h2{
     font-size: 58px;
     font-weight: bold;
-    margin-bottom: 18px;
+    margin-bottom: 24px;
 }
 .step-text h3{
     font-weight: bold;
     font-size: 20px;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
 }
 .step-text p{
     font-size: 16px;
@@ -1011,6 +1045,7 @@ header .page-title{
 }
 .faq-left p{
     font-size: 24px;
+    margin-bottom: 20px;
 }
 .faq-form{
     display: flex;
@@ -1065,7 +1100,7 @@ header .page-title{
     transition: padding-bottom 0.3s ease;
 }
 .faq-right details[open] summary{
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 }
 .faq-right .faq-icon{
     font-size: 30px;
@@ -1076,7 +1111,7 @@ details[open] .faq-icon{
     font-size: 40px;
 }
 details p{
-    padding: 5px 15px;
+    padding: 20px 15px;
     font-size: 20px;
     width: 85%;
     margin-top: 0;
@@ -1091,6 +1126,7 @@ details p{
 .item-details h2{
     padding: 24px 0;
     font-size:22px;
+    font-weight: normal;
     color: #fff5e1;
     border-top: 2px #fff5e1 solid;
 }
@@ -1198,9 +1234,12 @@ details p{
     border: none;
     border-radius: 30px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
     align-items: center;
     font-size: 16px;
     font-weight: bold;
+    color: #fff5e1;
     padding: 0 26px;
     height: 100%;
 }
@@ -1215,6 +1254,9 @@ details p{
     transform: scale(1.01);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
+/*you may also like section*/
+
 /*responsive media*/
 @media (max-width: 768px){
     /*INDEX.HTML STYLES*/
@@ -1234,11 +1276,8 @@ details p{
     .nav-links li{
         display: none;
     }
-    nav i{
-        font-size: 26px;
-    }
-    nav .order-btn{
-        padding: 2px 10px;
+    .order-btn{
+        padding: 4px 10px;
         font-size: 20px;
     }
 
@@ -1265,7 +1304,8 @@ details p{
     }
     .banner-text p{
         font-size: 18px;
-        width: 65%;
+        width: 70%;
+        line-height: 26px;
     }
     .carousel-container{
         width: 100%;
@@ -1276,7 +1316,7 @@ details p{
 
     /*about us section*/
     .about{
-        background: linear-gradient(to bottom, #5a2d14 35%, #fff5e1 35%);
+        background: linear-gradient(to bottom, #5a2d14 38%, #fff5e1 38%);
     }
     .about-content{
         flex-direction: column;
@@ -1296,7 +1336,7 @@ details p{
     }
     .about-text-container p{
         font-size: 16px;
-        margin-bottom: 10px;
+        margin-bottom: 14px;
     }
     .about-text-container h3{
         max-width: 60%;
@@ -1409,11 +1449,11 @@ details p{
         padding: 64px 0 10px 0;
     }
     .products .category-container{
-        padding: 150px 50px 50px;
+        padding: 120px 50px 50px;
     }
     .category-banner{
         flex-direction: column-reverse;
-        gap: 30px;
+        gap: 50px;
     }
     .category-text h1{
         font-size: 60px;
@@ -1421,6 +1461,7 @@ details p{
     .category-text p{
         width: 80%;
         font-size: 20px;
+        line-height: 26px;
     }
     .category-container h2{
         padding: 20px 0;
@@ -1477,12 +1518,14 @@ details p{
     }
     .delivery-details {
         flex-direction: row;
-        padding-bottom: 40px;
-        gap: 15px;
+        padding: 40px 0;
+        gap: 20px;
+    }
+    .step-text-container .step-number{
+        justify-content: space-evenly;
     }
     .step-number h2 {
         font-size: 48px;
-        margin-bottom: 10px;
     }
     .step-text h3 {
         font-size: 20px;
@@ -1508,6 +1551,7 @@ details p{
     }
     .faq-left p{
         font-size: 20px;
+        margin-bottom: 10px;
     }
     .faq-form{
         margin-bottom: 5px;
@@ -1526,9 +1570,6 @@ details p{
         padding: 10px;
         font-size: 18px;
     }
-    .faq-right details[open] summary{
-        padding-bottom: 0;
-    }
     .faq-right .faq-icon{
         font-size: 26px;
     }
@@ -1536,7 +1577,7 @@ details p{
         font-size: 36px;
     }
     details p{
-        padding: 0 15px;
+        padding: 0 15px 10px 15px;
         font-size: 16px;
         width: 90%;
     }
@@ -1558,11 +1599,11 @@ details p{
         width: 100%;
     }
     .item-name h1, .item-price h2{
-    font-size: 48px;
+        font-size: 48px;
     }
     .item-desc p{
-    color: #5a2d14;
-    font-size: 20px;
+        color: #5a2d14;
+        font-size: 20px;
     }
     .quantity-cart{
         margin-top: 20px;
@@ -1603,11 +1644,12 @@ details p{
     .nav-links li{
         display: none;
     }
-    nav i{
-        font-size: 16px;
+    .nav-bar .cart-icon{
+        height: 20px;
+        width: 20px;
     }
-    nav .order-btn{
-        padding: 2px 6px;
+    .order-btn{
+        padding: 4px 6px;
         font-size: 12px;
     }
     
@@ -1621,36 +1663,29 @@ details p{
     .sidebar-menu li ul li a{
         font-size: 16px;
     }
-
     /*banner section*/
     .banner{
-        padding: 50px 20px 20px 20px;
-        flex-direction: column-reverse;
-        align-items: center;
+        padding: 60px 20px 20px 20px;
     }
     .banner-text{
-        margin-bottom: 20px;
-        padding-left: 0;
+        margin-bottom: 30px;
     }
     #shopForHeading{
         font-size: 14px;
     }
     #shopForText{
-        font-size:44px;
+        font-size: 44px;
     }
     .banner-text p{
         font-size: 14px;
         width: 80%;
+        line-height: 20px;
     }
     .carousel-container{
         width: 100%;
         height: auto;
     }
-    .search-container{
-        max-width: 100%;
-    }
     #search-bar{
-        width: 100%;
         padding: 6px 12px 6px 40px;
         font-size: 12px;
     }
@@ -1669,7 +1704,7 @@ details p{
     }
     /*about us section*/
     .about{
-        background: linear-gradient(to bottom, #5a2d14 48%, #fff5e1 48%);
+        background: linear-gradient(to bottom, #5a2d14 50%, #fff5e1 50%);
         padding: 20px 30px;
     }
     .about-content{
@@ -1691,6 +1726,7 @@ details p{
     .about-text-container p{
         font-size: 14px;
         margin-bottom: 10px;
+        line-height: 24px;
     }
     .about-text-container h3{
         max-width: 70%;
@@ -1846,15 +1882,16 @@ details p{
     }
     .category-text h1{
         font-size: 40px;
-        margin-bottom: 4px;
+        margin-bottom: 0px;
     }
     .category-text p{
         width: 84%;
         font-size: 12px;
+        line-height: 20px;
     }
     .category-container h2{
-        padding: 5px 0;
-        font-size:16px;
+        padding: 20px 0;
+        font-size:14px;
     }
     /*product items*/
     .product-card{
@@ -1867,6 +1904,7 @@ details p{
     .product-text p{
         font-size: 10px;
         max-width:90%;
+        line-height: 18px;
     }
     .product-text .price{
         font-size: 20px;
@@ -1909,7 +1947,7 @@ details p{
     }
     .delivery-details {
         flex-direction: row;
-        padding: 0 0 40px 0;
+        padding: 30px 0 10px 0;
         gap: 15px;
     }
     .step-number{
@@ -1917,7 +1955,7 @@ details p{
     }
     .step-number h2 {
         font-size: 48px;
-        margin-bottom: 10px;
+        margin-bottom:30px;
     }
     .step-text h3 {
         font-size: 18px;
@@ -1971,7 +2009,7 @@ details p{
         font-size: 18px;
     }
     details p{
-        font-size: 10px;
+        font-size: 12px;
         width: 95%;
         line-height: 1.2;
     }
