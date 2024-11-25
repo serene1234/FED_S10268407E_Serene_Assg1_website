@@ -797,7 +797,7 @@ header .page-title{
 }
 
 
-/*PRODUCTS.HTML STYLES*/
+/*PRODUCTS STYLES*/
 /*products section*/
 .products-main-content{
     background-color: #fff5e1;
@@ -1118,7 +1118,7 @@ details p{
 }
 
 
-/*CARAMEL-BUTTER-CREAM-CAKE.HTML STYLES*/
+/*ITEM DETAILS STYLES*/
 /*item details section*/
 .item-details{
     padding: 120px 40px 80px 40px;
@@ -1129,6 +1129,10 @@ details p{
     font-weight: normal;
     color: #fff5e1;
     border-top: 2px #fff5e1 solid;
+}
+.item-details a{
+    text-decoration: none;
+    color: #fff5e1;
 }
 .item-details-container{
     display: flex;
@@ -1155,7 +1159,7 @@ details p{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 30%;
+    height: 40%;
 }
 .item-name h1{
     font-size: 54px;
@@ -1178,7 +1182,7 @@ details p{
     justify-content: center;
     align-items: center;
     padding: 40px;
-    height: 80%;;
+    height: 60%;;
 }
 .item-desc{
     display: flex;
@@ -1507,7 +1511,7 @@ details p{
     }
 
 
-    /*PRODUCTS.HTML STYLES*/
+    /*PRODUCTS STYLES*/
     /*products section*/
     .category-header h1{
         font-size: 20px;
@@ -1648,7 +1652,7 @@ details p{
     }
 
 
-    /*CARAMEL-BUTTER-CREAM-CAKE.HTML STYLES*/
+    /*ITEM DETAILS STYLES*/
     /*item details section*/
     .item-details{
         padding: 100px 40px 30px 40px;
@@ -1932,7 +1936,7 @@ details p{
     }
 
 
-    /*PRODUCTS.HTML STYLES*/
+    /*PRODUCTS STYLES*/
     /*products section*/
     .category-header h1{
         font-size: 12px;
@@ -2080,7 +2084,7 @@ details p{
     }
 
 
-    /*CARAMEL-BUTTER-CREAM-CAKE.HTML STYLES*/
+    /*ITEM DETAILS STYLES*/
     /*item details section*/
     .item-details{
         padding: 50px 30px 40px 30px;

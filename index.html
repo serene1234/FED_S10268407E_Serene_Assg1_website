@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-        <title>Chateraise - Home</title>
+        <title>Home - Chateraise</title>
         <link rel="stylesheet" href="https://unpkg.com/normalize.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
@@ -17,10 +17,10 @@
                 <li class="menu-category"><a href="index.html">Home</a></li>
                 <li class="menu-category"><a href="#">Products</a>
                     <ul>
-                        <li><a href="products.html">Cakes</a></li>
-                        <li><a href="products.html">Ice Cream</a></li>
-                        <li><a href="products.html">Baked Goods</a></li>
-                        <li><a href="products.html">Chilled Items</a></li>
+                        <li><a href="cake-collection.html">Cakes</a></li>
+                        <li><a href="ice-cream-collection.html">Ice Cream</a></li>
+                        <li><a href="">Baked Goods</a></li>
+                        <li><a href="">Chilled Items</a></li>
                     </ul>
                 </li>
                 <li class="menu-category"><a href="#">Contact Us</a>
@@ -54,7 +54,7 @@
                 <nav class="nav-bar">
                     <button class="menu-btn" onclick="openSidebar()">☰ Menu</button>
                     <ul class="nav-links">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="#">Contact</a></li>
                         <li><a href="#">About Us</a></li>
                         <button class="order-btn" onclick="openProductsPage()">Order Now</button>
@@ -102,20 +102,28 @@
                 <h2>FEATURED</h2>
                 <div class="featured-items">
                     <div class="item">
-                        <img src="images/Chateraise cakes.png" alt="Cakes" class="item-image">
-                        <div class="item-text">Cakes</div>
+                        <a href="cake-collection.html">
+                            <img src="images/Chateraise cakes.png" alt="Cakes" class="item-image">
+                            <div class="item-text">Cakes</div>
+                        </a>
                     </div>
                     <div class="item">
-                        <img src="images/Chateraise ice cream.png" alt="Ice Cream" class="item-image">
-                        <div class="item-text">Ice Cream</div>
+                        <a href="ice-cream-collection.html">
+                            <img src="images/Chateraise ice cream.png" alt="Ice Cream" class="item-image">
+                            <div class="item-text">Ice Cream</div>
+                        </a>
                     </div>
                     <div class="item">
-                        <img src="images/Chateraise baked goods.png" alt="Baked Goods" class="item-image">
-                        <div class="item-text">Baked Goods</div>
+                        <a href="products.html">
+                            <img src="images/Chateraise baked goods.png" alt="Baked Goods" class="item-image">
+                            <div class="item-text">Baked Goods</div>
+                        </a>
                     </div>
                     <div class="item">
-                        <img src="images/Chateraise chilled items.png" alt="Chilled Items" class="item-image">
-                        <div class="item-text">Chilled Items</div>
+                        <a href="products.html">
+                            <img src="images/Chateraise chilled items.png" alt="Chilled Items" class="item-image">
+                            <div class="item-text">Chilled Items</div>
+                        </a>
                     </div>
                 </div>
              </section>
