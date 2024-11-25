@@ -1182,7 +1182,7 @@ details p{
 }
 .item-desc{
     display: flex;
-    width: 85%;
+    width: 75%;
     height: 100%;
     align-items: center;
 }
@@ -1256,6 +1256,71 @@ details p{
 }
 
 /*you may also like section*/
+.suggestions{
+    background-color: #fff5e1;
+    color: #5a2d14;
+    padding: 40px 40px;
+}
+.suggestions h2{
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.suggested-products{
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    padding: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+.suggested-products::-webkit-scrollbar{
+    display: none;
+}
+.suggested-product-card{
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #fff5e1;
+    text-align: left;
+}
+.suggested-image img{
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.suggested-desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 10px 0;
+}
+.suggested-desc .price{
+    font-size: 16px;
+}
+.suggested-desc .name{
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    width: 80%;
+}
+.add{
+    background-color: #5a2d14;
+    color: #fff5e1;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+.add:hover{
+    transform: scale(1.03);
+}
 
 /*responsive media*/
 @media (max-width: 768px){
@@ -2055,5 +2120,8 @@ details p{
     .add-to-cart-button img{
         max-width: 18px;
     }
-
+    /*you may also like section*/
+    .suggestions h2{
+        font-size: 34px;
+    } 
 }
