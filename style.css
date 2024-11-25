@@ -1967,8 +1967,8 @@ details p{
         font-size: 20px;
     }
     .product-text p{
-        font-size: 10px;
-        max-width:90%;
+        font-size: 12px;
+        max-width: 90%;
         line-height: 18px;
     }
     .product-text .price{

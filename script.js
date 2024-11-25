@@ -1,3 +1,8 @@
+// Automatically clear cart on page load (for testing purposes)
+/*localStorage.removeItem('cart');
+cart = [];
+updateCartIndicator();*/
+
 // Sidebar functions: These are global, so they run on all pages
 function openSidebar() {
     // Add the 'active' class to the sidebar which will trigger the transition
@@ -161,13 +166,112 @@ function initializeFAQToggle() {
     });
 }
 
+// Cart array to store products (retrieve from localStorage if it exists)
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Function to update cart in localStorage and cart icon
+function updateCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartIndicator(); // Update the cart indicator globally
+}
+
+// Function to update the cart indicator
+function updateCartIndicator() {
+    const cartBadge = document.querySelector('.cart-badge');
+    const totalItems = cart.reduce((sum, product) => sum + product.quantity, 0);
+
+    if (cartBadge) {
+        if (totalItems > 0) {
+            cartBadge.textContent = totalItems; // Display the total number of items
+            cartBadge.style.display = 'flex'; // Show the badge if there are items
+        } else {
+            cartBadge.style.display = 'none'; // Hide the badge if the cart is empty
+        }
+    }
+}
+
+// Update the opacity of the decrease button based on the quantity
+function updateDecreaseButtonOpacity() {
+    const decreaseButton = document.querySelector('.decrease');
+    const quantityElement = document.querySelector('.quantity');
+    const quantity = parseInt(quantityElement.textContent);
+
+    // Set opacity based on quantity
+    if (quantity === 1) {
+        decreaseButton.style.opacity = '0.5'; // Reduced opacity if quantity is 1
+    } else {
+        decreaseButton.style.opacity = '1'; // Full opacity if quantity is more than 1
+    }
+}
+
+// Event listeners for increase and decrease buttons (only if these elements exist)
+if (document.querySelector('.increase') && document.querySelector('.decrease')) {
+    document.querySelector('.increase').addEventListener('click', () => {
+        let quantityElement = document.querySelector('.quantity');
+        let quantity = parseInt(quantityElement.textContent);
+        quantityElement.textContent = quantity + 1;
+        updateDecreaseButtonOpacity(); // Update opacity after increase
+    });
+
+    document.querySelector('.decrease').addEventListener('click', () => {
+        let quantityElement = document.querySelector('.quantity');
+        let quantity = parseInt(quantityElement.textContent);
+        if (quantity > 1) {
+            quantityElement.textContent = quantity - 1;
+            updateDecreaseButtonOpacity(); // Update opacity after decrease
+        }
+    });
+    // Initialize the decrease button opacity based on the initial quantity
+    updateDecreaseButtonOpacity(); // Set opacity on page load
+}
+
+// Add product to cart from main product section (only if the product page exists)
+if (document.querySelector('.add-to-cart')) {
+    document.querySelector('.add-to-cart').addEventListener('click', () => {
+        let productName = document.querySelector('h1').textContent;
+        let price = document.querySelector('.item-price h2').textContent;
+        let quantity = parseInt(document.querySelector('.quantity').textContent);
+
+        addItemToCart(productName, price, quantity);
+        alert(`${quantity} ${productName}(s) added to cart!`);
+    });
+}
+
+// Add product to cart from "You may also like" section (only if the section exists)
+if (document.querySelectorAll('.suggested-products .add')) {
+    document.querySelectorAll('.suggested-products .add').forEach(button => {
+        button.addEventListener('click', (event) => {
+            let productCard = event.target.closest('.suggested-product-card');
+            let productName = productCard.querySelector('.name').textContent;
+            let price = productCard.querySelector('.price').textContent;
+
+            addItemToCart(productName, price, 1);
+            alert(`1 ${productName} added to cart!`);
+        });
+    });
+}
+
+// Function to add item to cart
+function addItemToCart(productName, price, quantity) {
+    // Check if the product already exists in the cart
+    let existingProduct = cart.find(product => product.name === productName);
+    if (existingProduct) {
+        existingProduct.quantity += quantity; // Update quantity
+    } else {
+        cart.push({ name: productName, price, quantity }); // Add new product
+    }
+
+    // Save updated cart to localStorage and update cart indicator
+    updateCart();
+}
+
 // Run page-specific initialization functions on page load
 window.onload = () => {
     // Initialize page-specific features
     if (document.querySelector('.carousel')) {
         initializeCarousel(); // Only on Home page where the carousel exists
     }
-    
+
     if (document.getElementById("shopForText")) {
         initializeTextChange(); // Only on pages with the text change feature
     }
@@ -178,6 +282,8 @@ window.onload = () => {
     if (document.querySelector('.faq-right')) {
         initializeFAQToggle(); // Only on pages with FAQ section
     }
+
+    updateCartIndicator(); // Update the cart indicator when the page loads
 };
 
 
