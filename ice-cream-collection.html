@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Ice Cream Collection - Chateraise</title>
+        <link rel="stylesheet" href="https://unpkg.com/normalize.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- sidebar navigation -->
+        <div id="sidebar" class="sidebar">
+            <!-- close button -->
+            <button class="close-btn" onclick="closeSidebar()">x</button>
+            <ul class="sidebar-menu">
+                <li class="menu-category"><a href="index.html">Home</a></li>
+                <li class="menu-category"><a href="#">Products</a>
+                    <ul>
+                        <li><a href="cake-collection.html">Cakes</a></li>
+                        <li><a href="ice-cream-collection.html">Ice Cream</a></li>
+                        <li><a href="#">Baked Goods</a></li>
+                        <li><a href="#">Chilled Items</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category"><a href="#">Contact Us</a>
+                    <ul>
+                        <li><a href="#">Join the Team</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category"><a href="#">About Us</a>
+                    <ul>
+                        <li><a href="#">Franchise</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category"><a href="#">Consumer Care</a>
+                    <ul>
+                        <li><a href="#">Return and Exchange</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Allergens</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- main content -->
+        <div class="products-main-content">
+            <!-- header -->
+            <header>
+                <div class="logo">
+                    <img src="images/chateraise logo.png">
+                </div>
+                <nav class="nav-bar">
+                    <button class="menu-btn" onclick="openSidebar()">☰ Menu</button>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <button class="order-btn" onclick="openProductsPage()">Order Now</button>
+                        <a href="" class="cart-icon">
+                            <img src="images/Cart icon.png" alt="cart-icon">
+                            <span class="cart-badge">0</span>
+                        </a>
+                    </ul>
+                </nav>
+            </header>
+            
+            <!--products section-->
+            <section class="products">
+                <div class="category-header">
+                    <h1>PRODUCTS</h1>
+                </div>
+                <div class="category-container">
+                    <div class="category-banner">
+                        <div class="category-image">
+                            <img src="images/Chateraise ice cream category.jpg" alt="Category Image">
+                        </div>
+                        <div class="category-text">
+                            <h1>Ice Cream</h1>
+                            <p>Chateraise's ice cream category features a range of premium, handcrafted flavors made with the finest ingredients. Each scoop offers rich, creamy texture and authentic taste, perfect for any occasion. From classic to seasonal creations, there's a flavor for every craving.</p>
+                        </div>
+                    </div>
+                    <h2><span class="bold-word">Products</span> | Ice Cream</h2>
+                    <div class="product-items">
+                        <a href="monaka-opera.html" class="product-card">
+                            <div class="product-image">
+                                <img src="images/Chateraise monaka opera.png" alt="Monaka Opera">
+                            </div>
+                            <div class="product-text">
+                                <h3>Monaka Opera</h3>
+                                <p>A delicate monaka wafer filled with smooth opera-flavored ice cream, offering a perfect blend of chocolate and coffee notes.</p>
+                                <div class="price">$2.70</div>
+                            </div>
+                        </a>
+                        <a href="monaka-gateau-fraise.html" class="product-card">
+                            <div class="product-image">
+                                <img src="images/Chateraise monaka gateau fraise.png" alt="Monaka Gateau Fraise">
+                            </div>
+                            <div class="product-text">
+                                <h3>Monaka Gateau Fraise</h3>
+                                <p>A crispy monaka wafer shell filled with rich, strawberry gateau-flavored ice cream, offering a deliciously fruity and creamy experience.</p>
+                                <div class="price">$2.70</div>
+                            </div>
+                        </a>
+                        <a href="#" class="product-card">
+                            <div class="product-image">
+                                <img src="images/Chateraise amaou strawberry soft serve.png" alt="Amaou Strawberry Soft Serve">
+                            </div>
+                            <div class="product-text">
+                                <h3>Amaou Strawberry Soft Serve</h3>
+                                <p>Creamy soft serve ice cream made with sweet, premium Amaou strawberries for a refreshing, fruity taste.</p>
+                                <div class="price">$2.70</div>
+                            </div>
+                        </a>
+                        <a href="#" class="product-card">
+                            <div class="product-image">
+                                <img src="images/Chateraise monaka salted caramel.png" alt="Monaka Salted Caramel">
+                            </div>
+                            <div class="product-text">
+                                <h3>Monaka Salted Caramel</h3>
+                                <p>A crisp monaka wafer filled with indulgent salted caramel ice cream, delivering a perfect balance of sweet and savory flavors.</p>
+                                <div class="price">$2.70</div>
+                            </div>
+                        </a>
+                        <a href="#" class="product-card">
+                            <div class="product-image">
+                                <img src="images/Chateraise monaka lemon tart.png" alt="Monaka Lemon Tart">
+                            </div>
+                            <div class="product-text">
+                                <h3>Monaka Lemon Tart</h3>
+                                <p>A zesty lemon tart-flavored ice cream in a crunchy monaka wafer, offering a refreshing citrus kick with a creamy texture.</p>
+                                <div class="price">$2.50</div>
+                            </div>
+                        </a>
+                        <a href="#" class="product-card">
+                            <div class="product-image">
+                                <img src="images/Chateraise warabi mochi and kinako ice bar.png" alt="Warabi Mochi and Kinako Ice Cream">
+                            </div>
+                            <div class="product-text">
+                                <h3>Warabi Mochi and Kinako Ice Cream</h3>
+                                <p>Smooth ice cream infused with the earthy flavor of kinako, paired with chewy warabi mochi for a delightful Japanese-inspired treat.</p>
+                                <div class="price">$1.70</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!--delivery section-->
+            <section class="delivery">
+                <div class="delivery-container">
+                    <div class="delivery-image">
+                        <img src="images/Delivery image.jpg" alt="Delivery Image">
+                    </div>
+                    <div class="delivery-details-container">
+                        <div class="delivery-header">
+                            <div class="delivery-header-text">
+                                <h2>We deliver too!</h2>
+                                <p>Served to your doorstep.</p>
+                            </div>
+                            <div class="delivery-icon">
+                                <img src="images/Delivery icon.png" alt="Delivery Icon">
+                            </div>
+                        </div>
+                        <div class="delivery-details">
+                            <div class="step-number">
+                                <h2>1</h2>
+                                <h2>2</h2>
+                                <h2>3</h2>
+                            </div>
+                            <div class="step-text-container">
+                                <div class="step-text">
+                                    <h3>Select Your Products</h3>
+                                    <p>Browse our selection and add your desired items to the cart.</p>
+                                </div>
+                                <div class="step-text">
+                                    <h3>Choose Delivery Option</h3>
+                                    <p>During checkout, select your preferred delivery date and time.</p>
+                                </div>
+                                <div class="step-text">
+                                    <h3>Complete Your Order</h3>
+                                    <p>Confirm your details and place your order for a seamless delivery experience.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--faq section-->
+            <section class="faq">
+                <div class="faq-container">
+                    <div class="faq-left">
+                        <h2>Frequently Asked Questions</h2>
+                        <p>Question not answered?</p>
+                        <form class="faq-form">
+                            <input type="text" id="faq-question" placeholder="Have a question? Ask us here!">
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                    <div class="faq-right">
+                        <details>
+                            <summary>
+                                How can I track my order?
+                                <span class="faq-icon">+</span>
+                            </summary>
+                            <p>You can track your order by logging into your account and checking the order status, or through the tracking link sent to your email.</p>
+                        </details>
+                        <details>
+                            <summary>
+                                Do you offer same-day delivery?
+                                <span class="faq-icon">+</span>
+                            </summary>
+                            <p>Yes, same-day delivery is available for orders placed before a specified cut-off time. Please check the delivery options during checkout.</p>
+                        </details>
+                        <details>
+                            <summary>
+                                Can I change my delivery date after placing an order?
+                                <span class="faq-icon">+</span>
+                            </summary>
+                            <p>Yes, you can reschedule your delivery up to 24 hours before the scheduled date by contacting our customer service team.</p>
+                        </details>
+                        <details>
+                            <summary>
+                                Are your products available for pickup?
+                                <span class="faq-icon">+</span>
+                            </summary>
+                            <p>Yes, you can select the "pickup" option during checkout to collect your order from our store at your convenience.</p>
+                        </details>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+            <!--footer section-->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <h3>Get the Latest News!</h3>
+                        <div class="newsletter">
+                            <input type="email" placeholder="Enter email here">
+                            <button class="subscribe">Subscribe</button>
+                        </div>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Instagram logo.png" alt="Instagram"></a>
+                            <a href="https://x.com/chateraise_jp/" target="_blank" class="icon"><img src="images/Twitter logo.png" alt="Twitter"></a>
+                            <a href="https://www.facebook.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Facebook logo.png" alt="Facebook"></a>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-section consumer-care">
+                            <h4>Consumer Care</h4>
+                            <ul>
+                                <li><a href="">Return and Exchange</a></li>
+                                <li><a href="">Delivery Information</a></li>
+                                <li><a href="">Allergens</a></li>
+                                <li><a href="">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section about-us">
+                            <h4>About Us</h4>
+                            <ul>
+                                <li><a href="">Franchise</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section contact-us">
+                            <h4>Contact Us</h4>
+                            <ul>
+                                <li><a href="">Join the Team</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© Chateraise Co., Ltd. All Rights Reserved.</p>
+                    <div class="footer-logo">
+                        <img src="images/chateraise logo.png" alt="Chateraise Logo">
+                    </div>
+                </div>
+            </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

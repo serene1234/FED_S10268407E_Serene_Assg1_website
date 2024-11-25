@@ -380,13 +380,13 @@ header .page-title{
     color: #5a2d14;
     transition: all 0.3s ease; /* Smooth transition for focus */
 }
-.search-container i {
-    color: #5a2d14;
+#search-icon{
     position: absolute;
-    left: 15px; 
+    left: 15px;
     top: 50%;
-    transform: translateY(-50%); 
-    font-size: 24px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
 }
 .banner-text input[type="search"]::placeholder{
     color:#5a2d14;
