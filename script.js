@@ -1,8 +1,3 @@
-// Automatically clear cart on page load (for testing purposes)
-/*localStorage.removeItem('cart');
-cart = [];
-updateCartIndicator();*/
-
 // Sidebar functions: These are global, so they run on all pages
 function openSidebar() {
     // Add the 'active' class to the sidebar which will trigger the transition
@@ -166,13 +161,28 @@ function initializeFAQToggle() {
     });
 }
 
+
 // Cart array to store products (retrieve from localStorage if it exists)
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Call this function on page load to initialize the cart
+function initializeCart() {
+    if (cart.length > 0) {
+        updateCart();  // Update cart display and costs if cart is not empty
+    }
+
+    debugCart(); // Debug the cart when the page is loaded
+}
 
 // Function to update cart in localStorage and cart icon
 function updateCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartIndicator(); // Update the cart indicator globally
+
+    const subtotal = calculateSubtotal(); // Dynamically calculate subtotal
+    updateCosts(subtotal); // Update the display with the new subtotal and total
+
+    debugCart(); // Debug the cart after updating it
 }
 
 // Function to update the cart indicator
@@ -188,6 +198,13 @@ function updateCartIndicator() {
             cartBadge.style.display = 'none'; // Hide the badge if the cart is empty
         }
     }
+}
+
+// Function to clear cart
+function clearCart() {
+    localStorage.removeItem('cart'); // Remove cart from localStorage
+    cart = []; // Reset the cart array
+    updateCartIndicator(); // Update cart indicator UI
 }
 
 // Update the opacity of the decrease button based on the quantity
@@ -228,12 +245,31 @@ if (document.querySelector('.increase') && document.querySelector('.decrease')) 
 // Add product to cart from main product section (only if the product page exists)
 if (document.querySelector('.add-to-cart')) {
     document.querySelector('.add-to-cart').addEventListener('click', () => {
-        let productName = document.querySelector('h1').textContent;
-        let price = document.querySelector('.item-price h2').textContent;
-        let quantity = parseInt(document.querySelector('.quantity').textContent);
+        let productName = document.querySelector('.item-name h1').textContent;
+        let priceElement = document.querySelector('.item-price h2'); // This is your h2 element
 
-        addItemToCart(productName, price, quantity);
-        alert(`${quantity} ${productName}(s) added to cart!`);
+        if (priceElement && priceElement.textContent) {
+            let price = priceElement.textContent.trim();  // Get the text content from the element
+
+            // Clean the price string (remove non-numeric characters)
+            let cleanedPrice = price.replace(/[^\d.-]/g, '').trim();
+
+            // Parse the cleaned price string into a numeric value
+            let numericPrice = parseFloat(cleanedPrice);
+
+            if (!isNaN(numericPrice)) {
+                let quantity = parseInt(document.querySelector('.quantity').textContent);  // Get the quantity
+
+                addItemToCart(productName, numericPrice, quantity);
+
+                // Update subtotal, total, and cart indicator
+                let subtotal = calculateSubtotal();
+                updateCosts(subtotal);
+                updateCartIndicator();
+
+                alert(`${quantity} ${productName}(s) added to cart!`);
+            }
+        }
     });
 }
 
@@ -243,9 +279,13 @@ if (document.querySelectorAll('.suggested-products .add')) {
         button.addEventListener('click', (event) => {
             let productCard = event.target.closest('.suggested-product-card');
             let productName = productCard.querySelector('.name').textContent;
-            let price = productCard.querySelector('.price').textContent;
+            let priceText = productCard.querySelector('.price').textContent;
 
-            addItemToCart(productName, price, 1);
+            // Clean the price text before passing it to addItemToCart
+            let cleanedPrice = priceText.replace('SGD', '').replace('$', '').replace(/,/g, '').trim();
+
+            addItemToCart(productName, cleanedPrice, 1);
+            updateCartIndicator();  // Update the cart indicator
             alert(`1 ${productName} added to cart!`);
         });
     });
@@ -253,16 +293,79 @@ if (document.querySelectorAll('.suggested-products .add')) {
 
 // Function to add item to cart
 function addItemToCart(productName, price, quantity) {
-    // Check if the product already exists in the cart
-    let existingProduct = cart.find(product => product.name === productName);
-    if (existingProduct) {
-        existingProduct.quantity += quantity; // Update quantity
+    // Ensure price is numeric (already handled by cleaning in the previous functions)
+    let numericPrice = typeof price === 'number' ? price : parseFloat(price.replace('SGD', '').replace(/,/g, '').trim());
+
+    const existingItemIndex = cart.findIndex(item => item.productName === productName);
+
+    if (existingItemIndex !== -1) {
+        cart[existingItemIndex].quantity += quantity;
     } else {
-        cart.push({ name: productName, price, quantity }); // Add new product
+        cart.push({ productName, price: numericPrice, quantity });
     }
 
-    // Save updated cart to localStorage and update cart indicator
     updateCart();
+    debugCart();  // Debug the cart after adding an item
+
+    // Log the updated cart
+    console.log(cart);
+}
+
+// Function to calculate subtotal
+function calculateSubtotal() {
+    return cart.reduce((subtotal, item) => subtotal + item.price * item.quantity, 0);
+}
+
+// Function to update costs
+function updateCosts(newSubtotal) {
+    const subtotalElement = document.querySelector('.subtotal');
+    const gstElement = document.querySelector('.gst');
+    const totalElement = document.querySelector('.total');
+
+    if (subtotalElement && gstElement && totalElement) {
+        const subtotal = parseFloat(newSubtotal);
+        const total = subtotal;  // Assuming no additional fees or taxes are added
+
+        subtotalElement.textContent = `SGD ${subtotal.toFixed(2)}`;
+        gstElement.textContent = `SGD 0.00`; // Update if necessary
+        totalElement.textContent = `SGD ${total.toFixed(2)}`;
+    }
+}
+
+// Function to remove item from cart
+function removeItemFromCart(productName) {
+    const itemIndex = cart.findIndex(item => item.productName === productName);
+    if (itemIndex !== -1) {
+        cart.splice(itemIndex, 1); // Remove the item from the cart
+    }
+
+    // Recalculate subtotal and update UI
+    let subtotal = calculateSubtotal();
+    updateCosts(subtotal);
+    updateCartIndicator();
+
+    debugCart(); // Debug the cart after removing an item
+}
+document.querySelectorAll('.cart-item-quantity').forEach(input => {
+    input.addEventListener('change', event => {
+        const productName = event.target.dataset.productName; // Assume each input has a data attribute
+        const newQuantity = parseInt(event.target.value);
+
+        const item = cart.find(item => item.productName === productName);
+        if (item) {
+            item.quantity = newQuantity; // Update the quantity in the cart
+        }
+
+        // Recalculate and update the cart
+        let subtotal = calculateSubtotal();
+        updateCosts(subtotal);
+        updateCartIndicator();
+    });
+});
+
+// Function to log the cart contents for debugging
+function debugCart() {
+    console.log('Current Cart:', JSON.stringify(cart, null, 2)); // Logs the cart in a readable format
 }
 
 // Run page-specific initialization functions on page load
@@ -282,9 +385,18 @@ window.onload = () => {
     if (document.querySelector('.faq-right')) {
         initializeFAQToggle(); // Only on pages with FAQ section
     }
+    let subtotal = calculateSubtotal();
+    if (subtotal > 0) {
+        updateCosts(subtotal); // Only update costs if the subtotal is greater than 0
+    }
 
     updateCartIndicator(); // Update the cart indicator when the page loads
+    initializeCart();  // Run this function on page load
+
+    // Check for the Pay Online button only when the page loads and attach the event listener
+    if (document.querySelector('.pay-online-button')) {
+        document.querySelector('.pay-online-button').addEventListener('click', (event) => {
+            clearCart();  // Clear the cart when the Pay Online button is clicked
+        });
+    }
 };
-
-
-

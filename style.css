@@ -142,6 +142,7 @@ header{
     right:-10px;
     color: #fff5e1;
     background-color: #5a2d14;
+    font-size: 12px;
     display: flex;
     width: 20px;
     height: 20px;
@@ -1324,6 +1325,256 @@ details p{
 }
 .add:hover{
     transform: scale(1.03);
+}
+
+
+/*CHECKOUT.HTML STYLES*/
+/*checkout progress section*/
+.checkout {
+    display: flex;
+    justify-content: space-between;
+    padding: 160px 40px 40px 40px;
+    background-color: #fff5e1;
+    color: #5a2d14;
+}
+.checkout-progress{
+    width: 60%;
+}
+.checkout-progress h2{
+    border-bottom: 2px #5a2d14 solid;
+    padding: 14px 0;
+    font-size: 26px;
+}
+.customer-info-container h3{
+    padding: 14px 0;
+    font-size: 20px;
+}
+.form-input{
+    padding: 5px 0;
+}
+.form-input label{
+    font-weight: bold;
+    font-size: 16px;
+}
+.form-input input{
+    width: 100%;
+    border: 2px #5a2d14 solid;
+    border-radius: 20px;
+    background-color:#fff5e1;
+    padding: 8px 14px;
+    color: #5a2d14;
+    outline: none;
+    margin-top: 8px;
+}
+.form-input input::placeholder, .additional-request textarea::placeholder{
+    color: #5a2d14;
+    opacity: 0.6;
+}
+.form-input input:focus{
+    outline: 1px solid #5a2d14;
+}
+.form-input select, .additional-request textarea{
+    border: 2px #5a2d14 solid;
+    border-radius: 10px;
+    background-color: #fff5e1;
+    color: #5a2d14;
+    padding: 8px 10px;
+    opacity: 0.8;
+    outline: none;
+}
+.additional-request textarea{
+    margin-top: 8px;
+}
+.name-input, .phone-input, .datetime-input{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+}
+.datetime-input input{
+    width: auto;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+.additional-request{
+    display: flex;
+    flex-direction: column;
+}
+.pay-online-button{
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: #5a2d14;
+    color: #fff5e1;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+.pay-online-button:hover{
+    transform: scale(1.03);
+}
+.checkout-summary{
+    border: 2px #5a2d14 solid;
+    width: 35%;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.checkout-summary h2{
+    font-size: 26px;
+    font-weight: bold;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #5a2d14;
+    width: 100%;
+    text-align: center;
+}
+.summary-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.summary-items .item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid #5a2d14;
+}
+.summary-items .item .item-name{
+    font-size: 10px;
+    font-weight: bold;
+    color: #5a2d14;
+    flex: 2;
+}
+.summary-items .item .item-controls {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+.summary-items .item .item-controls button {
+    background-color: #5a2d14;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.summary-items .item .item-controls button:hover {
+    background-color: #ddd;
+}
+
+.summary-items .item .item-controls .quantity {
+    font-size: 1.1em;
+    margin: 0 10px;
+}
+
+.summary-items .item .item-price {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.empty-cart-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #5a2d14;
+    display: none;
+    margin-top: 20px;
+}
+/*promo code*/
+.promo-code{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #5a2d14;
+}
+.promo-code label{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.promo-input{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.promo-input input{
+    border-radius: 2px solid #5a2d14;
+    background-color: #fff5e1;
+    padding: 8px 14px;
+    border-radius: 20px;
+    width: 100%;
+    outline: none;
+}
+.promo-input input::placeholder{
+    color: #5a2d14;
+}
+.promo-input button{
+    border: none;
+    border-radius: 20px;
+    background-color: #5a2d14;
+    color: #fff5e1;
+    font-weight: bold;
+    padding: 8px 30px;
+}
+.promo-input button:hover{
+    transform: scale(1.03);
+}
+.total-costs{
+    margin: 12px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.total-costs p, .total-costs h4 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.total-costs p{
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+.total-costs h4{
+    border-top: 2px solid #5a2d14;
+    border-bottom: 2px solid #5a2d14;
+    padding: 12px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.total-costs .cost{
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.checkout-summary h3{
+    font-size: 22px;
+    padding-bottom: 12px;
+}
+.complimentary-candles{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #5a2d14;
+}
+.candle-checkbox {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+.candle-checkbox label {
+    font-size: 18px;
+}
+
+.candle-checkbox input {
+    width: 20px;
+    height: 20px;
 }
 
 /*responsive media*/
