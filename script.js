@@ -181,6 +181,7 @@ function updateCart() {
 
     const subtotal = calculateSubtotal(); // Dynamically calculate subtotal
     updateCosts(subtotal); // Update the display with the new subtotal and total
+    updateCheckoutSummary();
 
     debugCart(); // Debug the cart after updating it
 }
@@ -205,6 +206,87 @@ function clearCart() {
     localStorage.removeItem('cart'); // Remove cart from localStorage
     cart = []; // Reset the cart array
     updateCartIndicator(); // Update cart indicator UI
+    updateCheckoutSummary();
+}
+
+
+
+// Function to show items in cart
+function updateCheckoutSummary() {
+    const summaryItemsList = document.querySelector('.summary-items');
+    const emptyCartMessage = document.querySelector('.empty-cart-message');
+
+    if (!summaryItemsList) {
+        console.warn("Warning: .summary-items element not found on this page.");
+        return; // Skip if there's no summary-items element
+    }
+
+    summaryItemsList.innerHTML = '';  // Clear any previous summary items
+
+    if (cart.length === 0) {
+        if (emptyCartMessage) {
+            emptyCartMessage.style.display = 'block'; // Show empty cart message
+        }
+    } else {
+        if (emptyCartMessage) {
+            emptyCartMessage.style.display = 'none'; // Hide empty cart message
+        }
+
+        // Add each item in the cart to the summary list
+        cart.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.classList.add('item');
+            listItem.innerHTML = `
+                <span class="item-name">${item.productName}</span>
+                <span class="item-price">SGD ${item.price.toFixed(2)}</span>
+                <div class="item-controls">
+                    <button class="decrease" data-product="${item.productName}">-</button>
+                    <span class="quantity">${item.quantity}</span>
+                    <button class="increase" data-product="${item.productName}">+</button>
+                </div>
+            `;
+            summaryItemsList.appendChild(listItem);
+        });
+
+        // Add event listeners for increase/decrease buttons
+        updateCartItemListeners();
+    }
+}
+
+
+
+function updateCartItemListeners() {
+    document.querySelectorAll('.increase').forEach(button => {
+        button.addEventListener('click', () => {
+            const productName = button.getAttribute('data-product');
+            changeItemQuantity(productName, 1);
+        });
+    });
+
+    document.querySelectorAll('.decrease').forEach(button => {
+        button.addEventListener('click', () => {
+            const productName = button.getAttribute('data-product');
+            changeItemQuantity(productName, -1);
+        });
+    });
+}
+
+// Function to change item quantity
+function changeItemQuantity(productName, change) {
+    const item = cart.find(item => item.productName === productName);
+    if (item) {
+        item.quantity += change;
+
+        if (item.quantity <= 0) {
+            // Remove item from cart if quantity is 0 or less
+            const index = cart.indexOf(item);
+            if (index > -1) {
+                cart.splice(index, 1);
+            }
+        }
+
+        updateCart(); // Update the cart in localStorage and re-render the cart
+    }
 }
 
 // Update the opacity of the decrease button based on the quantity
@@ -398,5 +480,11 @@ window.onload = () => {
         document.querySelector('.pay-online-button').addEventListener('click', (event) => {
             clearCart();  // Clear the cart when the Pay Online button is clicked
         });
+    }
+
+    // Cart empty check to show message if cart is empty on page load
+    const emptyCartMessage = document.querySelector('.empty-cart-message');
+    if (emptyCartMessage && cart.length === 0) {
+        emptyCartMessage.style.display = 'block'; // Show "Cart is empty" message if cart is empty
     }
 };
