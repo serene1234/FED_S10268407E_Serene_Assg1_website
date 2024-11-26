@@ -450,8 +450,40 @@ function debugCart() {
     console.log('Current Cart:', JSON.stringify(cart, null, 2)); // Logs the cart in a readable format
 }
 
+
+//Function for subsciption popup
+document.querySelector('.subscribe').addEventListener('click', function() {
+    // Get the email value (optional: validate it here)
+    let email = document.querySelector('.newsletter input').value;
+
+    if (email) {
+        // Simulate a successful subscription (you can replace this with an actual API call)
+        showPopup(); // Show the popup if subscription is successful
+    }
+});
+
+// Function to show the popup
+function showPopup() {
+    document.getElementById('popup').style.display = 'flex'; // Show the popup
+}
+
+// Function to close the popup
+function closePopup() {
+    document.getElementById('popup').style.display = 'none'; // Hide the popup
+
+    // Clear the email input field
+    const emailInput = document.querySelector('.newsletter input[type="email"]');
+    if (emailInput) {
+        emailInput.value = '';  // Clear the email input field
+    }
+}
+
 // Run page-specific initialization functions on page load
 window.onload = () => {
+    //Ensure popup is hidden on page load
+    if (document.querySelector('.popup')){
+        popup.style.display = 'none';
+    }
     // Initialize page-specific features
     if (document.querySelector('.carousel')) {
         initializeCarousel(); // Only on Home page where the carousel exists
@@ -479,12 +511,17 @@ window.onload = () => {
     if (document.querySelector('.pay-online-button')) {
         document.querySelector('.pay-online-button').addEventListener('click', (event) => {
             clearCart();  // Clear the cart when the Pay Online button is clicked
+            updateCosts(0);
+            alert("Checkout completed successfully! Thank you for your purchase.");
+
+            // reload the page
+            location.reload();
         });
     }
 
     // Cart empty check to show message if cart is empty on page load
-    const emptyCartMessage = document.querySelector('.empty-cart-message');
-    if (emptyCartMessage && cart.length === 0) {
+    if (emptyCartMessage = document.querySelector('.empty-cart-message') && cart.length === 0) {
         emptyCartMessage.style.display = 'block'; // Show "Cart is empty" message if cart is empty
     }
+
 };

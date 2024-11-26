@@ -18,8 +18,8 @@
                     <ul>
                         <li><a href="cake-collection.html">Cakes</a></li>
                         <li><a href="ice-cream-collection.html">Ice Cream</a></li>
-                        <li><a href="">Baked Goods</a></li>
-                        <li><a href="">Chilled Items</a></li>
+                        <li><a href="#">Baked Goods</a></li>
+                        <li><a href="#">Chilled Items</a></li>
                     </ul>
                 </li>
                 <li class="menu-category"><a href="#">Contact Us</a>
@@ -27,7 +27,7 @@
                         <li><a href="#">Join the Team</a></li>
                     </ul>
                 </li>
-                <li class="menu-category"><a href="#">About Us</a>
+                <li class="menu-category"><a href="index.html">About Us</a>
                     <ul>
                         <li><a href="#">Franchise</a></li>
                     </ul>
@@ -35,9 +35,9 @@
                 <li class="menu-category"><a href="#">Consumer Care</a>
                     <ul>
                         <li><a href="#">Return and Exchange</a></li>
-                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="cake-collection.html">Delivery Information</a></li>
                         <li><a href="#">Allergens</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="cake-collection.html">FAQ</a></li>
                     </ul>
                 </li>
             </ul>
@@ -55,8 +55,8 @@
                     <ul class="nav-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <button class="order-btn" onclick="openProductsPage()">Order Now</button>
+                        <li><a href="index.html">About Us</a></li>
+                        <a class="order-btn" href="cake-collection.html">Order Now</a>
                         <a href="checkout.html" class="cart-icon">
                             <img src="images/Cart icon.png" alt="cart-icon">
                             <span class="cart-badge">0</span>
@@ -201,26 +201,37 @@
                             <a href="https://www.facebook.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Facebook logo.png" alt="Facebook"></a>
                         </div>
                     </div>
+
+                    <!--popup message-->
+                    <div class="popup" id="popup">
+                        <div class="popup-content">
+                            <span class="close-x" onclick="closePopup()">x</span>
+                            <h2>Subscription Successful!</h2>
+                            <p>Thank you for subscribing!</p>
+                            <button class="close-popup" onclick="closePopup()">Close</button>
+                        </div>
+                    </div>
+
                     <div class="footer-right">
                         <div class="footer-section consumer-care">
                             <h4>Consumer Care</h4>
                             <ul>
-                                <li><a href="">Return and Exchange</a></li>
-                                <li><a href="">Delivery Information</a></li>
-                                <li><a href="">Allergens</a></li>
-                                <li><a href="">FAQ</a></li>
+                                <li><a href="#">Return and Exchange</a></li>
+                                <li><a href="cake-collection.html">Delivery Information</a></li>
+                                <li><a href="#">Allergens</a></li>
+                                <li><a href="cake-collection.html">FAQ</a></li>
                             </ul>
                         </div>
                         <div class="footer-section about-us">
                             <h4>About Us</h4>
                             <ul>
-                                <li><a href="">Franchise</a></li>
+                                <li><a href="#">Franchise</a></li>
                             </ul>
                         </div>
                         <div class="footer-section contact-us">
                             <h4>Contact Us</h4>
                             <ul>
-                                <li><a href="">Join the Team</a></li>
+                                <li><a href="#">Join the Team</a></li>
                             </ul>
                         </div>
                     </div>
