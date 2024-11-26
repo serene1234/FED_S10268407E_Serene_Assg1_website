@@ -209,8 +209,6 @@ function clearCart() {
     updateCheckoutSummary();
 }
 
-
-
 // Function to show items in cart
 function updateCheckoutSummary() {
     const summaryItemsList = document.querySelector('.summary-items');
@@ -252,7 +250,6 @@ function updateCheckoutSummary() {
         updateCartItemListeners();
     }
 }
-
 
 
 function updateCartItemListeners() {
@@ -387,10 +384,6 @@ function addItemToCart(productName, price, quantity) {
     }
 
     updateCart();
-    debugCart();  // Debug the cart after adding an item
-
-    // Log the updated cart
-    console.log(cart);
 }
 
 // Function to calculate subtotal
@@ -425,8 +418,6 @@ function removeItemFromCart(productName) {
     let subtotal = calculateSubtotal();
     updateCosts(subtotal);
     updateCartIndicator();
-
-    debugCart(); // Debug the cart after removing an item
 }
 document.querySelectorAll('.cart-item-quantity').forEach(input => {
     input.addEventListener('change', event => {
@@ -444,12 +435,6 @@ document.querySelectorAll('.cart-item-quantity').forEach(input => {
         updateCartIndicator();
     });
 });
-
-// Function to log the cart contents for debugging
-function debugCart() {
-    console.log('Current Cart:', JSON.stringify(cart, null, 2)); // Logs the cart in a readable format
-}
-
 
 //Function for subsciption popup
 document.querySelector('.subscribe').addEventListener('click', function() {
@@ -480,8 +465,9 @@ function closePopup() {
 
 // Run page-specific initialization functions on page load
 window.onload = () => {
-    //Ensure popup is hidden on page load
-    if (document.querySelector('.popup')){
+    // Ensure popup is hidden on page load
+    let popup = document.querySelector('.popup');
+    if (popup) {
         popup.style.display = 'none';
     }
     // Initialize page-specific features
@@ -520,8 +506,7 @@ window.onload = () => {
     }
 
     // Cart empty check to show message if cart is empty on page load
-    if (emptyCartMessage = document.querySelector('.empty-cart-message') && cart.length === 0) {
-        emptyCartMessage.style.display = 'block'; // Show "Cart is empty" message if cart is empty
+    if (document.querySelector('.empty-cart-message') && cart.length === 0) {
+        document.querySelector('.empty-cart-message').style.display = 'block'; // Show "Cart is empty" message if cart is empty
     }
-
 };

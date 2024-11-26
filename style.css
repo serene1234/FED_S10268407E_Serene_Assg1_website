@@ -30,7 +30,7 @@ header{
     background-color: #5a2d14;
     position: fixed; /* Make header the positioning context */
     width: 100%;
-    height: 80px;
+    height: 70px;
     z-index: 2;
     display: flex;
     justify-content: space-between;
@@ -41,6 +41,7 @@ header{
 .nav-bar{
     display: flex;
     width: 100%;
+    height: 70px;
     justify-content: space-between;
     align-items: center;
 }
@@ -109,17 +110,14 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40px;
+    height: 100%;
     width: 40px;
     transition: transform 0.3 ease;
-    flex-shrink: 0;
-    position: relative;
 }
 .nav-bar .cart-icon img{
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
-    display: block;
 }
 .nav-bar .cart-icon:hover{
     transform: scale(1.2);
@@ -553,16 +551,18 @@ header .page-title{
 .testimonial-article-container{
     background-color: #5a2d14;
     display: flex;
+    flex-direction: row;
     border-radius: 10px;
     max-width:60%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 .testimonial-article-container:hover{
     transform: scale(1.05);
 }
 .testimonial-article{
     max-width: 520px;
-    height: auto;
+    height: 300px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -572,6 +572,7 @@ header .page-title{
 }
 .testimonial-article img{
     width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -855,6 +856,32 @@ header .page-title{
     height: auto;
 }
 
+/*ANIMATION STYLES*/
+/* For fade-in-right animation */
+.fade-in-right-section {
+    opacity: 0;
+    transform: translateX(50px); /* Start from right */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition-delay: var(--delay, 0s); /* Delay for staggered effect */
+}
+
+.fade-in-right-section.visible {
+    opacity: 1;
+    transform: translateX(0); /* Move to original position */
+}
+
+/* For fade-in-left animation */
+.fade-in-left-section {
+    opacity: 0;
+    transform: translateX(-50px); /* Start from left */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition-delay: var(--delay, 0s); /* Delay for staggered effect */
+}
+
+.fade-in-left-section.visible {
+    opacity: 1;
+    transform: translateX(0); /* Move to original position */
+}
 
 /*PRODUCTS STYLES*/
 /*products section*/
@@ -1044,15 +1071,15 @@ header .page-title{
     width: auto;
 }
 .delivery-icon img{
-    max-width: 80%;
+    max-width: 76%;
     height: auto;
-    padding-right: 45px;
+    padding-right: 4px;
 }
 .delivery-details{
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    padding: 0 20px 30px 20px;
+    padding: 30px 10px;
     gap: 30px;
     flex-grow: 1;
 }
@@ -1930,7 +1957,7 @@ details p{
 
     /*faq section*/
     .faq{
-        padding: 10px 50px;
+        padding: 50px;
     }
     .faq-container{
         flex-direction: column;
@@ -2128,11 +2155,12 @@ details p{
     /*INDEX.HTML STYLES*/
     /*header section*/
     header{
-        padding: 0 20px;
-        height:40px;
+        padding: 10px 20px;
+        height: 40px;
     }
     .menu-btn{
         font-size: 12px;
+        width: auto;
     }
     .logo img{
         max-height: 40px;
@@ -2141,12 +2169,15 @@ details p{
     .order-btn {
         font-size: 12px;
         padding: 2px 8px;
+        width: auto;
     }
     .nav-links{
-        gap: 20px;
+        gap: 10px;
+    }
+    .nav-bar{
+        height: 40px;
     }
     .nav-bar .cart-icon{
-        height: 20px;
         width: 20px;
     }
     .cart-badge{
@@ -2481,7 +2512,7 @@ details p{
 
     /*faq section*/
     .faq{
-        padding: 0 50px 50px 50px;
+        padding-top: 0;
     }
     .faq-container{
         flex-direction: column;
