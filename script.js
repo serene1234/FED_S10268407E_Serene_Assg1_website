@@ -1,3 +1,27 @@
+// Function to initialize animations (from animations.js)
+function initializeAnimations() {
+    const rightSections = document.querySelectorAll(".fade-in-right-section");
+    const leftSections = document.querySelectorAll(".fade-in-left-section");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                entry.target.style.setProperty('--delay', `${index * 0.2}s`); // Add staggered delay
+                entry.target.classList.add("visible"); // Make the section visible
+                observer.unobserve(entry.target); // Stop observing this element
+            }
+        });
+    });
+
+    rightSections.forEach((section) => {
+        observer.observe(section); // Observe each fade-in-right-section
+    });
+
+    leftSections.forEach((section) => {
+        observer.observe(section); // Observe each fade-in-left-section
+    });
+}
+
 // Sidebar functions: These are global, so they run on all pages
 function openSidebar() {
     // Add the 'active' class to the sidebar which will trigger the transition
@@ -170,8 +194,6 @@ function initializeCart() {
     if (cart.length > 0) {
         updateCart();  // Update cart display and costs if cart is not empty
     }
-
-    debugCart(); // Debug the cart when the page is loaded
 }
 
 // Function to update cart in localStorage and cart icon
@@ -182,8 +204,6 @@ function updateCart() {
     const subtotal = calculateSubtotal(); // Dynamically calculate subtotal
     updateCosts(subtotal); // Update the display with the new subtotal and total
     updateCheckoutSummary();
-
-    debugCart(); // Debug the cart after updating it
 }
 
 // Function to update the cart indicator
@@ -437,14 +457,16 @@ document.querySelectorAll('.cart-item-quantity').forEach(input => {
 });
 
 //Function for subsciption popup
-document.querySelector('.subscribe').addEventListener('click', function() {
-    // Get the email value (optional: validate it here)
-    let email = document.querySelector('.newsletter input').value;
-
-    if (email) {
-        // Simulate a successful subscription (you can replace this with an actual API call)
-        showPopup(); // Show the popup if subscription is successful
+document.querySelector('.subscribe').addEventListener('click', function () {
+    const emailInput = document.querySelector('.newsletter input');
+    
+    if (!emailInput.value.trim() || !emailInput.validity.valid) {
+        alert("Please enter a valid email address.");
+        return;
     }
+    
+    // Email is valid; proceed with subscription
+    showPopup(); // Show the popup if subscription is successful
 });
 
 // Function to show the popup
@@ -463,6 +485,18 @@ function closePopup() {
     }
 }
 
+// Function to apply the promo code
+function applyPromoCode() {
+    const promoInput = document.querySelector('#promo-code');
+
+    // Check if the promo code is exactly 8 characters long
+    if (promoInput.value.trim().length === 8) {
+        alert("Promo code successfully applied!");
+    } else {
+        alert("Invalid promo code. Please try again.");
+    }
+}
+
 // Run page-specific initialization functions on page load
 window.onload = () => {
     // Ensure popup is hidden on page load
@@ -470,6 +504,8 @@ window.onload = () => {
     if (popup) {
         popup.style.display = 'none';
     }
+    // Initialize animations
+    initializeAnimations();
     // Initialize page-specific features
     if (document.querySelector('.carousel')) {
         initializeCarousel(); // Only on Home page where the carousel exists
@@ -496,11 +532,42 @@ window.onload = () => {
     // Check for the Pay Online button only when the page loads and attach the event listener
     if (document.querySelector('.pay-online-button')) {
         document.querySelector('.pay-online-button').addEventListener('click', (event) => {
-            clearCart();  // Clear the cart when the Pay Online button is clicked
+            event.preventDefault(); // Prevent the form from submitting by default
+    
+            // Select form fields
+            const firstName = document.querySelector('input[placeholder="First Name"]');
+            const lastName = document.querySelector('input[placeholder="Last Name"]');
+            const email = document.querySelector('input[type="email"]');
+            const phoneNumber = document.querySelector('input[type="tel"]');
+            const pickupDateTime = document.querySelector('input[type="datetime-local"]');
+    
+            // Check if fields are valid
+            if (!firstName.value.trim() || !lastName.value.trim()) {
+                alert("Please enter both your first and last names.");
+                return;
+            }
+    
+            if (!email.value.trim() || !email.validity.valid) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+    
+            if (!phoneNumber.value.trim()) {
+                alert("Please enter your contact number.");
+                return;
+            }
+    
+            if (!pickupDateTime.value.trim()) {
+                alert("Please select a valid pickup date and time.");
+                return;
+            }
+    
+            // If all validations pass
+            clearCart(); // Clear the cart when the Pay Online button is clicked
             updateCosts(0);
             alert("Checkout completed successfully! Thank you for your purchase.");
-
-            // reload the page
+    
+            // Reload the page
             location.reload();
         });
     }
@@ -508,5 +575,11 @@ window.onload = () => {
     // Cart empty check to show message if cart is empty on page load
     if (document.querySelector('.empty-cart-message') && cart.length === 0) {
         document.querySelector('.empty-cart-message').style.display = 'block'; // Show "Cart is empty" message if cart is empty
+    }
+
+    // Check if promo code area exists before running
+    if (document.getElementById('promo-code') && document.getElementById('apply-button')) {
+        // Attach event listener to the button
+        document.getElementById('apply-button').addEventListener('click', applyPromoCode);
     }
 };

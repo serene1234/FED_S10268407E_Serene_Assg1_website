@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang = "en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-        <title>Home - Chateraise</title>
-        <link rel="stylesheet" href="https://unpkg.com/normalize.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <!-- sidebar navigation -->
-        <div id="sidebar" class="sidebar">
-            <!-- close button -->
-            <button class="close-btn" onclick="closeSidebar()">x</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Home - Chateraise</title>
+    <!--normalize.css-->
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css">
+    <!--custom styles-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- sidebar navigation -->
+    <aside id="sidebar" class="sidebar">
+        <!-- sidebar close button -->
+        <button class="close-btn" onclick="closeSidebar()">x</button>
+        <nav>
             <ul class="sidebar-menu">
-                <li class="menu-category"><a href="index.html">Home</a></li>
-                <li class="menu-category"><a href="#">Products</a>
+                <!-- home section -->
+                <li class="menu-category">
+                    <a href="index.html">Home</a>
+                </li>
+                <!-- products section -->
+                <li class="menu-category">
+                    <a href="#">Products</a>
                     <ul>
                         <li><a href="cake-collection.html">Cakes</a></li>
                         <li><a href="ice-cream-collection.html">Ice Cream</a></li>
@@ -22,17 +30,23 @@
                         <li><a href="#">Chilled Items</a></li>
                     </ul>
                 </li>
-                <li class="menu-category"><a href="#">Contact Us</a>
+                <!-- contact us section -->
+                <li class="menu-category">
+                    <a href="#">Contact Us</a>
                     <ul>
                         <li><a href="#">Join the Team</a></li>
                     </ul>
                 </li>
-                <li class="menu-category"><a href="index.html">About Us</a>
+                <!-- about us section -->
+                <li class="menu-category">
+                    <a href="index.html">About Us</a>
                     <ul>
                         <li><a href="#">Franchise</a></li>
                     </ul>
                 </li>
-                <li class="menu-category"><a href="#">Consumer Care</a>
+                <!-- consumer care section -->
+                <li class="menu-category">
+                    <a href="#">Consumer Care</a>
                     <ul>
                         <li><a href="#">Return and Exchange</a></li>
                         <li><a href="cake-collection.html">Delivery Information</a></li>
@@ -41,211 +55,227 @@
                     </ul>
                 </li>
             </ul>
-        </div>
+        </nav>
+    </aside>
 
-         <!-- main content -->
-          <div class="main-content">
-            <!-- header -->
-            <header>
-                <nav class="nav-bar">
-                    <button class="menu-btn" onclick="openSidebar()">☰ Menu</button>
-                    <div class="logo">
-                        <img src="images/chateraise logo.png">
-                    </div>
-                    <ul class="nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="index.html">About Us</a></li>
-                        <a class="order-btn" href="cake-collection.html">Order Now</a>
-                        <a href="checkout.html" class="cart-icon">
-                            <img src="images/Cart icon.png" alt="cart-icon">
-                            <span class="cart-badge">0</span>
+    <!-- main content -->
+    <main class="main-content">
+        <!-- header section -->
+        <header>
+            <nav class="nav-bar">
+                <!-- menu button -->
+                <button class="menu-btn" onclick="openSidebar()">☰ Menu</button>
+                <!-- logo -->
+                <div class="logo">
+                    <img src="images/chateraise logo.png">
+                </div>
+                <!-- navigation links-->
+                <ul class="nav-links">
+                    <!-- home link -->
+                    <li><a href="index.html">Home</a></li>
+                    <!-- contact link -->
+                    <li><a href="#">Contact</a></li>
+                    <!-- about us link -->
+                    <li><a href="index.html">About Us</a></li>
+                    <!-- order now button -->
+                    <a class="order-btn" href="cake-collection.html">Order Now</a>
+                    <!-- cart icon -->
+                    <a href="checkout.html" class="cart-icon">
+                        <img src="images/Cart icon.png" alt="cart-icon">
+                        <span class="cart-badge">0</span>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- banner section -->
+        <section class="banner">
+            <div class="carousel-container">
+                <!-- carousel images -->
+                <div class="carousel">
+                    <img src="images/Chateraise advertisement 1.png" alt="Japanese Apple and Mikan Fair" class="carousel-slide">
+                    <img src="images/Chateraise advertisement 2.png" alt="Kyoto Uji Matcha" class="carousel-slide">
+                    <img src="images/Chateraise advertisement 3.png" alt="Yamanashi Grape Fair" class="carousel-slide">
+                    <img src="images/Chateraise advertisement 4.png" alt="Win a Trip to Winter Hokkaido" class="carousel-slide">
+                    <img src="images/Chateraise advertisement 5.png" alt="Japanese Shaved Ice Kakigori" class="carousel-slide">
+                </div>
+                <!--pagination dots -->
+                <div class="carousel-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <!-- banner text and search -->
+            <div class="banner-text">
+                <div id="shopForHeading">Shop For</div>
+                <h1 id="shopForText">CAKES</h1>
+                <p>All of our products contain little to no additives. Please keep refrigerated (frozen for ice cream) if not consumed immediately.</p>
+                <div class="search-container">
+                    <img src="images/search icon.png" alt="search icon" id="search-icon">
+                    <input type="search" id="search-bar" placeholder="Search for products">
+                    <ul id="suggestions-list" class="suggestions-list"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- featured section -->
+        <section class="featured">
+            <h2>FEATURED</h2>
+            <!-- featured collections -->
+            <div class="featured-items">
+                <!-- cake collection -->
+                <div class="item">
+                    <a href="cake-collection.html">
+                        <img src="images/Chateraise cakes.png" alt="Cakes" class="item-image">
+                        <div class="item-text">Cakes</div>
+                    </a>
+                </div>
+                <!-- ice cream collection -->
+                <div class="item">
+                    <a href="ice-cream-collection.html">
+                        <img src="images/Chateraise ice cream.png" alt="Ice Cream" class="item-image">
+                        <div class="item-text">Ice Cream</div>
+                    </a>
+                </div>
+                <!-- baked goods collection -->
+                <div class="item">
+                    <a href="products.html">
+                        <img src="images/Chateraise baked goods.png" alt="Baked Goods" class="item-image">
+                        <div class="item-text">Baked Goods</div>
+                    </a>
+                </div>
+                <!-- chilled items collection -->
+                <div class="item">
+                    <a href="products.html">
+                        <img src="images/Chateraise chilled items.png" alt="Chilled Items" class="item-image">
+                        <div class="item-text">Chilled Items</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- about us section -->
+        <section class="about">
+            <div class="about-content">
+                <div class="about-text-container">
+                    <h2 class="fade-in-left-section">ABOUT US</h2>
+                    <p class="fade-in-left-section">Chateraise SG brings the authentic taste of Japanese confectionery to Singapore with a delightful selection of cakes and pastries made from the finest ingredients. Combining traditional Japanese techniques with a modern twist, we're dedicated to creating a sweet experience in every bite.</p>
+                    <h3 class="fade-in-left-section">"Taste of nature, taste of affections"</h3>
+                </div>
+                <div class="about-image fade-in-right-section">
+                    <img src="images/Chateraise about us.jpg" alt="About Chateraise">
+                </div>
+            </div>
+        </section>
+
+        <!-- testimonials section -->
+        <section class="testimonial">
+            <div class="testimonial-content">
+                <!-- article section -->
+                <div class="testimonial-article-container fade-in-left-section">
+                    <!-- article 1 image -->
+                    <div  class="testimonial-article">
+                        <a href="https://eatbook.sg/chateraise-24-hour-unmanned-store/" target="_blank">
+                            <img src="images/Chateraise article image.png" alt="Article 1 Thumbnail">
                         </a>
-                    </ul>
-                </nav>
-            </header>
-
-            <!-- banner section -->
-             <section class="banner">
-                <div class="carousel-container">
-                    <div class="carousel">
-                        <img src="images/Chateraise advertisement 1.png" alt="Japanese Apple and Mikan Fair" class="carousel-slide">
-                        <img src="images/Chateraise advertisement 2.png" alt="Kyoto Uji Matcha" class="carousel-slide">
-                        <img src="images/Chateraise advertisement 3.png" alt="Yamanashi Grape Fair" class="carousel-slide">
-                        <img src="images/Chateraise advertisement 4.png" alt="Win a Trip to Winter Hokkaido" class="carousel-slide">
-                        <img src="images/Chateraise advertisement 5.png" alt="Japanese Shaved Ice Kakigori" class="carousel-slide">
                     </div>
-                    <!--pagination dots-->
-                    <div class="carousel-dots">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
+                    <!-- article 1 details -->
+                    <div class="article-details">
+                        <h3>Chateraise 24-Hour Unmanned Store</h3>
+                        <p>Eatbook</p>
+                        <a href="https://eatbook.sg/chateraise-24-hour-unmanned-store/" class="read-now" target="_blank">Read Now</a>
                     </div>
                 </div>
-                <div class="banner-text">
-                    <div id="shopForHeading">Shop For</div>
-                    <h1 id="shopForText">CAKES</h1>
-                    <p>All of our products contain little to no additives. Please keep refrigerated (frozen for ice cream) if not consumed immediately.</p>
-                    <div class="search-container">
-                        <img src="images/search icon.png" alt="search icon" id="search-icon">
-                        <input type="search" id="search-bar" placeholder="Search for products">
-                        <ul id="suggestions-list" class="suggestions-list"></ul>
+                <!-- testimonial text section -->
+                <div class ="testimonial-text-container fade-in-right-section">
+                    <h3>In the Internet!</h3>
+                    <h2>TASTIFIED BY</h2>
+                </div>
+                <!-- videos section -->
+                <div class="testimonial-video-container fade-in-right-section">
+                    <!-- link to video 1 -->
+                    <div class="testimonial-item">
+                        <iframe src="https://www.youtube.com/embed/7i5e0FoqBlY?si=58BPnsZMnTV2PQXL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <!-- link to video 2 -->
+                    <div class="testimonial-item">
+                        <iframe src="https://www.youtube.com/embed/4aZcL-aZ1r4?si=NTNlMVeRZ6rCrMCt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <!-- link to video 3 -->
+                    <div class="testimonial-item">
+                        <iframe src="https://www.youtube.com/embed/xpLsFxm41wM?si=owRo1M5DRKpC0Qiz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
-             </section>
+            </div>
+        </section>
 
-             <!--featured section-->
-             <section class="featured">
-                <h2>FEATURED</h2>
-                <div class="featured-items">
-                    <div class="item">
-                        <a href="cake-collection.html">
-                            <img src="images/Chateraise cakes.png" alt="Cakes" class="item-image">
-                            <div class="item-text">Cakes</div>
-                        </a>
+        <!-- footer section -->
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- footer left section -->
+                <div class="footer-left">
+                    <h3>Get the Latest News!</h3>
+                    <!-- newsletter subscription section -->
+                    <div class="newsletter">
+                        <input type="email" placeholder="Enter email here">
+                        <button class="subscribe">Subscribe</button>
                     </div>
-                    <div class="item">
-                        <a href="ice-cream-collection.html">
-                            <img src="images/Chateraise ice cream.png" alt="Ice Cream" class="item-image">
-                            <div class="item-text">Ice Cream</div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="products.html">
-                            <img src="images/Chateraise baked goods.png" alt="Baked Goods" class="item-image">
-                            <div class="item-text">Baked Goods</div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="products.html">
-                            <img src="images/Chateraise chilled items.png" alt="Chilled Items" class="item-image">
-                            <div class="item-text">Chilled Items</div>
-                        </a>
+                    <!-- social links -->
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Instagram logo.png" alt="Instagram"></a>
+                        <a href="https://x.com/chateraise_jp/" target="_blank" class="icon"><img src="images/Twitter logo.png" alt="Twitter"></a>
+                        <a href="https://www.facebook.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Facebook logo.png" alt="Facebook"></a>
                     </div>
                 </div>
-             </section>
-
-            <!--about us section-->
-            <section class="about">
-                <div class="about-content">
-                    <div class="about-text-container">
-                        <div class="about-heading fade-in-left-section">
-                            <h2>ABOUT</h2>
-                            <h2>US</h2>
-                        </div>
-                        <p class="fade-in-left-section">Chateraise SG brings the authentic taste of Japanese confectionery to Singapore with a delightful selection of cakes and pastries made from the finest ingredients. Combining traditional Japanese techniques with a modern twist, we're dedicated to creating a sweet experience in every bite.</p>
-                        <h3 class="fade-in-left-section">"Taste of nature, taste of affections"</h3>
-                    </div>
-                    <div class="about-image fade-in-right-section">
-                        <img src="images/Chateraise about us.jpg" alt="About Chateraise">
+                <!-- successful subscription popup message-->
+                <div class="popup" id="popup">
+                    <div class="popup-content">
+                        <span class="close-x" onclick="closePopup()">x</span>
+                        <h2>Subscription Successful!</h2>
+                        <p>Thank you for subscribing!</p>
+                        <button class="close-popup" onclick="closePopup()">Close</button>
                     </div>
                 </div>
-            </section>
-
-            <!--testimonials section-->
-            <section class="testimonial">
-                <div class="testimonial-content">
-                    <!--article section-->
-                    <div class="testimonial-article-container fade-in-left-section">
-                        <div  class="testimonial-article">
-                            <!--link to article-->
-                            <a href="https://eatbook.sg/chateraise-24-hour-unmanned-store/" target="_blank">
-                                <img src="images/Chateraise article image.png" alt="Article 1 Thumbnail">
-                            </a>
-                        </div>
-                        <div class="article-details">
-                            <h3>Chateraise 24-Hour Unmanned Store</h3>
-                            <p>Eatbook</p>
-                            <a href="https://eatbook.sg/chateraise-24-hour-unmanned-store/" class="read-now" target="_blank">Read Now</a>
-                        </div>
+                <!-- footer right section -->
+                <div class="footer-right">
+                    <!-- consumer care footer section -->
+                    <div class="footer-section consumer-care">
+                        <h4>Consumer Care</h4>
+                        <ul>
+                            <li><a href="#">Return and Exchange</a></li>
+                            <li><a href="cake-collection.html">Delivery Information</a></li>
+                            <li><a href="#">Allergens</a></li>
+                            <li><a href="cake-collection.html">FAQ</a></li>
+                        </ul>
                     </div>
-
-                    <!--text section-->
-                    <div class ="testimonial-text-container fade-in-right-section">
-                        <h3>In the Internet!</h3>
-                        <h2>TASTIFIED BY</h2>
+                    <!-- about us footer section -->
+                    <div class="footer-section about-us">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="#">Franchise</a></li>
+                        </ul>
                     </div>
-                    
-                    <!--video section-->
-                    <div class="testimonial-video-container fade-in-right-section">
-                        <!--link to video 1-->
-                        <div class="testimonial-item">
-                            <iframe src="https://www.youtube.com/embed/7i5e0FoqBlY?si=58BPnsZMnTV2PQXL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                        <!--link to video 2-->
-                        <div class="testimonial-item">
-                            <iframe src="https://www.youtube.com/embed/4aZcL-aZ1r4?si=NTNlMVeRZ6rCrMCt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                        <!--link to video 3-->
-                        <div class="testimonial-item">
-                            <iframe src="https://www.youtube.com/embed/xpLsFxm41wM?si=owRo1M5DRKpC0Qiz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
+                    <!-- contact us footer section -->
+                    <div class="footer-section contact-us">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><a href="#">Join the Team</a></li>
+                        </ul>
                     </div>
                 </div>
-            </section>
-
-            <!--footer section-->
-            <footer class="footer">
-                <div class="footer-content">
-                    <div class="footer-left">
-                        <h3>Get the Latest News!</h3>
-                        <div class="newsletter">
-                            <input type="email" placeholder="Enter email here">
-                            <button class="subscribe">Subscribe</button>
-                        </div>
-                        <div class="social-icons">
-                            <a href="https://www.instagram.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Instagram logo.png" alt="Instagram"></a>
-                            <a href="https://x.com/chateraise_jp/" target="_blank" class="icon"><img src="images/Twitter logo.png" alt="Twitter"></a>
-                            <a href="https://www.facebook.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Facebook logo.png" alt="Facebook"></a>
-                        </div>
-                    </div>
-
-                    <!--popup message-->
-                    <div class="popup" id="popup">
-                        <div class="popup-content">
-                            <span class="close-x" onclick="closePopup()">x</span>
-                            <h2>Subscription Successful!</h2>
-                            <p>Thank you for subscribing!</p>
-                            <button class="close-popup" onclick="closePopup()">Close</button>
-                        </div>
-                    </div>
-
-                    <div class="footer-right">
-                        <div class="footer-section consumer-care">
-                            <h4>Consumer Care</h4>
-                            <ul>
-                                <li><a href="#">Return and Exchange</a></li>
-                                <li><a href="cake-collection.html">Delivery Information</a></li>
-                                <li><a href="#">Allergens</a></li>
-                                <li><a href="cake-collection.html">FAQ</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-section about-us">
-                            <h4>About Us</h4>
-                            <ul>
-                                <li><a href="#">Franchise</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-section contact-us">
-                            <h4>Contact Us</h4>
-                            <ul>
-                                <li><a href="#">Join the Team</a></li>
-                            </ul>
-                        </div>
-                    </div>
+            </div>
+            <!-- footer bottom section -->
+            <div class="footer-bottom">
+                <p>© Chateraise Co., Ltd. All Rights Reserved.</p>
+                <div class="footer-logo">
+                    <img src="images/chateraise logo.png" alt="Chateraise Logo">
                 </div>
-                <div class="footer-bottom">
-                    <p>© Chateraise Co., Ltd. All Rights Reserved.</p>
-                    <div class="footer-logo">
-                        <img src="images/chateraise logo.png" alt="Chateraise Logo">
-                    </div>
-                </div>
-            </footer>
-            
-          </div>
-          <script src="script.js"></script>
-          <script src="animation.js"></script>
-    </body>
+            </div>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
 </html>

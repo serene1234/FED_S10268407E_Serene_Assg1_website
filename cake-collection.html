@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang = "en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-        <title>Cake Collection - Chateraise</title>
-        <link rel="stylesheet" href="https://unpkg.com/normalize.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <!-- sidebar navigation -->
-        <div id="sidebar" class="sidebar">
-            <!-- close button -->
-            <button class="close-btn" onclick="closeSidebar()">x</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Cake Collection - Chateraise</title>
+    <!--normalize.css-->
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css">
+    <!--custom styles-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- sidebar navigation section -->
+    <aside id="sidebar" class="sidebar">
+        <!-- sidebar close button -->
+        <button class="close-btn" onclick="closeSidebar()">x</button>
+        <nav>
             <ul class="sidebar-menu">
-                <li class="menu-category"><a href="index.html">Home</a></li>
-                <li class="menu-category"><a href="#">Products</a>
+                <!-- home section -->
+                <li class="menu-category">
+                    <a href="index.html">Home</a>
+                </li>
+                <!-- products section -->
+                <li class="menu-category">
+                    <a href="#">Products</a>
                     <ul>
                         <li><a href="cake-collection.html">Cakes</a></li>
                         <li><a href="ice-cream-collection.html">Ice Cream</a></li>
@@ -22,17 +30,23 @@
                         <li><a href="#">Chilled Items</a></li>
                     </ul>
                 </li>
-                <li class="menu-category"><a href="#">Contact Us</a>
+                <!-- contact us section -->
+                <li class="menu-category">
+                    <a href="#">Contact Us</a>
                     <ul>
                         <li><a href="#">Join the Team</a></li>
                     </ul>
                 </li>
-                <li class="menu-category"><a href="index.html">About Us</a>
+                <!-- about us section -->
+                <li class="menu-category">
+                    <a href="index.html">About Us</a>
                     <ul>
                         <li><a href="#">Franchise</a></li>
                     </ul>
                 </li>
-                <li class="menu-category"><a href="#">Consumer Care</a>
+                <!-- consumer care section -->
+                <li class="menu-category">
+                    <a href="#">Consumer Care</a>
                     <ul>
                         <li><a href="#">Return and Exchange</a></li>
                         <li><a href="cake-collection.html">Delivery Information</a></li>
@@ -41,254 +55,288 @@
                     </ul>
                 </li>
             </ul>
-        </div>
+        </nav>
+    </aside>
 
-        <!-- main content -->
-        <div class="products-main-content">
-            <!-- header -->
-            <header>
-                <nav class="nav-bar">
-                    <button class="menu-btn" onclick="openSidebar()">☰ Menu</button>
-                    <div class="logo">
-                        <img src="images/chateraise logo.png">
-                    </div>
-                    <ul class="nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="index.html">About Us</a></li>
-                        <a class="order-btn" href="cake-collection.html">Order Now</a>
-                        <a href="checkout.html" class="cart-icon">
-                            <img src="images/Cart icon.png" alt="cart-icon">
-                            <span class="cart-badge">0</span>
-                        </a>
-                    </ul>
-                </nav>
-            </header>
-            
-            <!--products section-->
-            <section class="products">
-                <div class="category-header">
-                    <h1>PRODUCTS</h1>
+    <!-- main content -->
+    <main class="products-main-content">
+        <!-- header section -->
+        <header>
+            <nav class="nav-bar">
+                <!-- menu button -->
+                <button class="menu-btn" onclick="openSidebar()">☰ Menu</button>
+                <!-- logo -->
+                <div class="logo">
+                    <img src="images/chateraise logo.png">
                 </div>
-                <div class="category-container">
-                    <div class="category-banner">
-                        <div class="category-image">
-                            <img src="images/Chateraise cake category.png" alt="Category Image">
-                        </div>
-                        <div class="category-text">
-                            <h1>Cakes</h1>
-                            <p>Chateraise offers a range of handcrafted cakes, blending Japanese flavors and European elegance. Each cake is made with fresh ingredients, from light cream cakes to rich chocolate treats, perfect for any occasion.</p>
-                        </div>
+                <!-- navigation links-->
+                <ul class="nav-links">
+                    <!-- home link -->
+                    <li><a href="index.html">Home</a></li>
+                    <!-- contact link -->
+                    <li><a href="#">Contact</a></li>
+                    <!-- about us link -->
+                    <li><a href="index.html">About Us</a></li>
+                    <!-- order now button -->
+                    <a class="order-btn" href="cake-collection.html">Order Now</a>
+                    <!-- cart icon -->
+                    <a href="checkout.html" class="cart-icon">
+                        <img src="images/Cart icon.png" alt="cart-icon">
+                        <span class="cart-badge">0</span>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- products section -->
+        <section class="products">
+            <!-- category header -->
+            <div class="category-header">
+                <h1>PRODUCTS</h1>
+            </div>
+            <!-- category banner -->
+            <div class="category-container">
+                <div class="category-banner">
+                    <div class="category-image">
+                        <img src="images/Chateraise cake category.png" alt="Cake Category Image">
                     </div>
-                    <h2><span class="bold-word">Products</span> | Cakes</h2>
-                    <div class="product-items">
-                        <a href="caramel-butter-cream-cake.html" class="product-card">
-                            <div class="product-image">
-                                <img src="images/Chateraise caramel butter cream cake.png" alt="Caramel Butter Cream Cake">
-                            </div>
-                            <div class="product-text">
-                                <h3>Caramel Butter Cream Cake</h3>
-                                <p>A luscious caramel buttercream cake with layers of soft, moist sponge, generously filled and topped with smooth, buttery caramel frosting. Perfectly sweet with a rich caramel flavor that melts in your mouth.</p>
-                                <div class="price">$5.50</div>
-                            </div>
-                        </a>
-                        <a href="strawberry-fresh-cream-cake.html" class="product-card">
-                            <div class="product-image">
-                                <img src="images/Chateraise strawberry fresh cream cake.png" alt="Strawberry Fresh Cream Cake">
-                            </div>
-                            <div class="product-text">
-                                <h3>Strawberry Fresh Cream Cake</h3>
-                                <p>A light and airy sponge cake layered with fresh strawberries and whipped cream, topped with a generous layer of smooth, fluffy cream and juicy strawberry slices for a refreshing and sweet treat.</p>
-                                <div class="price">$5.50</div>
-                            </div>
-                        </a>
-                        <a href="#" class="product-card">
-                            <div class="product-image">
-                                <img src="images/Chateraise white peach cake.png" alt="White Peach Cake">
-                            </div>
-                            <div class="product-text">
-                                <h3>White Peach Cake</h3>
-                                <p>A delicate cake featuring soft sponge layers filled with creamy frosting and sweet, juicy white peach slices. Light and fruity, it's a perfect balance of sweetness and refreshing flavor.</p>
-                                <div class="price">$5.50</div>
-                            </div>
-                        </a>
-                        <a href="#" class="product-card">
-                            <div class="product-image">
-                                <img src="images/Chateraise gateau chocolate bar cake.png" alt="Gateau Chocolate Bar Cake">
-                            </div>
-                            <div class="product-text">
-                                <h3>Gateau Chocolate Bar Cake</h3>
-                                <p>A rich and decadent chocolate cake bar with dense, moist layers of chocolate sponge, covered in a smooth chocolate ganache. An indulgent treat for chocolate lovers.</p>
-                                <div class="price">$5.80</div>
-                            </div>
-                        </a>
-                        <a href="#" class="product-card">
-                            <div class="product-image">
-                                <img src="images/Chateraise tiramisu mille crepe cake.png" alt="Tiramisu Mille Crepe Cake">
-                            </div>
-                            <div class="product-text">
-                                <h3>Tiramisu Mille Crepe Cake</h3>
-                                <p>A luxurious tiramisu-inspired crepe cake with layers of thin crepes, mascarpone cream, and a hint of coffee, dusted with cocoa powder. A perfect blend of light and creamy textures with a subtle coffee kick.</p>
-                                <div class="price">$5.80</div>
-                            </div>
-                        </a>
-                        <a href="#" class="product-card">
-                            <div class="product-image">
-                                <img src="images/Chateraise white zebra mille crepe cake.png" alt="White Zebra Mille Crepe Cake">
-                            </div>
-                            <div class="product-text">
-                                <h3>White Zebra Mille Crepe Cake</h3>
-                                <p>A striking mille crepe cake with alternating layers of vanilla and chocolate crepes, each spread with a light and creamy filling. A beautiful and delicious treat with a perfect balance of flavors.</p>
-                                <div class="price">$5.80</div>
-                            </div>
-                        </a>
+                    <div class="category-text">
+                        <h2>Cakes</h2>
+                        <p>Chateraise offers a range of handcrafted cakes, blending Japanese flavors and European elegance. Each cake is made with fresh ingredients, from light cream cakes to rich chocolate treats, perfect for any occasion.</p>
                     </div>
                 </div>
-            </section>
-
-            <!--delivery section-->
-            <section class="delivery">
-                <div class="delivery-container">
-                    <div class="delivery-image">
-                        <img src="images/Delivery image.jpg" alt="Delivery Image">
-                    </div>
-                    <div class="delivery-details-container">
-                        <div class="delivery-header">
-                            <div class="delivery-header-text">
-                                <h2>We deliver too!</h2>
-                                <p>Served to your doorstep.</p>
-                            </div>
-                            <div class="delivery-icon">
-                                <img src="images/Delivery icon.png" alt="Delivery Icon">
-                            </div>
+                <!-- breadcrumb navigation -->
+                <h3><span class="bold-word">Products</span> | Cakes</h3>
+                <!-- product list -->
+                <div class="product-items">
+                    <!-- product card 1 -->
+                    <a href="caramel-butter-cream-cake.html" class="product-card">
+                        <div class="product-image">
+                            <img src="images/Chateraise caramel butter cream cake.png" alt="Caramel Butter Cream Cake">
                         </div>
-                        <div class="delivery-details">
-                            <div class="step-number">
-                                <h2>1</h2>
-                                <h2>2</h2>
-                                <h2>3</h2>
-                            </div>
-                            <div class="step-text-container">
-                                <div class="step-text">
-                                    <h3>Select Your Products</h3>
-                                    <p>Browse our selection and add your desired items to the cart.</p>
-                                </div>
-                                <div class="step-text">
-                                    <h3>Choose Delivery Option</h3>
-                                    <p>During checkout, select your preferred delivery date and time.</p>
-                                </div>
-                                <div class="step-text">
-                                    <h3>Complete Your Order</h3>
-                                    <p>Confirm your details and place your order for a seamless delivery experience.</p>
-                                </div>
-                            </div>
+                        <div class="product-text">
+                            <h3>Caramel Butter Cream Cake</h3>
+                            <p>A luscious caramel buttercream cake with layers of soft, moist sponge, generously filled and topped with smooth, buttery caramel frosting. Perfectly sweet with a rich caramel flavor that melts in your mouth.</p>
+                            <div class="price">$5.50</div>
                         </div>
-                    </div>
+                    </a>
+                    <!-- product card 2 -->
+                    <a href="strawberry-fresh-cream-cake.html" class="product-card">
+                        <div class="product-image">
+                            <img src="images/Chateraise strawberry fresh cream cake.png" alt="Strawberry Fresh Cream Cake">
+                        </div>
+                        <div class="product-text">
+                            <h3>Strawberry Fresh Cream Cake</h3>
+                            <p>A light and airy sponge cake layered with fresh strawberries and whipped cream, topped with a generous layer of smooth, fluffy cream and juicy strawberry slices for a refreshing and sweet treat.</p>
+                            <div class="price">$5.50</div>
+                        </div>
+                    </a>
+                    <!-- product card 3 -->
+                    <a href="#" class="product-card">
+                        <div class="product-image">
+                            <img src="images/Chateraise white peach cake.png" alt="White Peach Cake">
+                        </div>
+                        <div class="product-text">
+                            <h3>White Peach Cake</h3>
+                            <p>A delicate cake featuring soft sponge layers filled with creamy frosting and sweet, juicy white peach slices. Light and fruity, it's a perfect balance of sweetness and refreshing flavor.</p>
+                            <div class="price">$5.50</div>
+                        </div>
+                    </a>
+                    <!-- product card 4 -->
+                    <a href="#" class="product-card">
+                        <div class="product-image">
+                            <img src="images/Chateraise gateau chocolate bar cake.png" alt="Gateau Chocolate Bar Cake">
+                        </div>
+                        <div class="product-text">
+                            <h3>Gateau Chocolate Bar Cake</h3>
+                            <p>A rich and decadent chocolate cake bar with dense, moist layers of chocolate sponge, covered in a smooth chocolate ganache. An indulgent treat for chocolate lovers.</p>
+                            <div class="price">$5.80</div>
+                        </div>
+                    </a>
+                    <!-- product card 5 -->
+                    <a href="#" class="product-card">
+                        <div class="product-image">
+                            <img src="images/Chateraise tiramisu mille crepe cake.png" alt="Tiramisu Mille Crepe Cake">
+                        </div>
+                        <div class="product-text">
+                            <h3>Tiramisu Mille Crepe Cake</h3>
+                            <p>A luxurious tiramisu-inspired crepe cake with layers of thin crepes, mascarpone cream, and a hint of coffee, dusted with cocoa powder. A perfect blend of light and creamy textures with a subtle coffee kick.</p>
+                            <div class="price">$5.80</div>
+                        </div>
+                    </a>
+                    <!-- product card 6 -->
+                    <a href="#" class="product-card">
+                        <div class="product-image">
+                            <img src="images/Chateraise white zebra mille crepe cake.png" alt="White Zebra Mille Crepe Cake">
+                        </div>
+                        <div class="product-text">
+                            <h3>White Zebra Mille Crepe Cake</h3>
+                            <p>A striking mille crepe cake with alternating layers of vanilla and chocolate crepes, each spread with a light and creamy filling. A beautiful and delicious treat with a perfect balance of flavors.</p>
+                            <div class="price">$5.80</div>
+                        </div>
+                    </a>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!--faq section-->
-            <section class="faq">
-                <div class="faq-container">
-                    <div class="faq-left">
-                        <h2>Frequently Asked Questions</h2>
-                        <p>Question not answered?</p>
-                        <form class="faq-form">
-                            <input type="text" id="faq-question" placeholder="Have a question? Ask us here!">
-                            <button type="submit">Submit</button>
-                        </form>
-                    </div>
-                    <div class="faq-right">
-                        <details>
-                            <summary>
-                                How can I track my order?
-                                <span class="faq-icon">+</span>
-                            </summary>
-                            <p>You can track your order by logging into your account and checking the order status, or through the tracking link sent to your email.</p>
-                        </details>
-                        <details>
-                            <summary>
-                                Do you offer same-day delivery?
-                                <span class="faq-icon">+</span>
-                            </summary>
-                            <p>Yes, same-day delivery is available for orders placed before a specified cut-off time. Please check the delivery options during checkout.</p>
-                        </details>
-                        <details>
-                            <summary>
-                                Can I change my delivery date after placing an order?
-                                <span class="faq-icon">+</span>
-                            </summary>
-                            <p>Yes, you can reschedule your delivery up to 24 hours before the scheduled date by contacting our customer service team.</p>
-                        </details>
-                        <details>
-                            <summary>
-                                Are your products available for pickup?
-                                <span class="faq-icon">+</span>
-                            </summary>
-                            <p>Yes, you can select the "pickup" option during checkout to collect your order from our store at your convenience.</p>
-                        </details>
-                    </div>
+        <!-- delivery section -->
+        <section class="delivery">
+            <div class="delivery-container">
+                <div class="delivery-image">
+                    <img src="images/Delivery image.jpg" alt="Delivery Image">
                 </div>
-            </section>
-        </div>
-
-            <!--footer section-->
-            <footer class="footer">
-                <div class="footer-content">
-                    <div class="footer-left">
-                        <h3>Get the Latest News!</h3>
-                        <div class="newsletter">
-                            <input type="email" placeholder="Enter email here">
-                            <button class="subscribe">Subscribe</button>
+                <!-- delivery steps -->
+                <div class="delivery-details-container">
+                    <div class="delivery-header">
+                        <div class="delivery-header-text">
+                            <h2>We deliver too!</h2>
+                            <p>Served to your doorstep.</p>
                         </div>
-                        <div class="social-icons">
-                            <a href="https://www.instagram.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Instagram logo.png" alt="Instagram"></a>
-                            <a href="https://x.com/chateraise_jp/" target="_blank" class="icon"><img src="images/Twitter logo.png" alt="Twitter"></a>
-                            <a href="https://www.facebook.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Facebook logo.png" alt="Facebook"></a>
+                        <div class="delivery-icon">
+                            <img src="images/Delivery icon.png" alt="Delivery Icon">
                         </div>
                     </div>
-
-                    <!--popup message-->
-                    <div class="popup" id="popup">
-                        <div class="popup-content">
-                            <span class="close-x" onclick="closePopup()">x</span>
-                            <h2>Subscription Successful!</h2>
-                            <p>Thank you for subscribing!</p>
-                            <button class="close-popup" onclick="closePopup()">Close</button>
+                    <div class="delivery-details">
+                        <!-- numbered steps -->
+                        <div class="step-number">
+                            <h2>1</h2>
+                            <h2>2</h2>
+                            <h2>3</h2>
                         </div>
-                    </div>
-
-                    <div class="footer-right">
-                        <div class="footer-section consumer-care">
-                            <h4>Consumer Care</h4>
-                            <ul>
-                                <li><a href="#">Return and Exchange</a></li>
-                                <li><a href="cake-collection.html">Delivery Information</a></li>
-                                <li><a href="#">Allergens</a></li>
-                                <li><a href="cake-collection.html">FAQ</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-section about-us">
-                            <h4>About Us</h4>
-                            <ul>
-                                <li><a href="#">Franchise</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-section contact-us">
-                            <h4>Contact Us</h4>
-                            <ul>
-                                <li><a href="#">Join the Team</a></li>
-                            </ul>
+                        <!-- descriptions for each step -->
+                        <div class="step-text-container">
+                            <div class="step-text">
+                                <h3>Select Your Products</h3>
+                                <p>Browse our selection and add your desired items to the cart.</p>
+                            </div>
+                            <div class="step-text">
+                                <h3>Choose Delivery Option</h3>
+                                <p>During checkout, select your preferred delivery date and time.</p>
+                            </div>
+                            <div class="step-text">
+                                <h3>Complete Your Order</h3>
+                                <p>Confirm your details and place your order for a seamless delivery experience.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="footer-bottom">
-                    <p>© Chateraise Co., Ltd. All Rights Reserved.</p>
-                    <div class="footer-logo">
-                        <img src="images/chateraise logo.png" alt="Chateraise Logo">
+            </div>
+        </section>
+
+        <!-- faq section -->
+        <section class="faq">
+            <div class="faq-container">
+                <!-- faq input form -->
+                <div class="faq-left">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Question not answered?</p>
+                    <form class="faq-form">
+                        <input type="text" id="faq-question" placeholder="Have a question? Ask us here!">
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                <!-- expandable faq section -->
+                <div class="faq-right">
+                    <!-- faq 1 -->
+                    <details>
+                        <summary>
+                            How can I track my order?
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <p>You can track your order by logging into your account and checking the order status, or through the tracking link sent to your email.</p>
+                    </details>
+                    <!-- faq 2 -->
+                    <details>
+                        <summary>
+                            Do you offer same-day delivery?
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <p>Yes, same-day delivery is available for orders placed before a specified cut-off time. Please check the delivery options during checkout.</p>
+                    </details>
+                    <!-- faq 3 -->
+                    <details>
+                        <summary>
+                            Can I change my delivery date after placing an order?
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <p>Yes, you can reschedule your delivery up to 24 hours before the scheduled date by contacting our customer service team.</p>
+                    </details>
+                    <!-- faq 4 -->
+                    <details>
+                        <summary>
+                            Are your products available for pickup?
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <p>Yes, you can select the "pickup" option during checkout to collect your order from our store at your convenience.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!--footer section-->
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- footer left section -->
+                <div class="footer-left">
+                    <h3>Get the Latest News!</h3>
+                    <!-- newsletter subscription section -->
+                    <div class="newsletter">
+                        <input type="email" placeholder="Enter email here">
+                        <button class="subscribe">Subscribe</button>
+                    </div>
+                    <!-- social links -->
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Instagram logo.png" alt="Instagram"></a>
+                        <a href="https://x.com/chateraise_jp/" target="_blank" class="icon"><img src="images/Twitter logo.png" alt="Twitter"></a>
+                        <a href="https://www.facebook.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Facebook logo.png" alt="Facebook"></a>
                     </div>
                 </div>
-            </footer>
-        <script src="script.js"></script>
-    </body>
+                <!-- successful subscription popup message-->
+                <div class="popup" id="popup">
+                    <div class="popup-content">
+                        <span class="close-x" onclick="closePopup()">x</span>
+                        <h2>Subscription Successful!</h2>
+                        <p>Thank you for subscribing!</p>
+                        <button class="close-popup" onclick="closePopup()">Close</button>
+                    </div>
+                </div>
+                <!-- footer right section -->
+                <div class="footer-right">
+                    <!-- consumer care footer section -->
+                    <div class="footer-section consumer-care">
+                        <h4>Consumer Care</h4>
+                        <ul>
+                            <li><a href="#">Return and Exchange</a></li>
+                            <li><a href="cake-collection.html">Delivery Information</a></li>
+                            <li><a href="#">Allergens</a></li>
+                            <li><a href="cake-collection.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <!-- about us footer section -->
+                    <div class="footer-section about-us">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="#">Franchise</a></li>
+                        </ul>
+                    </div>
+                    <!-- contact us footer section -->
+                    <div class="footer-section contact-us">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><a href="#">Join the Team</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- footer bottom section -->
+            <div class="footer-bottom">
+                <p>© Chateraise Co., Ltd. All Rights Reserved.</p>
+                <div class="footer-logo">
+                    <img src="images/chateraise logo.png" alt="Chateraise Logo">
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
 </html>

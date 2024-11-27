@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang = "en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-        <title>Checkout - Chateraise</title>
-        <link rel="stylesheet" href="https://unpkg.com/normalize.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <!-- sidebar navigation -->
-        <div id="sidebar" class="sidebar">
-            <!-- close button -->
-            <button class="close-btn" onclick="closeSidebar()">x</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Checkout - Chateraise</title>
+    <!--normalize.css-->
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css">
+    <!--custom styles-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- sidebar navigation section -->
+    <aside id="sidebar" class="sidebar">
+        <!-- sidebar close button -->
+        <button class="close-btn" onclick="closeSidebar()">x</button>
+        <nav>
             <ul class="sidebar-menu">
-                <li class="menu-category"><a href="index.html">Home</a></li>
-                <li class="menu-category"><a href="#">Products</a>
+                <!-- home section -->
+                <li class="menu-category">
+                    <a href="index.html">Home</a>
+                </li>
+                <!-- products section -->
+                <li class="menu-category">
+                    <a href="#">Products</a>
                     <ul>
                         <li><a href="cake-collection.html">Cakes</a></li>
                         <li><a href="ice-cream-collection.html">Ice Cream</a></li>
@@ -22,17 +30,23 @@
                         <li><a href="#">Chilled Items</a></li>
                     </ul>
                 </li>
-                <li class="menu-category"><a href="#">Contact Us</a>
+                <!-- contact us section -->
+                <li class="menu-category">
+                    <a href="#">Contact Us</a>
                     <ul>
                         <li><a href="#">Join the Team</a></li>
                     </ul>
                 </li>
-                <li class="menu-category"><a href="index.html">About Us</a>
+                <!-- about us section -->
+                <li class="menu-category">
+                    <a href="index.html">About Us</a>
                     <ul>
                         <li><a href="#">Franchise</a></li>
                     </ul>
                 </li>
-                <li class="menu-category"><a href="#">Consumer Care</a>
+                <!-- consumer care section -->
+                <li class="menu-category">
+                    <a href="#">Consumer Care</a>
                     <ul>
                         <li><a href="#">Return and Exchange</a></li>
                         <li><a href="cake-collection.html">Delivery Information</a></li>
@@ -41,187 +55,209 @@
                     </ul>
                 </li>
             </ul>
+        </nav>
+    </aside>
+
+    <!-- main content -->
+    <main class="main-content">
+        <!-- header section -->
+        <header>
+            <nav class="nav-bar">
+                <!-- menu button -->
+                <button class="menu-btn" onclick="openSidebar()">☰ Menu</button>
+                <!-- logo -->
+                <div class="logo">
+                    <img src="images/chateraise logo.png">
+                </div>
+                <!-- navigation links-->
+                <ul class="nav-links">
+                    <!-- home link -->
+                    <li><a href="index.html">Home</a></li>
+                    <!-- contact link -->
+                    <li><a href="#">Contact</a></li>
+                    <!-- about us link -->
+                    <li><a href="index.html">About Us</a></li>
+                    <!-- order now button -->
+                    <a class="order-btn" href="cake-collection.html">Order Now</a>
+                    <!-- cart icon -->
+                    <a href="checkout.html" class="cart-icon">
+                        <img src="images/Cart icon.png" alt="cart-icon">
+                        <span class="cart-badge">0</span>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- category header -->
+        <div class="category-header">
+            <h1>CHECKOUT</h1>
         </div>
-
-        <!-- main content -->
-        <div class="main-content">
-            <!-- header -->
-            <header>
-                <nav class="nav-bar">
-                    <button class="menu-btn" onclick="openSidebar()">☰ Menu</button>
-                    <div class="logo">
-                        <img src="images/chateraise logo.png">
-                    </div>
-                    <ul class="nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="index.html">About Us</a></li>
-                        <a class="order-btn" href="cake-collection.html">Order Now</a>
-                        <a href="checkout.html" class="cart-icon">
-                            <img src="images/Cart icon.png" alt="cart-icon">
-                            <span class="cart-badge">0</span>
-                        </a>
-                    </ul>
-                </nav>
-            </header>
-
-            <div class="category-header">
-                <h1>CHECKOUT</h1>
-            </div>
-            <!--checkout-->
-            <main class="checkout">
-                <!--checkout progress section-->
-                <section class="checkout-progress">
-                    <h2>Checkout Progress</h2>
-                    <div class="customer-info-container">
-                        <h3>Customer Information</h3>
-                        <form>
-                            <div class="form-input">
-                                <label>Name*</label>
-                                <div class="name-input">
-                                    <input type="text" placeholder="First Name" required>
-                                    <input type="text" placeholder="Last Name" required> 
-                                </div>
+        <!-- checkout section -->
+        <section class="checkout">
+            <!--checkout progress -->
+            <div class="checkout-progress">
+                <h2>Checkout Progress</h2>
+                <div class="customer-info-container">
+                    <h3>Customer Information</h3>
+                    <form>
+                        <!-- name input -->
+                        <div class="form-input">
+                            <label>Name*</label>
+                            <div class="name-input">
+                                <input type="text" placeholder="First Name" required>
+                                <input type="text" placeholder="Last Name" required> 
                             </div>
-                            <div class="form-input">
-                                <label>Email*</label>
-                                <input type="email" placeholder="Email" required>
-                            </div>
-                            <div class="form-input">
-                                <label>Contact Number*</label>
-                                <div class="phone-input">
-                                    <select id="country-code">
-                                        <option value="+65" selected>+65 (SG)</option>
-                                        <option value="+1">+1 (US)</option>
-                                        <option value="+44">+44 (UK)</option>
-                                        <option value="+91">+91 (IN)</option>
-                                        <option value="+61">+61 (AU)</option>
-                                        <option value="+81">+81 (JP)</option>
-                                    </select>
-                                    <input type="tel" placeholder="Mobile Number" required>
-                                </div>
-                            </div>
-                            <h3>Pickup Location and Time</h3>
-                            <div class="form-input">
-                                <label>Pickup Location</label>
-                                <select>
-                                    <option>Chateraise @ Westgate</option>
-                                    <option>Chateraise @ Lot 1</option>
-                                    <option>Chateraise @ Clementi Mall</option>
-                                    <option>Chateraise @ AMK Hub</option>
-                                    <option>Chateraise @ Oasis Terraces</option>
-                                    <option>Chateraise @ Chinatown Point</option>
+                        </div>
+                        <!-- email input-->
+                        <div class="form-input">
+                            <label>Email*</label>
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <!--contact number input -->
+                        <div class="form-input">
+                            <label>Contact Number*</label>
+                            <div class="phone-input">
+                                <select id="country-code">
+                                    <option value="+65" selected>+65 (SG)</option>
+                                    <option value="+1">+1 (US)</option>
+                                    <option value="+44">+44 (UK)</option>
+                                    <option value="+91">+91 (IN)</option>
+                                    <option value="+61">+61 (AU)</option>
+                                    <option value="+81">+81 (JP)</option>
                                 </select>
+                                <input type="tel" placeholder="Mobile Number" required>
                             </div>
-                            <div class="form-input">
-                                <div class="datetime-input">
-                                    <label>Pickup Date and Time</label>
-                                    <input type="datetime-local">
-                                </div>
+                        </div>
+                        <!-- pickup location input -->
+                        <h3>Pickup Location and Time</h3>
+                        <div class="form-input">
+                            <label>Pickup Location</label>
+                            <select>
+                                <option>Chateraise @ Westgate</option>
+                                <option>Chateraise @ Lot 1</option>
+                                <option>Chateraise @ Clementi Mall</option>
+                                <option>Chateraise @ AMK Hub</option>
+                                <option>Chateraise @ Oasis Terraces</option>
+                                <option>Chateraise @ Chinatown Point</option>
+                            </select>
+                        </div>
+                        <!-- pickup datetime input -->
+                        <div class="form-input">
+                            <div class="datetime-input">
+                                <label>Pickup Date and Time</label>
+                                <input type="datetime-local">
                             </div>
-                            <div class="form-input">
-                                <div class="additional-request">
-                                    <label>Additional Request</label>
-                                    <textarea placeholder="Kindly let us know if you have any additional requests."></textarea>
-                                </div>
+                        </div>
+                        <!-- additional requests input -->
+                        <div class="form-input">
+                            <div class="additional-request">
+                                <label>Additional Request</label>
+                                <textarea placeholder="Kindly let us know if you have any additional requests."></textarea>
                             </div>
-                            <button type="submit" class="pay-online-button">Pay Online</button>
-                        </form>
-                    </div>
-                </section>
+                        </div>
+                        <button type="submit" class="pay-online-button">Pay Online</button>
+                    </form>
+                </div>
+            </div>
 
-                <!--checkout summary section-->
-                <section class="checkout-summary">
-                    <h2>Checkout Summary</h2>
-                    <ul class="summary-items">
-                        <!--items will show here-->
-                    </ul>
-                    <p class="empty-cart-message">Your cart is empty.</p>
-                    <!--promo code input-->
-                    <div class="promo-code">
-                        <label>Promotion Code:</label>
-                        <div class="promo-input">
-                            <input type="text" placeholder="Enter promotion code here">
-                            <button>Apply</button>
-                        </div>
-                    </div>
-                    <!--total costs-->
-                    <div class="total-costs">
-                        <p>Subtotal: <span class="cost subtotal">SGD 0.00</span></p>
-                        <p>GST: <span class="cost gst">SGD 0.00</span></p>
-                        <h4>Total: <span class="cost total">SGD 0.00</span></h4>
-                    </div>
-                    <!--complimentary candles-->
-                    <div class="complimentary-candles">
-                        <h3>Complimentary Candles</h3>
-                        <div class="candle-checkbox">
-                            <input type="checkbox">Big Candle (1pcs)
-                        </div>
-                        <div class="candle-checkbox">
-                            <input type="checkbox">Small Candle (1pcs)
-                        </div>
-                    </div>
-                </section>
-            </main>
-
-            <!--footer section-->
-            <footer class="footer">
-                <div class="footer-content">
-                    <div class="footer-left">
-                        <h3>Get the Latest News!</h3>
-                        <div class="newsletter">
-                            <input type="email" placeholder="Enter email here">
-                            <button class="subscribe">Subscribe</button>
-                        </div>
-                        <div class="social-icons">
-                            <a href="https://www.instagram.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Instagram logo.png" alt="Instagram"></a>
-                            <a href="https://x.com/chateraise_jp/" target="_blank" class="icon"><img src="images/Twitter logo.png" alt="Twitter"></a>
-                            <a href="https://www.facebook.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Facebook logo.png" alt="Facebook"></a>
-                        </div>
-                    </div>
-
-                    <!--popup message-->
-                    <div class="popup" id="popup">
-                        <div class="popup-content">
-                            <span class="close-x" onclick="closePopup()">x</span>
-                            <h2>Subscription Successful!</h2>
-                            <p>Thank you for subscribing!</p>
-                            <button class="close-popup" onclick="closePopup()">Close</button>
-                        </div>
-                    </div>
-
-                    <div class="footer-right">
-                        <div class="footer-section consumer-care">
-                            <h4>Consumer Care</h4>
-                            <ul>
-                                <li><a href="">Return and Exchange</a></li>
-                                <li><a href="cake-collection.html">Delivery Information</a></li>
-                                <li><a href="">Allergens</a></li>
-                                <li><a href="cake-collection.html">FAQ</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-section about-us">
-                            <h4>About Us</h4>
-                            <ul>
-                                <li><a href="#">Franchise</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-section contact-us">
-                            <h4>Contact Us</h4>
-                            <ul>
-                                <li><a href="#">Join the Team</a></li>
-                            </ul>
-                        </div>
+            <!--checkout summary -->
+            <div class="checkout-summary">
+                <h2>Checkout Summary</h2>
+                <ul class="summary-items">
+                    <!--items will show here-->
+                </ul>
+                <p class="empty-cart-message">Your cart is empty.</p>
+                <!--promo code input-->
+                <div class="promo-code">
+                    <label>Promotion Code:</label>
+                    <div class="promo-input">
+                        <input type="text" id="promo-code" placeholder="Enter promotion code here">
+                        <button id="apply-button">Apply</button>
                     </div>
                 </div>
-                <div class="footer-bottom">
-                    <p>© Chateraise Co., Ltd. All Rights Reserved.</p>
-                    <div class="footer-logo">
-                        <img src="images/chateraise logo.png" alt="Chateraise Logo">
+                <!--total costs-->
+                <div class="total-costs">
+                    <p>Subtotal: <span class="cost subtotal">SGD 0.00</span></p>
+                    <p>GST: <span class="cost gst">SGD 0.00</span></p>
+                    <h4>Total: <span class="cost total">SGD 0.00</span></h4>
+                </div>
+                <!--complimentary candles-->
+                <div class="complimentary-candles">
+                    <h3>Complimentary Candles</h3>
+                    <div class="candle-checkbox">
+                        <input type="checkbox">Big Candle (1pcs)
+                    </div>
+                    <div class="candle-checkbox">
+                        <input type="checkbox">Small Candle (1pcs)
                     </div>
                 </div>
-            </footer>
-        </div>
-      <script src="script.js"></script>
-    </body>
+            </div>
+        </section>
+
+        <!--footer section-->
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- footer left section -->
+                <div class="footer-left">
+                    <h3>Get the Latest News!</h3>
+                    <!-- newsletter subscription section -->
+                    <div class="newsletter">
+                        <input type="email" placeholder="Enter email here">
+                        <button class="subscribe">Subscribe</button>
+                    </div>
+                    <!-- social links -->
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Instagram logo.png" alt="Instagram"></a>
+                        <a href="https://x.com/chateraise_jp/" target="_blank" class="icon"><img src="images/Twitter logo.png" alt="Twitter"></a>
+                        <a href="https://www.facebook.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Facebook logo.png" alt="Facebook"></a>
+                    </div>
+                </div>
+                <!-- successful subscription popup message-->
+                <div class="popup" id="popup">
+                    <div class="popup-content">
+                        <span class="close-x" onclick="closePopup()">x</span>
+                        <h2>Subscription Successful!</h2>
+                        <p>Thank you for subscribing!</p>
+                        <button class="close-popup" onclick="closePopup()">Close</button>
+                    </div>
+                </div>
+                <!-- footer right section -->
+                <div class="footer-right">
+                    <!-- consumer care footer section -->
+                    <div class="footer-section consumer-care">
+                        <h4>Consumer Care</h4>
+                        <ul>
+                            <li><a href="#">Return and Exchange</a></li>
+                            <li><a href="cake-collection.html">Delivery Information</a></li>
+                            <li><a href="#">Allergens</a></li>
+                            <li><a href="cake-collection.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <!-- about us footer section -->
+                    <div class="footer-section about-us">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="#">Franchise</a></li>
+                        </ul>
+                    </div>
+                    <!-- contact us footer section -->
+                    <div class="footer-section contact-us">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><a href="#">Join the Team</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- footer bottom section -->
+            <div class="footer-bottom">
+                <p>© Chateraise Co., Ltd. All Rights Reserved.</p>
+                <div class="footer-logo">
+                    <img src="images/chateraise logo.png" alt="Chateraise Logo">
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
 </html>

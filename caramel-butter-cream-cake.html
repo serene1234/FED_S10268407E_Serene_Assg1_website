@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang = "en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-        <title>Caramel Butter Cream Cake - Chateraise</title>
-        <link rel="stylesheet" href="https://unpkg.com/normalize.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <!-- sidebar navigation -->
-        <div id="sidebar" class="sidebar">
-            <!-- close button -->
-            <button class="close-btn" onclick="closeSidebar()">x</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Caramel Butter Cream Cake - Chateraise</title>
+    <!--normalize.css-->
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css">
+    <!--custom styles-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- sidebar navigation section -->
+    <aside id="sidebar" class="sidebar">
+        <!-- sidebar close button -->
+        <button class="close-btn" onclick="closeSidebar()">x</button>
+        <nav>
             <ul class="sidebar-menu">
-                <li class="menu-category"><a href="index.html">Home</a></li>
-                <li class="menu-category"><a href="#">Products</a>
+                <!-- home section -->
+                <li class="menu-category">
+                    <a href="index.html">Home</a>
+                </li>
+                <!-- products section -->
+                <li class="menu-category">
+                    <a href="#">Products</a>
                     <ul>
                         <li><a href="cake-collection.html">Cakes</a></li>
                         <li><a href="ice-cream-collection.html">Ice Cream</a></li>
@@ -22,17 +30,23 @@
                         <li><a href="#">Chilled Items</a></li>
                     </ul>
                 </li>
-                <li class="menu-category"><a href="#">Contact Us</a>
+                <!-- contact us section -->
+                <li class="menu-category">
+                    <a href="#">Contact Us</a>
                     <ul>
                         <li><a href="#">Join the Team</a></li>
                     </ul>
                 </li>
-                <li class="menu-category"><a href="index.html">About Us</a>
+                <!-- about us section -->
+                <li class="menu-category">
+                    <a href="index.html">About Us</a>
                     <ul>
                         <li><a href="#">Franchise</a></li>
                     </ul>
                 </li>
-                <li class="menu-category"><a href="#">Consumer Care</a>
+                <!-- consumer care section -->
+                <li class="menu-category">
+                    <a href="#">Consumer Care</a>
                     <ul>
                         <li><a href="#">Return and Exchange</a></li>
                         <li><a href="cake-collection.html">Delivery Information</a></li>
@@ -41,190 +55,213 @@
                     </ul>
                 </li>
             </ul>
+        </nav>
+    </aside>
+
+    <!-- main content -->
+    <main class="main-content">
+        <!-- header section -->
+        <header>
+            <nav class="nav-bar">
+                <!-- menu button -->
+                <button class="menu-btn" onclick="openSidebar()">☰ Menu</button>
+                <!-- logo -->
+                <div class="logo">
+                    <img src="images/chateraise logo.png">
+                </div>
+                <!-- navigation links-->
+                <ul class="nav-links">
+                    <!-- home link -->
+                    <li><a href="index.html">Home</a></li>
+                    <!-- contact link -->
+                    <li><a href="#">Contact</a></li>
+                    <!-- about us link -->
+                    <li><a href="index.html">About Us</a></li>
+                    <!-- order now button -->
+                    <a class="order-btn" href="cake-collection.html">Order Now</a>
+                    <!-- cart icon -->
+                    <a href="checkout.html" class="cart-icon">
+                        <img src="images/Cart icon.png" alt="cart-icon">
+                        <span class="cart-badge">0</span>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- category header -->
+        <div class="category-header">
+            <h1>PRODUCTS</h1>
         </div>
-
-        <!-- main content -->
-        <div class="main-content">
-            <!-- header -->
-            <header>
-                <nav class="nav-bar">
-                    <button class="menu-btn" onclick="openSidebar()">☰ Menu</button>
-                    <div class="logo">
-                        <img src="images/chateraise logo.png">
+        <!-- item details section -->
+        <section class="item-details">
+            <!-- breadcrumb navigation -->
+            <h2>
+                <span class="bold-word">Products</span> | 
+                <a href="cake-collection.html" class="cake-link">Cakes</a> | Caramel Butter Cream Cake
+            </h2>
+            <div class="item-details-container">
+                <!-- item image -->
+                <div class="item-image">
+                    <img src="images/Chateraise caramel butter cream cake portrait.png" alt="Caramel Butter Cream Cake">
+                </div>
+                <!-- item information -->
+                <div class="item-info">
+                    <div class="item-info-header">
+                        <div class="item-name">
+                            <h1>Caramel Butter Cream Cake</h1>
+                        </div>
+                        <div class="item-price">
+                            <h2>$5.50</h2>
+                        </div>
                     </div>
-                    <ul class="nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="index.html">About Us</a></li>
-                        <a class="order-btn" href="cake-collection.html">Order Now</a>
-                        <a href="checkout.html" class="cart-icon">
-                            <img src="images/Cart icon.png" alt="cart-icon">
-                            <span class="cart-badge">0</span>
-                        </a>
-                    </ul>
-                </nav>
-            </header>
-
-            <!--item details section-->
-            <div class="category-header">
-                <h1>PRODUCTS</h1>
+                    <div class="item-desc-container">
+                        <div class="item-desc">
+                            <p>The <span class="bold-word">Caramel Butter Cream Cake</span> features soft, fluffy vanilla sponge layers filled with smooth, rich caramel buttercream. Frosted with a <span class="bold-word">creamy caramel icing</span> and topped with a drizzle of golden caramel and a hint of sea salt, it offers a perfect balance of sweetness and <span class="bold-word">buttery richness</span> in every bite. A luxurious treat for caramel lovers.</p>
+                        </div>
+                        <!-- quanitity selector and add-to-cart -->
+                        <div class="quantity-cart">
+                            <div class="quantity-selector">
+                                <button class="decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="increase">+</button>
+                            </div>
+                            <div class="add-to-cart-button">
+                                <button class="add-to-cart">Add to Cart
+                                    <img src="images/Cart icon.png" alt="cart" class="button-icon">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <section class="item-details">
-                <h2><span class="bold-word">Products</span> | <a href="cake-collection.html" class="cake-link">Cakes</a> | Caramel Butter Cream Cake</h2>
-                <div class="item-details-container">
-                    <div class="item-image">
-                        <img src="images/Chateraise caramel butter cream cake portrait.png" alt="Caramel Butter Cream Cake">
+        </section>
+
+        <!--you may also like section-->
+        <section class="suggestions">
+            <h2>You may also like</h2>
+            <div class="suggested-products">
+                <!--product 1-->
+                <div class="suggested-product-card">
+                    <div class="suggested-image">
+                        <img src="images/Chateraise strawberry fresh cream cake portrait.png" alt="Strawberry Fresh Cream Cake">
                     </div>
-                    <div class="item-info">
-                        <div class="item-info-header">
-                            <div class="item-name">
-                                <h1>Caramel Butter Cream Cake</h1>
-                            </div>
-                            <div class="item-price">
-                                <h2>$5.50</h2>
-                            </div>
-                        </div>
-                        <div class="item-desc-container">
-                            <div class="item-desc">
-                                <p>The <span class="bold-word">Caramel Butter Cream Cake</span> features soft, fluffy vanilla sponge layers filled with smooth, rich caramel buttercream. Frosted with a <span class="bold-word">creamy caramel icing</span> and topped with a drizzle of golden caramel and a hint of sea salt, it offers a perfect balance of sweetness and <span class="bold-word">buttery richness</span> in every bite. A luxurious treat for caramel lovers.</p>
-                            </div>
-                            <div class="quantity-cart">
-                                <div class="quantity-selector">
-                                    <button class="decrease">-</button>
-                                    <span class="quantity">1</span>
-                                    <button class="increase">+</button>
-                                </div>
-                                <div class="add-to-cart-button">
-                                    <button class="add-to-cart">Add to Cart
-                                        <img src="images/Cart icon.png" alt="cart" class="button-icon">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="suggested-desc">
+                        <p class="price">$5.50</p>
+                        <p class="name">Strawberry Fresh Cream Cake</p>
+                        <button class="add">+ ADD</button>
                     </div>
                 </div>
-            </section>
-
-            <!--you may also like section-->
-            <section class="suggestions">
-                <h2>You may also like</h2>
-                <div class="suggested-products">
-                    <!--product 1-->
-                    <div class="suggested-product-card">
-                        <div class="suggested-image">
-                            <img src="images/Chateraise strawberry fresh cream cake portrait.png" alt="Strawberry Fresh Cream Cake">
-                        </div>
-                        <div class="suggested-desc">
-                            <p class="price">$5.50</p>
-                            <p class="name">Strawberry Fresh Cream Cake</p>
-                            <button class="add">+ ADD</button>
-                        </div>
+                <!--product 2-->
+                <div class="suggested-product-card">
+                    <div class="suggested-image">
+                        <img src="images/Chateraise white zebra mille crepe cake portrait.png" alt="White Zebra Mille Crepe Cake">
                     </div>
-                    <!--product 2-->
-                    <div class="suggested-product-card">
-                        <div class="suggested-image">
-                            <img src="images/Chateraise white zebra mille crepe cake portrait.png" alt="White Zebra Mille Crepe Cake">
-                        </div>
-                        <div class="suggested-desc">
-                            <p class="price">$5.50</p>
-                            <p class="name">White Zebra Mille Crepe Cake</p>
-                            <button class="add">+ ADD</button>
-                        </div>
-                    </div>
-                    <!--product 3-->
-                    <div class="suggested-product-card">
-                        <div class="suggested-image">
-                            <img src="images/Chateraise gateau chocolate bar cake portrait.png" alt="Gateau Chocolate Bar Cake">
-                        </div>
-                        <div class="suggested-desc">
-                            <p class="price">$5.80</p>
-                            <p class="name">Gateau Chocolate Bar Cake</p>
-                            <button class="add">+ ADD</button>
-                        </div>
-                    </div>
-                    <!--product 4-->
-                    <div class="suggested-product-card">
-                        <div class="suggested-image">
-                            <img src="images/Chateraise tiramisu mille crepe cake portrait.png" alt="Tiramisu Mille Crepe Cake">
-                        </div>
-                        <div class="suggested-desc">
-                            <p class="price">$5.80</p>
-                            <p class="name">Tiramisu Mille Crepe Cake</p>
-                            <button class="add">+ ADD</button>
-                        </div>
-                    </div>
-                    <!--product 5-->
-                    <div class="suggested-product-card">
-                        <div class="suggested-image">
-                            <img src="images/Chateraise white peach cake portrait.png" alt="White Peach Cake">
-                        </div>
-                        <div class="suggested-desc">
-                            <p class="price">$5.50</p>
-                            <p class="name">White Peach Cake</p>
-                            <button class="add">+ ADD</button>
-                        </div>
+                    <div class="suggested-desc">
+                        <p class="price">$5.50</p>
+                        <p class="name">White Zebra Mille Crepe Cake</p>
+                        <button class="add">+ ADD</button>
                     </div>
                 </div>
-            </section>
-
-            <!--footer section-->
-            <footer class="footer">
-                <div class="footer-content">
-                    <div class="footer-left">
-                        <h3>Get the Latest News!</h3>
-                        <div class="newsletter">
-                            <input type="email" placeholder="Enter email here">
-                            <button class="subscribe">Subscribe</button>
-                        </div>
-                        <div class="social-icons">
-                            <a href="https://www.instagram.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Instagram logo.png" alt="Instagram"></a>
-                            <a href="https://x.com/chateraise_jp/" target="_blank" class="icon"><img src="images/Twitter logo.png" alt="Twitter"></a>
-                            <a href="https://www.facebook.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Facebook logo.png" alt="Facebook"></a>
-                        </div>
+                <!--product 3-->
+                <div class="suggested-product-card">
+                    <div class="suggested-image">
+                        <img src="images/Chateraise gateau chocolate bar cake portrait.png" alt="Gateau Chocolate Bar Cake">
                     </div>
-
-                    <!--popup message-->
-                    <div class="popup" id="popup">
-                        <div class="popup-content">
-                            <span class="close-x" onclick="closePopup()">x</span>
-                            <h2>Subscription Successful!</h2>
-                            <p>Thank you for subscribing!</p>
-                            <button class="close-popup" onclick="closePopup()">Close</button>
-                        </div>
-                    </div>
-
-                    <div class="footer-right">
-                        <div class="footer-section consumer-care">
-                            <h4>Consumer Care</h4>
-                            <ul>
-                                <li><a href="#">Return and Exchange</a></li>
-                                <li><a href="cake-collection.html">Delivery Information</a></li>
-                                <li><a href="#">Allergens</a></li>
-                                <li><a href="cake-collection.html">FAQ</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-section about-us">
-                            <h4>About Us</h4>
-                            <ul>
-                                <li><a href="#">Franchise</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-section contact-us">
-                            <h4>Contact Us</h4>
-                            <ul>
-                                <li><a href="#">Join the Team</a></li>
-                            </ul>
-                        </div>
+                    <div class="suggested-desc">
+                        <p class="price">$5.80</p>
+                        <p class="name">Gateau Chocolate Bar Cake</p>
+                        <button class="add">+ ADD</button>
                     </div>
                 </div>
-                <div class="footer-bottom">
-                    <p>© Chateraise Co., Ltd. All Rights Reserved.</p>
-                    <div class="footer-logo">
-                        <img src="images/chateraise logo.png" alt="Chateraise Logo">
+                <!--product 4-->
+                <div class="suggested-product-card">
+                    <div class="suggested-image">
+                        <img src="images/Chateraise tiramisu mille crepe cake portrait.png" alt="Tiramisu Mille Crepe Cake">
+                    </div>
+                    <div class="suggested-desc">
+                        <p class="price">$5.80</p>
+                        <p class="name">Tiramisu Mille Crepe Cake</p>
+                        <button class="add">+ ADD</button>
                     </div>
                 </div>
-            </footer>
-        </div>
-      <script src="script.js"></script>
-    </body>
+                <!--product 5-->
+                <div class="suggested-product-card">
+                    <div class="suggested-image">
+                        <img src="images/Chateraise white peach cake portrait.png" alt="White Peach Cake">
+                    </div>
+                    <div class="suggested-desc">
+                        <p class="price">$5.50</p>
+                        <p class="name">White Peach Cake</p>
+                        <button class="add">+ ADD</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--footer section-->
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- footer left section -->
+                <div class="footer-left">
+                    <h3>Get the Latest News!</h3>
+                    <!-- newsletter subscription section -->
+                    <div class="newsletter">
+                        <input type="email" placeholder="Enter email here">
+                        <button class="subscribe">Subscribe</button>
+                    </div>
+                    <!-- social links -->
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Instagram logo.png" alt="Instagram"></a>
+                        <a href="https://x.com/chateraise_jp/" target="_blank" class="icon"><img src="images/Twitter logo.png" alt="Twitter"></a>
+                        <a href="https://www.facebook.com/chateraise.singapore/" target="_blank" class="icon"><img src="images/Facebook logo.png" alt="Facebook"></a>
+                    </div>
+                </div>
+                <!-- successful subscription popup message-->
+                <div class="popup" id="popup">
+                    <div class="popup-content">
+                        <span class="close-x" onclick="closePopup()">x</span>
+                        <h2>Subscription Successful!</h2>
+                        <p>Thank you for subscribing!</p>
+                        <button class="close-popup" onclick="closePopup()">Close</button>
+                    </div>
+                </div>
+                <!-- footer right section -->
+                <div class="footer-right">
+                    <!-- consumer care footer section -->
+                    <div class="footer-section consumer-care">
+                        <h4>Consumer Care</h4>
+                        <ul>
+                            <li><a href="#">Return and Exchange</a></li>
+                            <li><a href="cake-collection.html">Delivery Information</a></li>
+                            <li><a href="#">Allergens</a></li>
+                            <li><a href="cake-collection.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <!-- about us footer section -->
+                    <div class="footer-section about-us">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="#">Franchise</a></li>
+                        </ul>
+                    </div>
+                    <!-- contact us footer section -->
+                    <div class="footer-section contact-us">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><a href="#">Join the Team</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- footer bottom section -->
+            <div class="footer-bottom">
+                <p>© Chateraise Co., Ltd. All Rights Reserved.</p>
+                <div class="footer-logo">
+                    <img src="images/chateraise logo.png" alt="Chateraise Logo">
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
 </html>
