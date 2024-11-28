@@ -9,7 +9,6 @@
 /*font styles*/
 .inter-customer-font {
   font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
@@ -78,7 +77,7 @@ body {
     height: 100%;
     background-color: #fff5e1;
     color: #5a2d14;
-    padding: 20px;
+    padding: 20px 40px 20px 20px;
     z-index: 1000; /*ensure sidebar is above other content*/
     transition: left 0.3s ease; /*transition when sidebar is opened*/
 }
@@ -94,6 +93,7 @@ body {
     border: none;
     color: #5a2d14;
     padding: 5px;
+    cursor: pointer;
 }
 .sidebar-menu, .sidebar-menu ul{
     list-style: none;
@@ -109,7 +109,7 @@ body {
 .menu-category a {
     color: #5a2d14;
     text-decoration-line: underline;
-    text-decoration-thickness: 3px;
+    text-decoration-thickness: 2px;
     font-weight: bold;
     display: block;
     padding: 10px 0;
@@ -120,13 +120,32 @@ body {
 }
 .sidebar-menu li ul li a{
     font-size: 16px;
+    font-weight: normal;
     color: #5a2d14;
     text-decoration: none;
     padding: 5px 0;
+    transition: color 0.3s ease;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
 }
 .sidebar-menu li ul li a:hover{
-    text-decoration: underline;
+    text-decoration: none;
     color: #5a2d14
+}
+.sidebar-menu li ul li a::after{
+    content: "";
+    position: absolute;
+    left:0;
+    bottom: 2px;
+    width: 0%;
+    height: 2px;
+    background-color: #5a2d14;
+    transition: width 0.3s ease;
+}
+/*underline animation after hovered*/
+.sidebar-menu li ul li a:hover::after{
+    width: 100%;
 }
 
 /*header section styles*/
@@ -158,6 +177,7 @@ header{
     padding: 0 10px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .logo{
     display: flex;
@@ -181,30 +201,31 @@ header{
     font-weight: bold;
     gap: 20px;
 }
-.nav-links li a{
+.nav-links .link{
     position: relative;
     color:#fff5e1;
     text-decoration: none;
     transition: color 0.3s ease;
     white-space: nowrap;
+    cursor: pointer;
 }
-.nav-links li a:hover{
+.nav-links .link:hover{
     color: #fff5e1;
     text-decoration: none;
 }
 /*underline animation hidden before hovered*/
-.nav-links li a::after{
+.nav-links .link::after{
     content: "";
     position: absolute;
     left:0;
-    bottom: 0;
+    bottom: -3px;
     width: 0%;
     height: 3px;
     background-color: #fff5e1;
     transition: width 0.3s ease;
 }
 /*underline animation after hovered*/
-.nav-links li a:hover::after{
+.nav-links .link:hover::after{
     width: 100%;
 }
 .nav-links .order-btn {
@@ -221,6 +242,7 @@ header{
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
     box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.6s ease; /*smooth transition to hover effect*/
+    cursor: pointer;
 }
 .nav-links .order-btn:hover {
     background-color: #5a2d14;
@@ -241,7 +263,8 @@ header{
     justify-content: center;
     height: 100%;
     width: 40px;
-    transition: transform 0.3 ease;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 .nav-bar .cart-icon img{
     width: 100%;
@@ -249,7 +272,7 @@ header{
     object-fit: contain;
 }
 .nav-bar .cart-icon:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 .cart-badge{
     color: #fff5e1;
@@ -315,6 +338,7 @@ header{
     border-radius: 20px;
     font-weight: bold;
     font-size: 18px;
+    cursor: pointer;
 }
 .subscribe:hover{
     background-color: #5a2d14;
@@ -328,6 +352,7 @@ header{
     width: 50px;
     height: 50px;
     object-fit: contain;
+    cursor: pointer;
 }
 /*successful subscription popup message*/
 .popup {
@@ -362,6 +387,7 @@ header{
     font-size: 24px;
     color: #fff5e1;
     z-index: 1;
+    cursor: pointer;
 }
 .popup-content h2 {
     font-size: 40px;
@@ -442,6 +468,7 @@ header{
 .footer-logo img {
     max-width: 150px;
     height: auto;
+    cursor: pointer;
 }
 
 /*INDEX.HTML STYLES*/
@@ -488,6 +515,7 @@ header{
     background-color: #fff5e1;
     opacity: 0.5;
     transition: opacity 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
 }
 /* when image of dot is showing*/
 .dot.active{
@@ -538,6 +566,7 @@ header{
     font-size: 18px;
     color: #5a2d14;
     transition: all 0.3s ease; /*smooth transition for focus*/
+    cursor: text;
 }
 #search-icon{
     position: absolute;
@@ -565,6 +594,7 @@ header{
     list-style: none;
     margin: 0;
     padding: 0;
+    cursor: pointer;
 }
 .suggestions-list li {
     text-align: left;
@@ -575,6 +605,7 @@ header{
 }
 .suggestions-list li:hover {
     background-color: #fbe2b4; /*highlight the suggestion on hover*/
+    cursor: pointer;
 }
 .first-suggestion{
     background-color: #fbe2b4;
@@ -608,6 +639,7 @@ header{
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 .item:hover{
     transform: scale(1.05);
@@ -708,77 +740,44 @@ header{
     justify-content: space-between;
 }
 .testimonial-article-container{
-    background-color: #5a2d14;
-    height: 300px;
+    width: 60%;
+    height: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    gap: 30px;
 }
 .testimonial-article{
-    height: 100%;
+    position: relative;
+    width: 50%;
+    height: auto;
+    overflow: hidden;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
 }
 .testimonial-article:hover{
     transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 .testimonial-article img{
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
+    display: block;
     border-radius: 10px;
 }
-.article-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 200px;
-    height: 100%;
-    text-align: center;
-    color: #fff5e1;
-}
-.article-details h3{
-    font-size: 20px;
+.read-now-button{
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    transform: translateX(-50%); /*centers the button by shifting it left by 50% of its width*/
+    text-decoration: none;
+    font-size: 12px;
     font-weight: bold;
-    padding: 12px 25px;
-    text-align: center;
-}
-.article-details p{
-    font-size: 16px;
-    font-weight: normal;
-    margin-bottom: 30px;
-}
-.read-now{
-    position: relative;
-    border-radius: 20px;
-    background-color: #fff5e1;
-    color: #5a2d14;
-    padding: 6px 26px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.read-now:hover{
-    background-color: #fff5e1;
-    color: #5a2d14;
-    text-decoration: none;
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-.read-now:visited{
-    color: #5a2d14;
-    text-decoration: none;
-}
-.read-now:focus{
-    text-decoration: none;
 }
 .testimonial-text-container{
     max-width: 40%;
@@ -809,6 +808,7 @@ header{
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
 }
 .testimonial-item iframe{
     width: 100%;
@@ -905,6 +905,7 @@ header{
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     background-color: rgba(90, 45, 20, 0.85);
+    cursor: pointer;
 }
 .product-items a{
     text-decoration: none;
@@ -975,15 +976,15 @@ header{
 }
 .delivery-header{
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    justify-content: center;
     position: relative;
+
 }
 .delivery-header-text{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 70%;
+    width: 100%;
 }
 .delivery-header-text h2{
     font-weight: bold;
@@ -994,7 +995,6 @@ header{
     font-size: 20px;
 }
 .delivery-icon{
-    position: absolute;
     bottom: 0;
     right: 0;
     display: flex;
@@ -1002,13 +1002,13 @@ header{
     width: auto;
 }
 .delivery-icon img{
-    max-width: 76%;
+    max-width: 80%;
     height: auto;
 }
 .delivery-details{
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content:flex-start;
     gap: 30px;
     flex-grow: 1;
 }
@@ -1089,6 +1089,7 @@ header{
     border-radius: 20px;
     font-weight: bold;
     font-size: 18px;
+    cursor: pointer;
 }
 .faq-form button:hover{
     transform: scale(1.01);
@@ -1134,7 +1135,7 @@ details p{
 /*ITEM.HTML STYLES*/
 /*item details section styles*/
 .item-details{
-    padding: 120px 40px 80px 40px;
+    padding: 140px 40px 80px 40px;
 }
 .item-details h2{
     padding: 24px 0;
@@ -1172,15 +1173,16 @@ details p{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    gap: 30px;
     height: 40%;
+    padding-bottom: 20px;
 }
-.item-name h1{
+.item-name h3{
     font-size: 54px;
     font-weight: bold;
     text-align: left;
-    margin: 0;
 }
-.item-price h2{
+.item-price h4{
     border: none;
     font-size: 54px;
     font-weight: bold;
@@ -1235,6 +1237,7 @@ details p{
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
 }
 /* when quanitity is at minimum, decrease selector disabled*/
 .decrease.disabled{
@@ -1260,6 +1263,7 @@ details p{
     color: #fff5e1;
     padding: 0 26px;
     height: 100%;
+    cursor: pointer;
 }
 .add-to-cart-button img{
     height: 100%;
@@ -1291,10 +1295,6 @@ details p{
     padding: 10px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-}
-/*hides scrollbar*/
-.suggested-products::-webkit-scrollbar{
-    display: none;
 }
 .suggested-product-card{
     display: flex;
@@ -1336,6 +1336,7 @@ details p{
     font-size: 14px;
     font-weight: bold;
     transition: transform 0.2s ease;
+    cursor: pointer;
 }
 .add:hover{
     transform: scale(1.03);
@@ -1387,7 +1388,7 @@ details p{
 .form-input input:focus{
     outline: 1px solid #5a2d14;
 }
-.form-input select, .additional-request textarea{
+.form-input select{
     border: 2px #5a2d14 solid;
     border-radius: 10px;
     background-color: #fff5e1;
@@ -1397,7 +1398,14 @@ details p{
     outline: none;
 }
 .additional-request textarea{
+    border: 2px #5a2d14 solid;
+    border-radius: 10px;
+    background-color: #fff5e1;
+    color: #5a2d14;
     margin-top: 8px;
+    height: 100px;
+    padding: 8px;
+    outline: none;
 }
 .name-input, .phone-input, .datetime-input{
     display: flex;
@@ -1424,6 +1432,7 @@ details p{
     padding: 10px;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 .pay-online-button:hover{
     transform: scale(1.03);
@@ -1431,6 +1440,7 @@ details p{
 /*checkout summary styles*/
 .checkout-summary{
     border: 2px #5a2d14 solid;
+    background-color: rgba(90, 45, 20, 0.05);
     width: 35%;
     border-radius: 20px;
     padding: 20px;
@@ -1463,14 +1473,14 @@ details p{
     justify-content: space-between;
     width: 100%;
     height: 70%;
-    gap: 10px;
     border-radius: 0;
     border-bottom: 2px solid #5a2d14;
 }
 .summary-items .cart-item-image{
     width: 30%;
     max-width: 80px;
-    object-fit: cover;  
+    object-fit: cover;
+    border-radius: 10px;
 }
 .summary-items .item .item-name{
     font-size: 18px;
@@ -1536,7 +1546,7 @@ details p{
     gap: 20px;
 }
 .promo-input input{
-    border-radius: 2px solid #5a2d14;
+    border: 2px solid #5a2d14;
     background-color: #fff5e1;
     padding: 8px 14px;
     border-radius: 20px;
@@ -1554,6 +1564,7 @@ details p{
     color: #fff5e1;
     font-weight: bold;
     padding: 8px 30px;
+    cursor: pointer;
 }
 .promo-input button:hover{
     transform: scale(1.03);
@@ -1608,6 +1619,7 @@ details p{
 .candle-checkbox input {
     width: 20px;
     height: 20px;
+    cursor: pointer;
 }
 
 /*responsive media*/
@@ -1630,7 +1642,7 @@ details p{
     .menu-btn{
         font-size: 20px;
     }
-    .nav-links li{
+    .nav-links .link{
         display: none;
     }
     .nav-links .order-btn {
@@ -1752,28 +1764,12 @@ details p{
         font-size: 60px;
     }
     .testimonial-article-container {
-        max-width: 100%; 
+        width: 78%; 
         flex-direction: column;
         margin-bottom: 20px;
     }
     .testimonial-article{
         width: 100%;
-    }
-    .article-details {
-        max-width: 100%;
-        text-align: center;
-        justify-content: space-between;
-        padding: 30px 0;
-    }
-    .article-details h3{
-        padding: 0;
-    }
-    .article-details p{
-        margin: 0;
-    }
-    .read-now{
-        font-size: 16px;
-        padding: 6px 20px;
     }
     .testimonial-video-container {
         flex-direction: column;
@@ -1931,7 +1927,7 @@ details p{
     /*ITEM.HTML STYLES*/
     /*item details section styles*/
     .item-details{
-        padding: 100px 40px 30px 40px;
+        padding: 120px 40px 30px 40px;
     }
     .item-details h2{
         font-size:20px;
@@ -1943,7 +1939,10 @@ details p{
     .item-image img{
         width: 100%;
     }
-    .item-name h1, .item-price h2{
+    .item-info-header{
+        gap: 20px;
+    }
+    .item-name h3, .item-price h4{
         font-size: 48px;
     }
     .item-desc p{
@@ -1972,6 +1971,9 @@ details p{
     /*CHECKOUT.HTML STYLES*/
     /*checkout section styles*/
     /*checkout progress*/
+    .checkout-progress{
+        width: 50%;
+    }
     .checkout-progress h2{
         font-size: 24px;
     }
@@ -2004,6 +2006,7 @@ details p{
     }
     /*checkout summary*/
     .checkout-summary{
+        width: 45%;
         padding: 10px;
     }
     .checkout-summary h2{
@@ -2011,32 +2014,31 @@ details p{
         padding-bottom: 6px;
     }
     .summary-items .item{
-        gap: 8px;
-        justify-content: center;
-        padding: 20px 0;
+        justify-content: space-between;
+        padding: 30px 10px;
     }
     .summary-items .cart-item-image{
         width: 20%;
     }
     .summary-items .item .item-name{
-        font-size: 12px;
+        font-size: 18px;
         width: 36%;
     }
     .summary-items .item .item-price {
-        font-size: 10px;
+        font-size: 18px;
         width: 10%;
     }
     .item-controls button {
-        width: 12px;
-        height: 12px;
-        font-size: 8px;
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
     }
     .summary-items .item .item-controls .quantity {
-        font-size: 12px;
-        margin: 0 6px;
+        font-size: 18px;
+        margin: 0 10px;
     }
     .empty-cart-message {
-        font-size: 16px;
+        font-size: 18px;
         padding: 10px 0;
     }
     /*promo code*/
@@ -2044,7 +2046,7 @@ details p{
         margin-top: 10px;
     }
     .promo-code label, .checkout-summary h3{
-        font-size: 16px;
+        font-size: 18px;
         margin-bottom: 5px;
     }
     .promo-input{
@@ -2065,18 +2067,18 @@ details p{
     }
     .total-costs p{
         margin-bottom: 10px;
-        font-size: 16px;
+        font-size: 18px;
     }
     .total-costs h4{
         padding: 10px 0;
-        font-size: 16px;
+        font-size: 18px;
     }
     .candle-checkbox label {
-        font-size: 16px;
+        font-size: 18px;
     }
     .candle-checkbox input {
-        width: 16px;
-        height: 16px;
+        width: 18px;
+        height: 18px;
     }
 }
 
@@ -2240,20 +2242,8 @@ details p{
         font-size: 45px;
     }
     .testimonial-article-container{
+        width: 100%;
         margin-bottom: 10px;
-    }
-    .article-details{
-        padding: 40px 0;
-    }
-    .article-details h3{
-        font-size: 16px;
-    }
-    .article-details p{
-        font-size: 14px;
-    }
-    .read-now {
-        padding: 4px 20px;
-        font-size: 14px;
     }
     .testimonial-item {
         width: 100%;
@@ -2310,17 +2300,17 @@ details p{
         padding: 30px;
     }
     .delivery-image{
-        padding: 30px;
+        padding: 20px;
     }
     .delivery-details-container{
-        padding: 0 30px;
+        padding: 0 20px;
     }
     .delivery-header-text h2{
-        font-size: 40px;
+        font-size: 38px;
         width: 100%;
     }
     .delivery-header-text p{
-        font-size: 16px;
+        font-size: 14px;
     }
     .delivery-icon{
         width: 30%;
@@ -2333,11 +2323,11 @@ details p{
         gap: 15px;
     }
     .step-number h2{
-        font-size: 44px;
+        font-size: 40px;
         margin-bottom:30px;
     }
     .step-text h3{
-        font-size: 18px;
+        font-size: 16px;
     }
     .step-text p{
         font-size: 14px;
@@ -2383,7 +2373,7 @@ details p{
     /*ITEM.HTML STYLES*/
     /*item details section styles*/
     .item-details{
-        padding: 50px 30px 40px 30px;
+        padding: 80px 30px 40px 30px;
     }
     .item-details h2{
         font-size:14px;
@@ -2392,7 +2382,7 @@ details p{
     .item-details-container{
         gap: 20px;
     }
-    .item-name h1, .item-price h2{
+    .item-name h3, .item-price h4{
         font-size: 38px;
     }
     .item-desc{
@@ -2444,9 +2434,9 @@ details p{
     /*checkout section styles*/
     /*checkout progress*/
     .checkout {
-        flex-direction: column;
-        padding: 80px 40px 40px 40px;
-        gap: 30px;
+        flex-direction: column-reverse;
+        padding: 100px 40px 40px 40px;
+        gap: 20px;
     }
     .checkout-progress{
         width: 100%;
@@ -2473,7 +2463,7 @@ details p{
         font-size: 10px;
     }
     .additional-request textarea{
-        margin-top: 2px;
+        margin-top: 5px;
     }
     .pay-online-button{
         margin-top: 5px;
@@ -2488,8 +2478,7 @@ details p{
         font-size: 20px;
     }
     .summary-items .item{
-        padding: 10px 0;
-        gap: 12px;
+        padding: 10px;
     }
     .summary-items .item .item-name{
         font-size: 14px;
@@ -2499,12 +2488,12 @@ details p{
         font-size: 14px;
     }
     .item-controls button {
-        width: 16px;
-        height: 16px;
-        font-size: 10px;
+        width: 18px;
+        height: 18px;
+        font-size: 12px;
     }
     .summary-items .item .item-controls .quantity {
-        font-size: 14px;
+        font-size: 16px;
         margin: 0 8px;
     }
     .empty-cart-message {
