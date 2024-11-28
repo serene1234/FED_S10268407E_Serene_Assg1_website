@@ -1446,32 +1446,40 @@ details p{
 }
 /*summary items shown when item added to cart*/
 .summary-items {
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 .summary-items .item{
+    padding: 30px 0;
     box-shadow: none;
     transform: none;
-    border-radius: 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    padding: 30px 0;
-    height: 40px;
+    justify-content: space-between;
     width: 100%;
-    margin-bottom: 10px;
+    height: 70%;
+    gap: 10px;
+    border-radius: 0;
     border-bottom: 2px solid #5a2d14;
 }
+.summary-items .cart-item-image{
+    width: 30%;
+    max-width: 80px;
+    object-fit: cover;  
+}
 .summary-items .item .item-name{
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     color: #5a2d14;
-    width: 50%;
+    width: 35%;
 }
 .summary-items .item .item-price {
-    font-size: 16px;
+    font-size: 18px;
+    width: 20%;
     color: #5a2d14;
 }
 .summary-items .item .item-controls {
@@ -2001,23 +2009,29 @@ details p{
         padding-bottom: 6px;
     }
     .summary-items .item{
+        gap: 8px;
         justify-content: center;
-        gap: 5px;
+        padding: 20px 0;
+    }
+    .summary-items .cart-item-image{
+        width: 20%;
     }
     .summary-items .item .item-name{
         font-size: 12px;
-        width: 60%;
+        width: 36%;
     }
     .summary-items .item .item-price {
-        font-size: 12px;
+        font-size: 10px;
+        width: 10%;
     }
     .item-controls button {
-        width: 16px;
-        height: 16px;
+        width: 12px;
+        height: 12px;
+        font-size: 8px;
     }
     .summary-items .item .item-controls .quantity {
         font-size: 12px;
-        margin: 0 8px;
+        margin: 0 6px;
     }
     .empty-cart-message {
         font-size: 16px;
@@ -2471,16 +2485,25 @@ details p{
     .checkout-summary h2{
         font-size: 20px;
     }
-    .summary-items .item .item-name, .summary-items .item .item-price{
+    .summary-items .item{
+        padding: 10px 0;
+        gap: 12px;
+    }
+    .summary-items .item .item-name{
+        font-size: 14px;
+        width: 30%;
+    }
+    .summary-items .item .item-price{
         font-size: 14px;
     }
     .item-controls button {
-        width: 14px;
-        height: 14px;
+        width: 16px;
+        height: 16px;
+        font-size: 10px;
     }
     .summary-items .item .item-controls .quantity {
         font-size: 14px;
-        margin: 0 6px;
+        margin: 0 8px;
     }
     .empty-cart-message {
         font-size: 16px;

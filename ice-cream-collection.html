@@ -13,7 +13,7 @@
     <!-- sidebar navigation section -->
     <aside id="sidebar" class="sidebar">
         <!-- sidebar close button -->
-        <button class="close-btn" onclick="closeSidebar()">x</button>
+        <button class="close-btn" id="closeSidebarButton">x</button>
         <nav>
             <ul class="sidebar-menu">
                 <!-- home section -->
@@ -64,7 +64,7 @@
         <header>
             <nav class="nav-bar">
                 <!-- menu button -->
-                <button class="menu-btn" onclick="openSidebar()">☰ Menu</button>
+                <button class="menu-btn" id="openSidebarButton">☰ Menu</button>
                 <!-- logo -->
                 <div class="logo">
                     <img src="images/chateraise logo.png">
@@ -292,10 +292,10 @@
                 <!--popup message-->
                 <div class="popup" id="popup">
                     <div class="popup-content">
-                        <span class="close-x" onclick="closePopup()">x</span>
+                        <span class="close-x">x</span>
                         <h2>Subscription Successful!</h2>
                         <p>Thank you for subscribing!</p>
-                        <button class="close-popup" onclick="closePopup()">Close</button>
+                        <button class="close-popup">Close</button>
                     </div>
                 </div>
 
