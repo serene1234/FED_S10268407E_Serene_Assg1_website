@@ -658,7 +658,8 @@ header{
     display: flex;
     width: 35%;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 60px;
     height: auto;
     color: #fff5e1;
 }
@@ -1714,6 +1715,7 @@ details p{
     }
     .about-text-container{
         width: 100%;
+        gap: 20px;
     }
     .about-text-container p{
         font-size: 16px;
@@ -2205,9 +2207,9 @@ details p{
         padding: 20px 30px;
     }
     .about-text-container{
-        width: 90%;
         padding-right: 0;
         text-align: left;
+        gap: 10px;
     }
     .about-heading h2{
         font-size: 60px;

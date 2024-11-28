@@ -354,12 +354,27 @@ class Cart {
         summaryItemsList.innerHTML = '';  // Clear any previous summary items
     
         if (this.cart.length === 0) {
+            console.log("Cart is empty."); // Debug log
+    
+            // Show the empty cart message
             if (emptyCartMessage) {
-                emptyCartMessage.style.display = 'block'; // Show empty cart message
+                emptyCartMessage.style.display = 'block'; // Make sure it's visible
             }
+    
+            // Update subtotal and total to 0
+            if (subtotalElement) {
+                subtotalElement.textContent = 'SGD 0.00';
+            }
+            if (totalElement) {
+                totalElement.textContent = 'SGD 0.00';
+            }
+    
         } else {
+            console.log("Cart has items:", this.cart); // Debug log
+    
+            // Hide the empty cart message
             if (emptyCartMessage) {
-                emptyCartMessage.style.display = 'none'; // Hide empty cart message
+                emptyCartMessage.style.display = 'none'; // Make sure it's hidden
             }
     
             // Add each item in the cart to the summary list
@@ -458,12 +473,15 @@ class Cart {
             if (item.quantity <= 0) {
                 const index = this.cart.indexOf(item);
                 if (index > -1) {
+                    console.log(`Removing item: ${item.productName}`); // Debug log
                     this.cart.splice(index, 1);
                 }
             }
-            this.updateCart();
+            console.log("Cart state after modification:", this.cart); // Debug log
+            this.updateCart(); // Update the cart UI
         }
     }
+    
     
     clearCart() {
         localStorage.removeItem('cart');
@@ -595,7 +613,7 @@ class QuantityHandler {
         quantity += amount;
 
         // Only allow decrease if quantity is greater than 1
-        if (quantity >= 1) {
+        if (quantity >= 0) {
             this.quantityElement.textContent = quantity;
             this.updateDecreaseButtonOpacity();  // Update opacity after changing quantity
         }
@@ -604,7 +622,7 @@ class QuantityHandler {
     // Update the opacity of the decrease button based on the quantity
     updateDecreaseButtonOpacity() {
         const quantity = parseInt(this.quantityElement.textContent);
-        if (quantity <= 1) {
+        if (quantity <= 0) {
             this.decreaseButton.style.opacity = 0.5;  // Set opacity to 50% if quantity is 1 or less
             this.decreaseButton.disabled = true;     // Optionally disable the button
         } else {
