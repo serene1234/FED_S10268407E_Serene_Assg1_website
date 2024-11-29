@@ -101,6 +101,7 @@ class SubscriptionPopupManager {
         // Attach event listeners
         this.subscribeButton.addEventListener('click', () => this.handleSubscription());
         this.popup.querySelector('.close-popup').addEventListener('click', () => this.closePopup());
+        this.popup.querySelector('.close-x').addEventListener('click', () => this.closePopup());
     }
     // method to handle subscription process
     handleSubscription() {
@@ -379,6 +380,8 @@ document.addEventListener("DOMContentLoaded", () => {
 class Cart {
     constructor() {
         this.cart = this.loadCartFromLocalStorage();
+        // ensure cart indicator is updated when the class is initialised
+        this.updateCartIndicator();
     }
     // lead cart data from localStorage, return empty array if no data found
     loadCartFromLocalStorage() {
