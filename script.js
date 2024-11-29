@@ -55,27 +55,6 @@ class Sidebar {
         this.mainContent.style.transition = "transform 0.3s ease, opacity 0.3s ease";
     }
 }
-// instantiate Sidebar
-const sidebar = new Sidebar();
-// wait for DOM to be fully loaded
-document.addEventListener("DOMContentLoaded", () => {
-    // select button that opens sidebar
-    const openSidebarButton = document.getElementById("openSidebarButton");
-    if (openSidebarButton) {
-        // call open method to display sidebar
-        openSidebarButton.addEventListener("click", () => {
-            sidebar.open();
-        });
-    }
-    // select button that closes sidebar
-    const closeSidebarButton = document.getElementById("closeSidebarButton");
-    if (closeSidebarButton) {
-        // call close method to hide sidebar
-        closeSidebarButton.addEventListener("click", () => {
-            sidebar.close();
-        });
-    }
-});
 
 
 // SubscriptionPopupManager class to handle subscription form popup (footer)
@@ -452,6 +431,7 @@ class Cart {
                         <span class="quantity">${item.quantity}</span>
                         <button class="increase" data-product="${item.productName}">+</button>
                     </div>
+                    <button class="remove-control" data-product="${item.productName}">x</button>
                 `;
                 summaryItemsList.appendChild(listItem);
             });
@@ -467,6 +447,8 @@ class Cart {
             }
             // update event listeners for quantity change
             this.updateCartItemListeners();
+            // update event listeners for removing item
+            this.updateRemoveButtonListeners();
         }
     }
     // method to calculate subtotal by summing up prices of all items
@@ -512,6 +494,20 @@ class Cart {
                 }
             });
         });
+    }
+    // method to update listeners for remove button
+    updateRemoveButtonListeners() {
+        document.querySelectorAll('.remove-control').forEach(button => {
+            button.addEventListener('click', () => {
+                const productName = button.getAttribute('data-product');
+                this.removeItem(productName);
+            });
+        });
+    }
+    //method to to remove an item
+    removeItem(productName) {
+        this.cart = this.cart.filter(item => item.productName !== productName);
+        this.updateCart();
     }
     // method to get current quantity of specific product in cart
     getItemQuantity(productName) {
@@ -784,6 +780,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // initialise animations
     const animationHandler = new AnimationHandler();
     animationHandler.initializeAnimations();
+
+    //instantiate sidebar
+    const sidebar = new Sidebar();
+    // select button that opens sidebar
+    const openSidebarButton = document.getElementById("openSidebarButton");
+    if (openSidebarButton) {
+        // Call open method to display sidebar
+        openSidebarButton.addEventListener("click", () => {
+            sidebar.open();
+        });
+    }
+    // select button that closes sidebar
+    const closeSidebarButton = document.getElementById("closeSidebarButton");
+    if (closeSidebarButton) {
+        // Call close method to hide sidebar
+        closeSidebarButton.addEventListener("click", () => {
+            sidebar.close();
+        });
+    }
+
     // instantiating  popup
     new SubscriptionPopupManager();
     // instantiate and initialise carousel

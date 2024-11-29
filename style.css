@@ -81,7 +81,7 @@ body {
     z-index: 1000; /*ensure sidebar is above other content*/
     transition: left 0.3s ease; /*transition when sidebar is opened*/
 }
-.sidebar.sidebar-active{
+.sidebar.sidebar-active {
     left: 0; 
 }
 .close-btn {
@@ -102,42 +102,38 @@ body {
 }
 .menu-category {
     color: #5a2d14;
-    font-weight: bold;
-    font-size: 18px;
     margin: 10px 0;
 }
 .menu-category a {
     color: #5a2d14;
-    text-decoration-line: underline;
-    text-decoration-thickness: 2px;
     font-weight: bold;
-    display: block;
-    padding: 10px 0;
+    font-size: 16px;
+    text-decoration: none;
+    border-bottom: 2px solid #5a2d14;
+    display: inline-block;
+    margin-bottom: 16px;
 }
-.sidebar-menu li ul{
+.menu-category ul{
     padding-left: 20px;
-    margin-top: 10px;
 }
-.sidebar-menu li ul li a{
+.menu-category ul a{
+    position: relative;
+    border-bottom: none;
     font-size: 16px;
     font-weight: normal;
-    color: #5a2d14;
-    text-decoration: none;
-    padding: 5px 0;
-    transition: color 0.3s ease;
-    position: relative;
     display: inline-block;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
-.sidebar-menu li ul li a:hover{
+.menu-category ul a:hover{
     text-decoration: none;
     color: #5a2d14
 }
-.sidebar-menu li ul li a::after{
+.menu-category ul a::after{
     content: "";
     position: absolute;
     left:0;
-    bottom: 2px;
+    bottom: 0;
     width: 0%;
     height: 2px;
     background-color: #5a2d14;
@@ -275,8 +271,8 @@ header{
     transform: scale(1.1);
 }
 .cart-badge{
-    color: #fff5e1;
-    background-color: #5a2d14;
+    color: #5a2d14;
+    background-color: #fff5e1;
     font-size: 12px;
     display: flex;
     width: 20px;
@@ -907,7 +903,7 @@ header{
 .product-card:hover{
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    background-color: rgba(90, 45, 20, 0.85);
+    background-color: #5a2d14;
     cursor: pointer;
 }
 .product-items a{
@@ -1124,6 +1120,7 @@ header{
 .faq-right .faq-icon{
     font-size: 30px;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 details[open] .faq-icon{
     transform: rotate(180deg); /*rotates icon*/
@@ -1521,6 +1518,12 @@ details p{
     font-size: 16px;
     margin: 0 10px;
 }
+.remove-control{
+    border: none;
+    background-color: #fff5e1;
+    padding: 2px;
+    cursor: pointer;
+}
 /*empty-cart-message when cart is empty*/
 .empty-cart-message {
     text-align: center;
@@ -1629,12 +1632,12 @@ details p{
 @media (max-width: 1440px){
     /*sidebar section styles*/
     .sidebar{
-        width: 200px;
+        width: 250px;
     }
     .close-btn{
         font-size: 20px;
     }
-    .sidebar-menu li ul li a{
+    .menu-category ul a{
         font-size: 16px;
     }
 
@@ -2024,21 +2027,21 @@ details p{
         width: 20%;
     }
     .summary-items .item .item-name{
-        font-size: 18px;
-        width: 36%;
+        font-size: 16px;
+        width: 26%;
     }
     .summary-items .item .item-price {
-        font-size: 18px;
+        font-size: 16px;
         width: 10%;
     }
     .item-controls button {
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
         font-size: 12px;
     }
     .summary-items .item .item-controls .quantity {
-        font-size: 18px;
-        margin: 0 10px;
+        font-size: 16px;
+        margin: 0 5px;
     }
     .empty-cart-message {
         font-size: 18px;
@@ -2086,6 +2089,10 @@ details p{
 }
 
 @media (max-width: 767px){
+    /*sidebar section styles*/
+    .sidebar{
+        width: 240px;
+    }
     /*header section styles*/
     header{
         padding: 10px 20px;
