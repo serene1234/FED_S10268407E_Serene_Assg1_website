@@ -977,7 +977,6 @@ header{
     display: flex;
     justify-content: center;
     position: relative;
-
 }
 .delivery-header-text{
     display: flex;
@@ -1856,6 +1855,10 @@ details p{
     }
     .delivery-header{
         flex-direction: row;
+        justify-content: space-between;
+    }
+    .delivery-header-text{
+        width: 60%;
     }
     .delivery-header-text h2 {
         font-size: 50px;
@@ -2315,6 +2318,9 @@ details p{
     .delivery-details-container{
         padding: 0 20px;
     }
+    .delivery-header-text{
+        display: inline-block;
+    }
     .delivery-header-text h2{
         font-size: 38px;
         width: 100%;
@@ -2326,7 +2332,7 @@ details p{
         width: 30%;
     }
     .delivery-icon img{
-        max-width: 100%;
+        max-width: 68%;
     }
     .delivery-details{
         padding: 30px 0;
