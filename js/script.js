@@ -776,6 +776,47 @@ class CheckoutManager {
 }
 
 
+class PickupLocationManager {
+    constructor(selectElementId, locations) {
+        this.selectElement = document.getElementById(selectElementId);
+        this.locations = locations;
+    }
+    populateLocations() {
+        this.locations.forEach(location => {
+            const option = document.createElement("option");
+            option.textContent = location;
+            this.selectElement.appendChild(option);
+        });
+    }
+    clearLocations() {
+        // clears all existing options
+        this.selectElement.innerHTML = "";
+    }
+}
+
+
+class CountryCodeSelector {
+    constructor(selectElementId, countryCodes) {
+        this.selectElement = document.getElementById(selectElementId);
+        this.countryCodes = countryCodes;
+    }
+
+    // method to populate the select element with country codes
+    populateCountryCodes() {
+        // clear existing options
+        this.selectElement.innerHTML = "";
+
+        // add the new options dynamically
+        this.countryCodes.forEach(({ code, country }) => {
+            const option = document.createElement("option");
+            option.value = code;
+            option.textContent = `${code} (${country})`;
+            this.selectElement.appendChild(option);
+        });
+    }
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // initialise animations
     const animationHandler = new AnimationHandler();
@@ -829,4 +870,28 @@ document.addEventListener('DOMContentLoaded', () => {
     new PromoCodeManager();
     // pass the cart instance to CheckoutManager
     new CheckoutManager(cart);
+    // define pickup locations
+    const pickupLocations = [
+        "Chateraise @ Westgate",
+        "Chateraise @ Lot 1",
+        "Chateraise @ Clementi Mall",
+        "Chateraise @ AMK Hub",
+        "Chateraise @ Oasis Terraces",
+        "Chateraise @ Chinatown Point",
+    ];
+    // instantiating pickupManager
+    const pickupManager = new PickupLocationManager("pickup-location", pickupLocations);
+    pickupManager.populateLocations();
+    // define country codes
+    const countryCodes = [
+        { code: "+65", country: "SG" },
+        { code: "+1", country: "US" },
+        { code: "+44", country: "UK" },
+        { code: "+91", country: "IN" },
+        { code: "+61", country: "AU" },
+        { code: "+81", country: "JP" },
+    ];
+    // instantiating populateCountryCodes
+    const countryCodeSelector = new CountryCodeSelector("country-code", countryCodes);
+    countryCodeSelector.populateCountryCodes();
 });
