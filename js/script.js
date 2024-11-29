@@ -540,6 +540,7 @@ class Cart {
 }
 
 
+// CartHandler class to handle product details
 class CartHandler {
     constructor() {
         // instantiate Cart class to manage cart operations
@@ -557,6 +558,7 @@ class CartHandler {
             this.initializeSuggestedProductAddToCart(suggestedAddButtons);
         }
     }
+    // method to get product details of item when add to cart button is clicked
     initializeMainProductAddToCart(addToCartButton) {
         addToCartButton.addEventListener('click', () => {
             // get product details
@@ -583,6 +585,7 @@ class CartHandler {
             }
         });
     }
+    // method to get product details of item when add button on suggested items section is clicked (You May Also Like section)
     initializeSuggestedProductAddToCart(suggestedAddButtons) {
         suggestedAddButtons.forEach(button => {
             button.addEventListener('click', (event) => {
@@ -622,6 +625,7 @@ class CartHandler {
 }
 
 
+// QuantityHandler class to handle increasing and decreasing quantity of products
 class QuantityHandler {
     constructor() {
         // select quantity display and buttons for increasing and decreasing quantity
@@ -629,7 +633,6 @@ class QuantityHandler {
         this.increaseButton = document.querySelector('.increase');
         this.decreaseButton = document.querySelector('.decrease');
     }
-
     initialize() {
         // check if the required elements are present on the page
         if (!this.quantityElement || !this.increaseButton || !this.decreaseButton) {
@@ -638,7 +641,7 @@ class QuantityHandler {
         }
         this.increaseButton.addEventListener('click', () => this.changeQuantity(1));
         this.decreaseButton.addEventListener('click', () => this.changeQuantity(-1));
-        // initialize decrease button opacity based on initial quantity
+        // initialise decrease button opacity based on initial quantity
         this.updateDecreaseButtonOpacity();
     }
     // change quantity by specified amount
@@ -670,6 +673,7 @@ class QuantityHandler {
 }
 
 
+// PromoCodeManager class to handle promo code input
 class PromoCodeManager {
     constructor() {
         // select promo code input field and apply button
@@ -686,7 +690,7 @@ class PromoCodeManager {
         // Add an event listener for applying the promo code
         this.applyPromoButton.addEventListener('click', () => this.applyPromoCode());
     }
-    // method to hanel promo code application logic
+    // method to handle promo code application logic
     applyPromoCode() {
         const promoCode = this.promoInput.value.trim();
         // validate the promo code
@@ -699,12 +703,13 @@ class PromoCodeManager {
 }
 
 
+// CheckoutManager class to handle validation before payment can be made, clearing cart and updating costs when checkout is completed
 class CheckoutManager {
     constructor(cart) {
         this.cart = cart;
         // select pay online button
         this.payOnlineButton = document.querySelector('.pay-online-button');
-        // check if thepPay online button exists on page
+        // check if the pay online button exists on page
         if (this.payOnlineButton) {
             // select input fields for user details
             this.firstNameField = document.querySelector('input[placeholder="First Name"]');
@@ -724,6 +729,7 @@ class CheckoutManager {
     handleCheckout(event) {
          // prevent form submission by default
         event.preventDefault();
+        // alert user if attempt to pay without item in cart was made
         if(!this.cartNotEmpty()){
             alert("Your cart is empty. Please add items to the cart before proceeding.");
             return;
@@ -761,21 +767,23 @@ class CheckoutManager {
         // reload page to reset state
         location.reload();
     }
-    // function to clear cart
-    clearCart() {
-        console.log('Cart cleared!');
-    }
-    //update costs
-    updateCosts(newAmount) {
-        console.log('Costs updated to:', newAmount);
-    }
+    //  function to check if cart is empty
     cartNotEmpty(){
         console.log("Cart state in cartNotEmpty:", this.cart.length)
         return this.cart.length > 0;
     }
+    // function to clear cart (debug)
+    clearCart() {
+        console.log('Cart cleared!');
+    }
+    // function to update costs (debug)
+    updateCosts(newAmount) {
+        console.log('Costs updated to:', newAmount);
+    }
 }
 
 
+// PickupLocationManager class to handle dropdown of locations in checkout
 class PickupLocationManager {
     constructor(selectElementId, locations) {
         this.selectElement = document.getElementById(selectElementId);
@@ -795,6 +803,7 @@ class PickupLocationManager {
 }
 
 
+// CountryCodeSelector class to handle dropdown of country codes in checkout
 class CountryCodeSelector {
     constructor(selectElementId, countryCodes) {
         this.selectElement = document.getElementById(selectElementId);
@@ -806,7 +815,7 @@ class CountryCodeSelector {
         // clear existing options
         this.selectElement.innerHTML = "";
 
-        // add the new options dynamically
+        // add the new options
         this.countryCodes.forEach(({ code, country }) => {
             const option = document.createElement("option");
             option.value = code;
@@ -848,28 +857,37 @@ document.addEventListener('DOMContentLoaded', () => {
     if (carousel.carouselContainer) {
         carousel.initialize();
     }
+
     // initialise textChanger
     const textChanger = new TextChanger();
     textChanger.initialize();
+
     // initialise search
     const search = new Search();
     search.initialize();
+
     // initialise faq toggle
     const faqToggle = new FAQToggle();
     faqToggle.initialize();
+
     // instantiate Cart and update checkout summary
     const cart = new Cart();
     cart.updateCheckoutSummary();
+
     // initialise cartHandler
     const cartHandler = new CartHandler();
     cartHandler.initialize();
+
     //initialise quantityHandler
     const quantityHandler = new QuantityHandler();
     quantityHandler.initialize();
+
     // instantiating promoCodeManager
     new PromoCodeManager();
+
     // pass the cart instance to CheckoutManager
     new CheckoutManager(cart);
+
     // define pickup locations
     const pickupLocations = [
         "Chateraise @ Westgate",
@@ -882,6 +900,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // instantiating pickupManager
     const pickupManager = new PickupLocationManager("pickup-location", pickupLocations);
     pickupManager.populateLocations();
+
     // define country codes
     const countryCodes = [
         { code: "+65", country: "SG" },
