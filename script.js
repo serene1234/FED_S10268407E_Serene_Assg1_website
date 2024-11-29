@@ -28,12 +28,6 @@ class AnimationHandler {
         this.leftSections.forEach((section) => observer.observe(section));
     }
 }
-// initialise AnimationHandler class
-const animationHandler = new AnimationHandler();
-document.addEventListener("DOMContentLoaded", () => {
-    // initialise animations once the page is loaded
-    animationHandler.initializeAnimations();
-});
 
 
 // sidebar class to manage opening and closing of sidebar
@@ -126,10 +120,6 @@ class SubscriptionPopupManager {
         }
     }
 }
-// initialize the SubscriptionPopupManager
-document.addEventListener('DOMContentLoaded', () => {
-    new SubscriptionPopupManager();
-});
 
 
 // carousel class to manage slides and dot navigation
@@ -195,11 +185,7 @@ class Carousel {
         this.updateDots();
     }
 }
-// instantiate and initialise the carousel
-const carousel = new Carousel('.carousel', '.carousel-slide', '.dot');
-if (carousel.carouselContainer) {
-    carousel.initialize();
-}
+
 
 // textChanger class to cycle through text with fade effect
 class TextChanger {
@@ -242,11 +228,6 @@ class TextChanger {
         clearInterval(this.textChangeInterval);
     }
 }
-// instantiate and initialise the text changer when the page is loaded
-document.addEventListener("DOMContentLoaded", () => {
-    const textChanger = new TextChanger();
-    textChanger.initialize();
-});
 
 
 // search class to provide search bar with product suggestions
@@ -335,11 +316,6 @@ class Search {
         this.suggestionsList.innerHTML = "";
     }
 }
-// initialize the search functionality
-document.addEventListener("DOMContentLoaded", () => {
-    const search = new Search();
-    search.initialize();
-});
 
 
 // FAQToggle class to manage toggling of FAQ section's icons
@@ -370,11 +346,7 @@ class FAQToggle {
         }
     }
 }
-// initialise FAQ toggle functionality (product page)
-document.addEventListener("DOMContentLoaded", () => {
-    const faqToggle = new FAQToggle();
-    faqToggle.initialize();
-});
+
 
 // Cart class to handle adding items, updating cart, calculating totals
 class Cart {
@@ -382,6 +354,9 @@ class Cart {
         this.cart = this.loadCartFromLocalStorage();
         // ensure cart indicator is updated when the class is initialised
         this.updateCartIndicator();
+    }
+    get length() {
+        return this.cart.length;
     }
     // lead cart data from localStorage, return empty array if no data found
     loadCartFromLocalStorage() {
@@ -567,13 +542,6 @@ class Cart {
         this.updateCart();
     }
 }
-// instantiate the Cart class when the page loads
-document.addEventListener("DOMContentLoaded", () => {
-    // create a Cart instance
-    const cart = new Cart();
-    // update the checkout summary
-    cart.updateCheckoutSummary();
-});
 
 
 class CartHandler {
@@ -656,11 +624,6 @@ class CartHandler {
         console.log('Cart indicator updated');
     }
 }
-// instantiate and initialise the CartHandler class
-document.addEventListener('DOMContentLoaded', () => {
-    const cartHandler = new CartHandler();
-    cartHandler.initialize();
-});
 
 
 class QuantityHandler {
@@ -709,11 +672,6 @@ class QuantityHandler {
         }
     }
 }
-// initialize only if the page contains the relevant elements
-document.addEventListener("DOMContentLoaded", () => {
-    const quantityHandler = new QuantityHandler();
-    quantityHandler.initialize();
-});
 
 
 class PromoCodeManager {
@@ -743,14 +701,11 @@ class PromoCodeManager {
         }
     }
 }
-// initialise PromoCodeManager on page load
-document.addEventListener('DOMContentLoaded', () => {
-    new PromoCodeManager();
-});
 
 
 class CheckoutManager {
-    constructor() {
+    constructor(cart) {
+        this.cart = cart;
         // select pay online button
         this.payOnlineButton = document.querySelector('.pay-online-button');
         // check if thepPay online button exists on page
@@ -773,6 +728,10 @@ class CheckoutManager {
     handleCheckout(event) {
          // prevent form submission by default
         event.preventDefault();
+        if(!this.cartNotEmpty()){
+            alert("Your cart is empty. Please add items to the cart before proceeding.");
+            return;
+        }
         // validate form fields
         if (!this.firstNameField.value.trim() || !this.lastNameField.value.trim()) {
             alert("Please enter both your first and last names.");
@@ -799,7 +758,7 @@ class CheckoutManager {
     // complete checkout, clear cart, reset costs
     completeCheckout() {
         // clear cart when checkout completed
-        this.clearCart();
+        this.cart.clearCart();
         // reset costs
         this.updateCosts(0);
         alert("Checkout completed successfully! Thank you for your purchase.");
@@ -814,8 +773,44 @@ class CheckoutManager {
     updateCosts(newAmount) {
         console.log('Costs updated to:', newAmount);
     }
+    cartNotEmpty(){
+        console.log("Cart state in cartNotEmpty:", this.cart.length)
+        return this.cart.length > 0;
+    }
 }
-// initialise the CheckoutManager when the page loads if the pay online button exists
+
+
 document.addEventListener('DOMContentLoaded', () => {
-    new CheckoutManager();
+    // initialise animations
+    const animationHandler = new AnimationHandler();
+    animationHandler.initializeAnimations();
+    // instantiating  popup
+    new SubscriptionPopupManager();
+    // instantiate and initialise carousel
+    const carousel = new Carousel('.carousel', '.carousel-slide', '.dot');
+    if (carousel.carouselContainer) {
+        carousel.initialize();
+    }
+    // initialise textChanger
+    const textChanger = new TextChanger();
+    textChanger.initialize();
+    // initialise search
+    const search = new Search();
+    search.initialize();
+    // initialise faq toggle
+    const faqToggle = new FAQToggle();
+    faqToggle.initialize();
+    // instantiate Cart and update checkout summary
+    const cart = new Cart();
+    cart.updateCheckoutSummary();
+    // initialise cartHandler
+    const cartHandler = new CartHandler();
+    cartHandler.initialize();
+    //initialise quantityHandler
+    const quantityHandler = new QuantityHandler();
+    quantityHandler.initialize();
+    // instantiating promoCodeManager
+    new PromoCodeManager();
+    // pass the cart instance to CheckoutManager
+    new CheckoutManager(cart);
 });
