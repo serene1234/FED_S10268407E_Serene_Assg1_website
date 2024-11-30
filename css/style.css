@@ -610,9 +610,6 @@ header{
     color: #5a2d14;
     cursor: pointer;
 }
-.suggestion-link:hover{
-    text-decoration: underline;
-}
 /*featured section styles*/
 .featured{
     background-color: #fff5e1;
