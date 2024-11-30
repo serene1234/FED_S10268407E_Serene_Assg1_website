@@ -101,6 +101,10 @@ User Stories:
 2. Leave required fields blank and try to proceed with the checkout process to verify that checkout process will not proceed
 3. Submit the form with all valid details and with items in cart and ensure that the checkout process completes successfully
 
+**Responsive Design**
+1. Verify that contents in each section does not spill when screen size changes
+2. Verify that font size and image size changes accordingly to screen size changes
+
 ## Credits
 
 ### Content
