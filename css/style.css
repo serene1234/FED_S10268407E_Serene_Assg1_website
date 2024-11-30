@@ -1307,6 +1307,10 @@ details p{
     border-radius: 10px;
     background-color: #fff5e1;
     text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+.suggested-product-card:hover{
+    transform: scale(1.05);
 }
 .suggested-image img{
     border-radius: 10px;

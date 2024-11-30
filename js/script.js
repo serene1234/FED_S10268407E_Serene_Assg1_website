@@ -261,7 +261,7 @@ class Search {
         const filteredProducts = this.products.filter(product =>
             product.name.toLowerCase().includes(query)
         );
-        // if no products match query, call function to show message
+        // if no products match query, call method to show message
         if (filteredProducts.length === 0) {
             this.showNoResults();
         } else {
