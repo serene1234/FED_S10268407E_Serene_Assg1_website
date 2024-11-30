@@ -20,7 +20,7 @@ User Stories:
 - As a customer, I want to have a dropdown option to select my country code and pickup location, so that I can quickly fill in my contact information and speed up the checkout process.
 
 
-Wireframe link: (https://www.figma.com/design/sEO7FBOBMubuo1wOFewrPg/FED_S10268407E_Serene_Assg1_wireframe?node-id=0-1&t=p5PAQC2OpNhISN59-1) 
+[Figma Wireframe Link](https://www.figma.com/design/sEO7FBOBMubuo1wOFewrPg/FED_S10268407E_Serene_Assg1_wireframe?node-id=0-1&t=p5PAQC2OpNhISN59-1) 
 
 ## Features
 ### Existing Features
@@ -63,57 +63,57 @@ Wireframe link: (https://www.figma.com/design/sEO7FBOBMubuo1wOFewrPg/FED_S102684
 
 ## Testing
 **1. Newsletter Subscription Popup**
-    1. Go to the footer section of any page
-    2. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    3. Try to submit the form with a valid email address and verify that a popup appears indicating successful subscription.
-    4. After closing the popup, verify that the page can be scrolled again
+1. Go to the footer section of any page
+2. Try to submit the form with an invalid email address and verify that a relevant error message appears
+3. Try to submit the form with a valid email address and verify that a popup appears indicating successful subscription.
+4. After closing the popup, verify that the page can be scrolled again
 
 **2. Sidebar Navigation**
-    1. Open the sidebar by clicking on the ‘Menu’ button in the navigation bar
-    2. Test the functionality of sidebar links and verify that they redirect to the correct pages
-    3. Verify that the sidebar closes properly when clicking the close icon or when navigating to a new page
-    4. Ensure the sidebar remains functional and accessible on all screen sizes
+1. Open the sidebar by clicking on the ‘Menu’ button in the navigation bar
+2. Test the functionality of sidebar links and verify that they redirect to the correct pages
+3. Verify that the sidebar closes properly when clicking the close icon or when navigating to a new page
+4. Ensure the sidebar remains functional and accessible on all screen sizes
 
 **3. Search Function**
-    1. Go to the “Home” page 
-    2. Enter various keywords into the search bar and verify that the results are accurate and relevant
-    3. Check for cases where no results are found and ensure an appropriate message is displayed
-    4. Verify that clicking on the result would redirect to the correct pages (links to “caramel butter cream cake”, “strawberry fresh cream cake”, “monaka opera”, “monaka gateau fraise” should work)
+1. Go to the “Home” page 
+2. Enter various keywords into the search bar and verify that the results are accurate and relevant
+3. Check for cases where no results are found and ensure an appropriate message is displayed
+4. Verify that clicking on the result would redirect to the correct pages (links to “caramel butter cream cake”, “strawberry fresh cream cake”, “monaka opera”, “monaka gateau fraise” should work)
 
 **4. Quantity Selector**
-    1. Go to any of the product details page
-    2. Try adjusting the quantity below 1 and verify that the quantity selector prevents this action
-    3. Ensure correct number of items is added to the cart when quantity is changed
+1. Go to any of the product details page
+2. Try adjusting the quantity below 1 and verify that the quantity selector prevents this action
+3. Ensure correct number of items is added to the cart when quantity is changed
 
 **5. Promo Code Validation**
-    1. Go to the “checkout” page
-    2. Enter any value that is less than 8 characters and verify that an alert message appears, showing that promo code is invalid
-    3. Verify that a success alert appears when a valid promo code is applied (anything that is 8 characters long)
+1. Go to the “checkout” page
+2. Enter any value that is less than 8 characters and verify that an alert message appears, showing that promo code is invalid
+3. Verify that a success alert appears when a valid promo code is applied (anything that is 8 characters long)
 
 **6. Empty Cart Validation**
-    1. Go to the “checkout” page with an empty cart
-    2. Press the “pay online” button and verify that an alert message appears, indicating that the cart is empty and cannot proceed with checkout
-    3. Try adding an item into the cart and fill in required fields in form
-    4. Verify that clicking on the “pay-online” button would indicate that checkout process is successful, and cart and form input are cleared
+1. Go to the “checkout” page with an empty cart
+2. Press the “pay online” button and verify that an alert message appears, indicating that the cart is empty and cannot proceed with checkout
+3. Try adding an item into the cart and fill in required fields in form
+4. Verify that clicking on the “pay-online” button would indicate that checkout process is successful, and cart and form input are cleared
 
 **7. Form Validation**
-    1. Go to the “Checkout” page
-    2. Leave required fields blank and try to proceed with the checkout process to verify that checkout process will not proceed
-    3. Submit the form with all valid details and with items in cart and ensure that the checkout process completes successfully
+1. Go to the “Checkout” page
+2. Leave required fields blank and try to proceed with the checkout process to verify that checkout process will not proceed
+3. Submit the form with all valid details and with items in cart and ensure that the checkout process completes successfully
 
 ## Credits
 
 ### Content
-- [Chatgpt] (https://chatgpt.com/)
+- [Chatgpt](https://chatgpt.com/)
 
 ### Media
 - The photos used in this site were obtained from:
     - https://www.instagram.com/chateraise.singapore/?hl=en
-    - [delivery image] (https://wearesolomon.com/wp-content/uploads/2019/03/If-your-food-delivery-man-handed-you-the-real-menu-of-their-everyday-lives-the-story-of-Mohammed-1-1.jpg)
-    - [chateraise logo] (https://play-lh.googleusercontent.com/A0lglNlcPRoq_WY6z1BKt2-t4yfQo9YMbEjRXaiT2_6-Fl-jq1SD_FlxGH_AJF4x7p_X)
-    - [aboout us image] (https://sethlui.com/wp-content/uploads/2017/05/chateraise-singapore-tpy-19-800x533.jpg)
+    - [delivery image](https://wearesolomon.com/wp-content/uploads/2019/03/If-your-food-delivery-man-handed-you-the-real-menu-of-their-everyday-lives-the-story-of-Mohammed-1-1.jpg)
+    - [chateraise logo](https://play-lh.googleusercontent.com/A0lglNlcPRoq_WY6z1BKt2-t4yfQo9YMbEjRXaiT2_6-Fl-jq1SD_FlxGH_AJF4x7p_X)
+    - [aboout us image](https://sethlui.com/wp-content/uploads/2017/05/chateraise-singapore-tpy-19-800x533.jpg)
 
 ### Acknowledgements
 Inspired by:
-- [Fender Play] (https://www.fender.com/play)
-- [Milk Bar Store] (https://milkbarstore.com/)
+- [Fender Play](https://www.fender.com/play)
+- [Milk Bar Store](https://milkbarstore.com/)
