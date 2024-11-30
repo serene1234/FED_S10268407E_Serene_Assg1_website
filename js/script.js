@@ -214,30 +214,30 @@ class Search {
     constructor() {
         // list of products
         this.products = [
-            "Cakes - Caramel Butter Cream Cake",
-            "Cakes - Strawberry Fresh Cream Cake",
-            "Cakes - Tiramisu Mille Crepe Cake",
-            "Cakes - Gateau Chocolate Bar Cake",
-            "Cakes - White Peach Cake",
-            "Cakes - White Zebra Mille Crepe Cake",
-            "Ice Cream - Dessert Monaka Salted Caramel",
-            "Ice Cream - Warabi Mochi and Kinako Ice Bar",
-            "Ice Cream - Dessert Monaka Setouchi Lemon Tart",
-            "Ice Cream - Monaka Opera",
-            "Ice Cream - Amaou Strawberry Soft Serve",
-            "Ice Cream - Monaka Gateau Fraise",
-            "Chilled Items - Strawberry Milk Pudding",
-            "Chilled Items - White Peach Jelly Cup",
-            "Chilled Items - Warabi Mochi Uji Matcha",
-            "Chilled Items - Fluffy Cream Roll Uji Matcha",
-            "Chilled Items - Chocolate Cream Puff",
-            "Chilled Items - Yamanashi Pione Jelly Glass",
-            "Baked Goods - Gateau au Fromage",
-            "Baked Goods - Chocolate Flavored Longevity Ring Gift Box (4pcs)",
-            "Baked Goods - Brownie Box (6pcs)",
-            "Baked Goods - Chocolate Ganache Pie",
-            "Baked Goods - Hokkaido Red Bean Mochi Pie",
-            "Baked Goods - Italian Chestnut Cake",
+            { name: "Cakes - Caramel Butter Cream Cake",  url: "../html/caramel-butter-cream-cake.html" },
+            { name: "Cakes - Strawberry Fresh Cream Cake", url: "../html/strawberry-fresh-cream-cake.html" },
+            { name: "Cakes - Tiramisu Mille Crepe Cake", url: "#" },
+            { name: "Cakes - Gateau Chocolate Bar Cake", url: "#" },
+            { name: "Cakes - White Peach Cake", url: "#" },
+            { name: "Cakes - White Zebra Mille Crepe Cake", url: "#"},
+            { name: "Ice Cream - Dessert Monaka Salted Caramel", url: "#" },
+            { name: "Ice Cream - Warabi Mochi and Kinako Ice Bar", url: "#" },
+            { name: "Ice Cream - Dessert Monaka Setouchi Lemon Tart", url: "#" },
+            { name: "Ice Cream - Monaka Opera", url: "../html/monaka-opera.html" },
+            { name: "Ice Cream - Amaou Strawberry Soft Serve", url: "#" },
+            { name: "Ice Cream - Monaka Gateau Fraise", url: "../html/monaka-gateau-fraise.html" },
+            { name: "Chilled Items - Strawberry Milk Pudding", url: "#" },
+            { name: "Chilled Items - White Peach Jelly Cup", url: "#" },
+            { name: "Chilled Items - Warabi Mochi Uji Matcha", url: "#" },
+            { name: "Chilled Items - Fluffy Cream Roll Uji Matcha", url: "#" },
+            { name: "Chilled Items - Chocolate Cream Puff", url: "#" },
+            { name: "Chilled Items - Yamanashi Pione Jelly Glass", url: "#" },
+            { name: "Baked Goods - Gateau au Fromage", url: "#" },
+            { name: "Baked Goods - Chocolate Flavored Longevity Ring Gift Box (4pcs)", url: "#" },
+            { name: "Baked Goods - Brownie Box (6pcs)", url: "#" },
+            { name: "Baked Goods - Chocolate Ganache Pie", url: "#" },
+            { name: "Baked Goods - Hokkaido Red Bean Mochi Pie", url: "#" },
+            { name: "Baked Goods - Italian Chestnut Cake", url: "#" }
         ];
         this.input = document.getElementById("search-bar");
         this.suggestionsList = document.getElementById("suggestions-list");
@@ -259,7 +259,7 @@ class Search {
         if (query.length === 0) return;
         // filter products based on query
         const filteredProducts = this.products.filter(product =>
-            product.toLowerCase().includes(query)
+            product.name.toLowerCase().includes(query)
         );
         // if no products match query, call function to show message
         if (filteredProducts.length === 0) {
@@ -274,25 +274,31 @@ class Search {
         filteredProducts.forEach((product, index) => {
             // create list item for each suggestion
             const suggestionItem = document.createElement("li");
-            suggestionItem.textContent = product;
-            // add class to first suggestion
-            if (index === 0) suggestionItem.classList.add("first-suggestion");
-            suggestionItem.onclick = () => this.selectSuggestion(product);
+            // create link for suggestion
+            const suggestionLink = document.createElement("a");
+            suggestionLink.textContent = product.name;
+            // prevent default navigation 
+            suggestionLink.href = "#";
+            suggestionLink.classList.add("suggestion-link");
+            // redirect to product's html page onclick
+            suggestionLink.addEventListener("click", (event) => {
+                event.preventDefault();
+                this.selectSuggestion(product.url);
+            })
             // append suggestion item to suggestions list
+            suggestionItem.appendChild(suggestionLink);
             this.suggestionsList.appendChild(suggestionItem);
         });
+    }
+    //method to handle selection  of suggestion andnavigate to product page
+    selectSuggestion(productUrl) {
+        window.location.href = productUrl;
     }
     // method to show "no results" message if no matches found
     showNoResults() {
         const noResultsItem = document.createElement("li");
         noResultsItem.textContent = "No results found";
         this.suggestionsList.appendChild(noResultsItem);
-    }
-    // method to handle selection of suggestion
-    selectSuggestion(product) {
-        this.input.value = product;
-        // clear suggestions list after selection
-        this.suggestionsList.innerHTML = "";
     }
 }
 
@@ -642,30 +648,28 @@ class QuantityHandler {
         this.increaseButton.addEventListener('click', () => this.changeQuantity(1));
         this.decreaseButton.addEventListener('click', () => this.changeQuantity(-1));
         // initialise decrease button opacity based on initial quantity
-        this.updateDecreaseButtonOpacity();
+        this.updateDecreaseButtonDisabled();
     }
     // change quantity by specified amount
     changeQuantity(amount) {
         // get current quantity
         let quantity = parseInt(this.quantityElement.textContent);
         quantity += amount;
-        // prevent decrease below 0
-        if (quantity >= 0) {
+        // prevent decrease below 1
+        if (quantity >= 1) {
             // update displayed qantity
             this.quantityElement.textContent = quantity;
             // adjust button opacity if needed
-            this.updateDecreaseButtonOpacity();
+            this.updateDecreaseButtonDisabled();
         }
     }
     // adjust opacity and disable state of the decrease button based on the quantity
-    updateDecreaseButtonOpacity() {
+    updateDecreaseButtonDisabled() {
         const quantity = parseInt(this.quantityElement.textContent);
         if (quantity <= 0) {
-            this.decreaseButton.style.opacity = 0.5;
             // disable button if quantity is 0
             this.decreaseButton.disabled = true;
         } else {
-            this.decreaseButton.style.opacity = 1;
             // enable the button if quantity is valid
             this.decreaseButton.disabled = false;
         }
@@ -783,38 +787,20 @@ class CheckoutManager {
 }
 
 
-// PickupLocationManager class to handle dropdown of locations in checkout
-class PickupLocationManager {
-    constructor(selectElementId, locations) {
-        this.selectElement = document.getElementById(selectElementId);
-        this.locations = locations;
-    }
-    populateLocations() {
-        this.locations.forEach(location => {
-            const option = document.createElement("option");
-            option.textContent = location;
-            this.selectElement.appendChild(option);
-        });
-    }
-    clearLocations() {
-        // clears all existing options
-        this.selectElement.innerHTML = "";
-    }
-}
-
-
 // CountryCodeSelector class to handle dropdown of country codes in checkout
 class CountryCodeSelector {
     constructor(selectElementId, countryCodes) {
         this.selectElement = document.getElementById(selectElementId);
         this.countryCodes = countryCodes;
     }
-
     // method to populate the select element with country codes
     populateCountryCodes() {
+        // check if element exists
+        if (!this.selectElement){
+            return;
+        }
         // clear existing options
         this.selectElement.innerHTML = "";
-
         // add the new options
         this.countryCodes.forEach(({ code, country }) => {
             const option = document.createElement("option");
@@ -822,6 +808,34 @@ class CountryCodeSelector {
             option.textContent = `${code} (${country})`;
             this.selectElement.appendChild(option);
         });
+    }
+}
+
+
+// PickupLocationManager class to handle dropdown of locations in checkout
+class PickupLocationManager {
+    constructor(selectElementId, locations) {
+        this.selectElement = document.getElementById(selectElementId);
+        this.locations = locations;
+    }
+    populateLocations() {
+        // check if element exists
+        if  (!this.selectElement) {
+            return;
+        }
+        this.locations.forEach(location => {
+            const option = document.createElement("option");
+            option.textContent = location;
+            this.selectElement.appendChild(option);
+        });
+    }
+    clearLocations() {
+        // check if element exists
+        if (!this.selectElement) {
+            return;
+        }
+        // clears all existing options
+        this.selectElement.innerHTML = "";
     }
 }
 

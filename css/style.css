@@ -20,33 +20,33 @@
 
 /*animation styles*/
 /*fade-in-right animation*/
-.fade-in-right-section {
+.fade-in-right-section{
     opacity: 0;
     transform: translateX(50px); /*start from right*/
     transition: opacity 0.8s ease, transform 0.8s ease;
     transition-delay: var(--delay, 0s); /*delay for staggered effect*/
 }
 
-.fade-in-right-section.visible {
+.fade-in-right-section.visible{
     opacity: 1;
     transform: translateX(0); /*move to original position*/
 }
 
 /*fade-in-left animation*/
-.fade-in-left-section {
+.fade-in-left-section{
     opacity: 0;
     transform: translateX(-50px); /*start from left*/
     transition: opacity 0.8s ease, transform 0.8s ease;
     transition-delay: var(--delay, 0s); /*delay for staggered effect*/
 }
 
-.fade-in-left-section.visible {
+.fade-in-left-section.visible{
     opacity: 1;
     transform: translateX(0); /*move to original position*/
 }
 
 /*body styles*/
-body {
+body{
     font-family: "Inter", sans-serif;
     color: #fff5e1;
     background-color: #5a2d14;
@@ -58,18 +58,18 @@ body {
 
 /*sidebar navigation section styles*/
 /*wrapper for main content*/
-.main-content {
+.main-content{
     transition: transform 0.3s ease, opacity 0.3s ease;
     position: relative;
     z-index: 1; /*ensure content stays below the sidebar*/
     overflow-x: hidden;
 }
 /*fade out content when sidebar is active*/
-.sidebar-active .main-content {
+.sidebar-active .main-content{
     opacity: 0.8; /*adds dimming effect*/
 }
 /*sidebar hidden by default*/
-.sidebar {
+.sidebar{
     position: fixed;
     top: 0;
     left: -250px;
@@ -81,10 +81,10 @@ body {
     z-index: 1000; /*ensure sidebar is above other content*/
     transition: left 0.3s ease; /*transition when sidebar is opened*/
 }
-.sidebar.sidebar-active {
+.sidebar.sidebar-active{
     left: 0; 
 }
-.close-btn {
+.close-btn{
     position: absolute;
     top: 10px;
     right: 20px;
@@ -100,11 +100,11 @@ body {
     padding: 0;
     margin: 0;
 }
-.menu-category {
+.menu-category{
     color: #5a2d14;
     margin: 10px 0;
 }
-.menu-category a {
+.menu-category a{
     color: #5a2d14;
     font-weight: bold;
     font-size: 16px;
@@ -224,7 +224,7 @@ header{
 .nav-links .link:hover::after{
     width: 100%;
 }
-.nav-links .order-btn {
+.nav-links .order-btn{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -240,7 +240,7 @@ header{
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.6s ease; /*smooth transition to hover effect*/
     cursor: pointer;
 }
-.nav-links .order-btn:hover {
+.nav-links .order-btn:hover{
     background-color: #5a2d14;
     color: #fff5e1;
     border: 2px solid #fff5e1;
@@ -378,14 +378,14 @@ header{
     margin-bottom: 6px;
     font-size: 18px;
 }
-.footer-section a {
+.footer-section a{
     color: #fff5e1;
     text-decoration: none;
 }
-.footer-section a:hover {
+.footer-section a:hover{
     text-decoration: underline;
 }
-.footer-bottom {
+.footer-bottom{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -393,18 +393,18 @@ header{
     margin-top: 20px;
     flex-wrap: wrap;
 }
-.footer-bottom p {
+.footer-bottom p{
     font-size: 14px;
     margin: 0;
     text-align: left;
 }
-.footer-logo img {
+.footer-logo img{
     max-width: 150px;
     height: auto;
     cursor: pointer;
 }
 /*successful subscription popup message*/
-.popup {
+.popup{
     display: none; /*hide popup by default*/
     position: fixed;
     top: 0;
@@ -416,7 +416,7 @@ header{
     align-items: center;
     z-index: 1000; /*ensure popup is above everything else*/
 }
-.popup-content {
+.popup-content{
     background-image: url('../images/chateraise\-newsletter\-popup\-bg.png');
     background-size: cover;
     background-position: center;
@@ -429,7 +429,7 @@ header{
     padding: 20px;
     position: relative;
 }
-.popup-content .close-x {
+.popup-content .close-x{
     position: absolute;
     top: 10px;
     right: 20px;
@@ -438,14 +438,14 @@ header{
     z-index: 1;
     cursor: pointer;
 }
-.popup-content h2 {
+.popup-content h2{
     font-size: 40px;
     color: #fff5e1;
     width: 50%;
     text-align: center;
     z-index: 1;
 }
-.popup-content p {
+.popup-content p{
     font-size: 18px;
     color: #fff5e1;
     text-align: center;
@@ -463,7 +463,7 @@ header{
     font-weight: bold;
     z-index: 1;
 }
-.popup .close-popup:hover {
+.popup .close-popup:hover{
     transform: scale(1.05);
 }
 
@@ -546,14 +546,14 @@ header{
     transition: opacity 1.5s ease; /*transition from one text to the other*/
     opacity: 1;
 }
-.search-container {
+.search-container{
     display: flex;
     justify-content: center;
     position: relative;
     margin-top: 20px;
     width: 90%;
 }
-#search-bar {
+#search-bar{
     width: 100%;
     padding: 10px 15px 10px 45px;
     background-color: #fff5e1;
@@ -578,7 +578,7 @@ header{
     opacity: 0.6;
 }
 /*suggestions list when user enters input*/
-.suggestions-list {
+.suggestions-list{
     position: absolute;
     top: 100%; /*space below the search bar*/
     left: 0;
@@ -593,23 +593,26 @@ header{
     padding: 0;
     cursor: pointer;
 }
-.suggestions-list li {
+.suggestions-list li{
     text-align: left;
     padding: 10px 15px;
     font-size: 16px;
     font-weight: bold;
     color: #5a2d14;
 }
-.suggestions-list li:hover {
+.suggestions-list li:hover{
     background-color: #fbe2b4; /*highlight the suggestion on hover*/
     cursor: pointer;
 }
-.first-suggestion{
-    background-color: #fbe2b4;
-    font-weight: bold;
+/* link to product*/
+.suggestion-link{
+    text-decoration: none;
     color: #5a2d14;
+    cursor: pointer;
 }
-
+.suggestion-link:hover{
+    text-decoration: underline;
+}
 /*featured section styles*/
 .featured{
     background-color: #fff5e1;
