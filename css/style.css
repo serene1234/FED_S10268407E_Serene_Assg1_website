@@ -417,7 +417,7 @@ header{
     z-index: 1000; /*ensure popup is above everything else*/
 }
 .popup-content{
-    background-image: url('../images/chateraise\-newsletter\-popup\-bg.png');
+    background-image: url('../images/others/chateraise\-newsletter\-popup\-bg.png');
     background-size: cover;
     background-position: center;
     width: 60%;
