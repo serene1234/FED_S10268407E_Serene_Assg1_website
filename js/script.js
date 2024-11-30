@@ -711,55 +711,46 @@ class PromoCodeManager {
 class CheckoutManager {
     constructor(cart) {
         this.cart = cart;
-        // select pay online button
-        this.payOnlineButton = document.querySelector('.pay-online-button');
-        // check if the pay online button exists on page
-        if (this.payOnlineButton) {
+        // select the form
+        this.form = document.querySelector('form');
+        // check if the form exists on page
+        if (this.form) {
             // select input fields for user details
-            this.firstNameField = document.querySelector('input[placeholder="First Name"]');
-            this.lastNameField = document.querySelector('input[placeholder="Last Name"]');
-            this.emailField = document.querySelector('input[type="email"]');
-            this.phoneNumberField = document.querySelector('input[type="tel"]');
-            this.pickupDateTimeField = document.querySelector('input[type="datetime-local"]');
             this.initialize();
         }
     }
     // initialise checkout process
     initialize() {
         // attach event listener for Pay Online button if it's present
-        this.payOnlineButton.addEventListener('click', (event) => this.handleCheckout(event));
+        this.form.addEventListener('submit', (event) => {
+            if (!this.cartNotEmpty()) {
+                event.preventDefault();
+                alert("Your cart is empty. Please add items to the cart before proceeding.");
+                return;
+            }
+             // handle checkout process by validating input fields
+            if(!this.validateFields()){
+                event.preventDefault();
+                return;
+            }
+            event.preventDefault();
+            this.completeCheckout();
+        });
     }
-    // handle checkout process by validating input fields
-    handleCheckout(event) {
-         // prevent form submission by default
-        event.preventDefault();
-        // alert user if attempt to pay without item in cart was made
-        if(!this.cartNotEmpty()){
-            alert("Your cart is empty. Please add items to the cart before proceeding.");
-            return;
+    // check if cart is empty
+    cartNotEmpty(){
+        console.log("Cart state in cartNotEmpty:", this.cart.length)
+        return this.cart.length > 0;
+    }
+    // validate input fields
+    validateFields() {
+        const requiredFields = Array.from(this.form.querySelectorAll('input[required]'));
+        for (let field of requiredFields) {
+            if (!field.value.trim()) {
+                return false; // return false if any field is empty
+            }
         }
-        // validate form fields
-        if (!this.firstNameField.value.trim() || !this.lastNameField.value.trim()) {
-            alert("Please enter both your first and last names.");
-            return;
-        }
-
-        if (!this.emailField.value.trim() || !this.emailField.validity.valid) {
-            alert("Please enter a valid email address.");
-            return;
-        }
-
-        if (!this.phoneNumberField.value.trim()) {
-            alert("Please enter your contact number.");
-            return;
-        }
-
-        if (!this.pickupDateTimeField.value.trim()) {
-            alert("Please select a valid pickup date and time.");
-            return;
-        }
-        // proceed with checkout if all inputs are valid
-        this.completeCheckout();
+        return true; // all fields are valid
     }
     // complete checkout, clear cart, reset costs
     completeCheckout() {
@@ -771,16 +762,11 @@ class CheckoutManager {
         // reload page to reset state
         location.reload();
     }
-    //  function to check if cart is empty
-    cartNotEmpty(){
-        console.log("Cart state in cartNotEmpty:", this.cart.length)
-        return this.cart.length > 0;
-    }
-    // function to clear cart (debug)
+    // clear cart (debug)
     clearCart() {
         console.log('Cart cleared!');
     }
-    // function to update costs (debug)
+    // update costs (debug)
     updateCosts(newAmount) {
         console.log('Costs updated to:', newAmount);
     }
