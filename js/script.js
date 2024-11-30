@@ -214,8 +214,8 @@ class Search {
     constructor() {
         // list of products
         this.products = [
-            { name: "Cakes - Caramel Butter Cream Cake",  url: "../html/caramel-butter-cream-cake.html" },
-            { name: "Cakes - Strawberry Fresh Cream Cake", url: "../html/strawberry-fresh-cream-cake.html" },
+            { name: "Cakes - Caramel Butter Cream Cake",  url: "html/caramel-butter-cream-cake.html" },
+            { name: "Cakes - Strawberry Fresh Cream Cake", url: "html/strawberry-fresh-cream-cake.html" },
             { name: "Cakes - Tiramisu Mille Crepe Cake", url: "#" },
             { name: "Cakes - Gateau Chocolate Bar Cake", url: "#" },
             { name: "Cakes - White Peach Cake", url: "#" },
@@ -223,9 +223,9 @@ class Search {
             { name: "Ice Cream - Dessert Monaka Salted Caramel", url: "#" },
             { name: "Ice Cream - Warabi Mochi and Kinako Ice Bar", url: "#" },
             { name: "Ice Cream - Dessert Monaka Setouchi Lemon Tart", url: "#" },
-            { name: "Ice Cream - Monaka Opera", url: "../html/monaka-opera.html" },
+            { name: "Ice Cream - Monaka Opera", url: "html/monaka-opera.html" },
             { name: "Ice Cream - Amaou Strawberry Soft Serve", url: "#" },
-            { name: "Ice Cream - Monaka Gateau Fraise", url: "../html/monaka-gateau-fraise.html" },
+            { name: "Ice Cream - Monaka Gateau Fraise", url: "html/monaka-gateau-fraise.html" },
             { name: "Chilled Items - Strawberry Milk Pudding", url: "#" },
             { name: "Chilled Items - White Peach Jelly Cup", url: "#" },
             { name: "Chilled Items - Warabi Mochi Uji Matcha", url: "#" },
